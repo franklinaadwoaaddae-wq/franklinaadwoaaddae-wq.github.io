@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZZ3SND459V"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-ZZ3SND459V');
-</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Franklina Addae | Portfolio</title>
@@ -750,5 +741,50 @@
   <footer>
     © 2026 Franklina Addae · Portfolio Website
   </footer>
+  <script>
+    // ===== Google Analytics Custom Event Tracking =====
+
+    // Helper to safely send events
+    function trackEvent(name, params = {}) {
+      if (typeof gtag === 'function') {
+        gtag('event', name, params);
+      }
+    }
+
+    // 1) Button click tracking (GitHub / LinkedIn / CTAs)
+    document.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        const href = link.getAttribute('href') || '';
+        if (href.includes('github.com')) {
+          trackEvent('click_github', { link_text: link.textContent.trim() });
+        }
+        if (href.includes('linkedin.com')) {
+          trackEvent('click_linkedin', { link_text: link.textContent.trim() });
+        }
+        if (link.classList.contains('btn')) {
+          trackEvent('click_cta', { label: link.textContent.trim() });
+        }
+      });
+    });
+
+    // 2) Page section view tracking (fires once per section)
+    const observed = new Set();
+    const sections = document.querySelectorAll('section, header');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id || entry.target.tagName;
+          if (!observed.has(id)) {
+            observed.add(id);
+            trackEvent('view_section', { section: id });
+          }
+        }
+      });
+    }, { threshold: 0.4 });
+
+    sections.forEach(sec => observer.observe(sec));
+
+      </script>
 </body>
 </html>
