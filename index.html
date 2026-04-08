@@ -1,11 +1,363 @@
-<h1>Franklina Addae</h1>
-<p>Master’s Student in Applied Statistics and Research Methods</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Franklina Addae | Portfolio</title>
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #1d4ed8;
+      --accent-soft: #dbeafe;
+      --border: #e5e7eb;
+      --shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
 
-<h2>Projects</h2>
-<ul>
-  <li>
-    <a href="https://github.com/franklinaadwoaaddae-wq/aca-medicaid-thesis">
-      Medicaid Expansion Thesis
-    </a>
-  </li>
-</ul>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, #eff6ff, #ffffff);
+      border-bottom: 1px solid var(--border);
+      padding: 70px 0 50px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 2.8rem;
+      margin: 0 0 10px;
+    }
+
+    .hero-text p {
+      font-size: 1.08rem;
+      color: var(--muted);
+      margin: 0 0 18px;
+      max-width: 700px;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 18px 0 24px;
+    }
+
+    .badge {
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: bold;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .hero-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .hero-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    section {
+      padding: 56px 0;
+    }
+
+    h2 {
+      font-size: 1.9rem;
+      margin: 0 0 18px;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 760px;
+      margin-bottom: 28px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .project-image {
+      width: 100%;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      margin: 12px 0 16px;
+      background: #fff;
+    }
+
+    .link {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .link:hover {
+      text-decoration: underline;
+    }
+
+    .list-clean {
+      padding-left: 18px;
+      margin: 0;
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0 40px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 860px) {
+      .hero,
+      .grid-2,
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-text h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container hero">
+      <div class="hero-text">
+        <h1>Franklina Addae</h1>
+        <p>
+          Master’s graduate in Applied Statistics and Research Methods with interests in
+          causal inference, public health, and policy-relevant data analysis.
+        </p>
+
+        <div class="badge-row">
+          <span class="badge">R</span>
+          <span class="badge">SAS</span>
+          <span class="badge">LaTeX</span>
+          <span class="badge">Causal Inference</span>
+          <span class="badge">Public Health Research</span>
+        </div>
+
+        <div class="button-row">
+          <a class="btn btn-primary" href="https://github.com/franklinaadwoaaddae-wq/aca-medicaid-thesis" target="_blank">View Thesis Repository</a>
+          <a class="btn btn-secondary" href="#projects">See Projects</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>Current Highlight</h3>
+        <p><strong>Master’s Thesis:</strong> Medicaid Expansion & Preventive Care</p>
+        <ul>
+          <li>BRFSS-based public health analysis</li>
+          <li>Difference-in-Differences and Event Study methods</li>
+          <li>Double Machine Learning for robust estimation</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p class="section-intro">
+        I recently completed my master’s thesis in Applied Statistics and Research Methods at the
+        University of Northern Colorado. My work focuses on using modern statistical methods to answer
+        real-world questions in public health and education. I enjoy building clear, reproducible analyses
+        and presenting findings in ways that can inform policy and practice.
+      </p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2>Featured Project</h2>
+      <p class="section-intro">
+        This project is the centerpiece of my current portfolio and reflects my interests in causal inference,
+        health policy, and applied statistical analysis.
+      </p>
+
+      <div class="card">
+        <h3>Did Medicaid Expansion Increase Preventive Care?</h3>
+        <p>
+          Causal evidence from BRFSS using modern machine learning methods.
+        </p>
+
+        <img src="output/Rplot07.png" alt="Thesis result plot" class="project-image" />
+
+        <p>
+          This figure highlights the relationship between Medicaid expansion and preventive care outcomes.
+          The project uses staggered difference-in-differences, event study methods, and Double Machine Learning
+          to examine whether expansion improved access to preventive care.
+        </p>
+
+        <p>
+          <a class="link" href="https://github.com/franklinaadwoaaddae-wq/aca-medicaid-thesis" target="_blank">View the full project on GitHub</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="research">
+    <div class="container">
+      <h2>Research Interests</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Causal Inference</h3>
+          <p>Applied methods for estimating policy and treatment effects using observational data.</p>
+        </div>
+        <div class="card">
+          <h3>Public Health</h3>
+          <p>Statistical evidence for improving access, equity, and preventive health outcomes.</p>
+        </div>
+        <div class="card">
+          <h3>Reproducible Analysis</h3>
+          <p>Clear workflows using R, SAS, and LaTeX for transparent and professional research outputs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cv">
+    <div class="container">
+      <h2>Selected Skills</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Technical Skills</h3>
+          <ul class="list-clean">
+            <li>R and SAS programming</li>
+            <li>Data cleaning and statistical modeling</li>
+            <li>Difference-in-Differences and Event Study analysis</li>
+            <li>Double Machine Learning</li>
+            <li>LaTeX and research reporting</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Academic Focus</h3>
+          <ul class="list-clean">
+            <li>Applied Statistics</li>
+            <li>Research Methods</li>
+            <li>Health policy evaluation</li>
+            <li>Survey and observational data</li>
+            <li>Communicating statistical findings clearly</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <div class="card">
+        <p>
+          You can connect with me through GitHub or add your professional email and LinkedIn here.
+        </p>
+        <p>
+          <a class="link" href="https://github.com/franklinaadwoaaddae-wq" target="_blank">GitHub Profile</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © 2026 Franklina Addae · Portfolio Website
+    </div>
+  </footer>
+</body>
+</html>
+
