@@ -2,13 +2,8 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Franklina Addae</title>
 
@@ -17,92 +12,63 @@
     content="Franklina Addae — doctoral researcher in Applied Statistics at the University of Northern Colorado."
   >
 
-
-  <!-- ========================================================
-       BROWSER TAB ICON
-       ======================================================== -->
-
+  <!-- Browser Tab Icon -->
   <link
     rel="icon"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='50' fill='%23182d50'/%3E%3Ctext x='50' y='64' text-anchor='middle' font-family='Georgia' font-size='43' font-weight='bold' fill='white'%3EFA%3C/text%3E%3C/svg%3E"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23182d50'/%3E%3Ctext x='50' y='64' text-anchor='middle' font-family='Georgia' font-size='43' font-weight='bold' fill='white'%3EFA%3C/text%3E%3C/svg%3E"
   >
 
-
-  <!-- ========================================================
-       ICON LIBRARIES
-
-       Font Awesome:
-       GitHub + LinkedIn
-
-       Academicons:
-       Google Scholar + ResearchGate + ORCID
-       ======================================================== -->
-
+  <!-- Font Awesome -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
   >
 
+  <!-- Academicons -->
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
   >
 
-
-
   <style>
 
-    /* ========================================================
-       FRANKLINA ADDAE
-       Personal Academic Website
-       ======================================================== */
-
+    /* =========================================================
+       COLOR PALETTE
+       Inspired by the graduation photograph
+       ========================================================= */
 
     :root {
+      --black: #191a1d;
+      --charcoal: #34363a;
+      --gray: #77797d;
 
-      /* Main text */
-      --black: #18191c;
-      --charcoal: #34373c;
-      --gray: #74777c;
+      --navy: #172d50;
+      --navy-soft: #29466e;
 
-      /* Colors inspired by graduation photograph */
-      --navy: #182d50;
-      --navy-light: #29476f;
+      --gold: #d3a51f;
+      --gold-soft: #ead9a4;
 
-      --gold: #d5a51f;
-      --gold-soft: #ead8a0;
-
-      /* Neutral backgrounds */
       --background: #faf9f6;
       --white: #ffffff;
-
-      /* Borders */
       --line: #dfded9;
 
-      /* Page width */
       --max-width: 1120px;
-
     }
 
 
-
-    /* ========================================================
+    /* =========================================================
        GENERAL
-       ======================================================== */
-
+       ========================================================= */
 
     * {
       box-sizing: border-box;
     }
 
-
     html {
       scroll-behavior: smooth;
     }
 
-
     body {
-
       margin: 0;
 
       font-family:
@@ -114,417 +80,420 @@
         sans-serif;
 
       background: var(--background);
-
       color: var(--black);
 
       line-height: 1.65;
-
       -webkit-font-smoothing: antialiased;
-
     }
-
 
     a {
       color: inherit;
     }
-
 
     img {
       display: block;
       max-width: 100%;
     }
 
-
     .container {
-
       width: min(90%, var(--max-width));
-
       margin: 0 auto;
-
     }
 
 
-
-    /* ========================================================
+    /* =========================================================
        HEADER
-       ======================================================== */
-
+       ========================================================= */
 
     .site-header {
-
       position: sticky;
-
       top: 0;
-
       z-index: 100;
 
-      background:
-        rgba(250, 249, 246, 0.96);
-
+      background: rgba(250, 249, 246, 0.96);
       backdrop-filter: blur(12px);
 
-      border-bottom:
-        1px solid var(--line);
-
+      border-bottom: 1px solid var(--line);
     }
 
-
     .navigation {
-
       min-height: 78px;
 
       display: flex;
-
       align-items: center;
-
       justify-content: space-between;
 
       gap: 30px;
-
     }
 
 
-
-    /* ========================================================
-       FA BRAND
-       ======================================================== */
-
+    /* =========================================================
+       BRAND
+       ========================================================= */
 
     .brand {
-
       display: flex;
-
       align-items: center;
-
       gap: 13px;
 
       text-decoration: none;
-
     }
 
-
     .brand-logo {
-
       width: 40px;
-
       height: 40px;
 
       display: flex;
-
       align-items: center;
-
       justify-content: center;
 
       border-radius: 50%;
 
       background: var(--navy);
-
       color: var(--white);
 
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
+      font-family: Georgia, "Times New Roman", serif;
       font-size: 0.94rem;
-
       font-weight: 700;
 
       box-shadow:
         0 0 0 3px
-        rgba(213, 165, 31, 0.12);
+        rgba(211, 165, 31, 0.12);
 
       transition:
         transform 0.2s ease,
         box-shadow 0.2s ease;
-
     }
 
-
     .brand:hover .brand-logo {
-
       transform: translateY(-1px);
 
       box-shadow:
         0 0 0 4px
-        rgba(213, 165, 31, 0.16);
-
+        rgba(211, 165, 31, 0.17);
     }
-
 
     .brand-name {
-
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
+      font-family: Georgia, "Times New Roman", serif;
       font-size: 1.08rem;
-
       font-weight: 600;
-
-      letter-spacing: 0.1px;
-
     }
 
 
-
-    /* ========================================================
+    /* =========================================================
        NAVIGATION
-       ======================================================== */
-
+       ========================================================= */
 
     .nav-links {
-
       display: flex;
-
       align-items: center;
-
       gap: 27px;
-
     }
 
-
     .nav-links a {
-
       position: relative;
+
+      padding: 29px 0 27px;
 
       text-decoration: none;
 
       color: var(--charcoal);
 
       font-size: 0.84rem;
-
       font-weight: 600;
 
-      padding: 29px 0 27px;
-
-      transition:
-        color 0.2s ease;
-
+      transition: color 0.2s ease;
     }
 
-
     .nav-links a::after {
-
       content: "";
 
       position: absolute;
 
       left: 0;
-
       bottom: 21px;
 
       width: 0;
-
       height: 2px;
 
       background: var(--gold);
 
-      transition:
-        width 0.2s ease;
-
+      transition: width 0.2s ease;
     }
-
 
     .nav-links a:hover {
-
       color: var(--navy);
-
     }
-
 
     .nav-links a:hover::after {
-
       width: 100%;
-
     }
 
 
-
-    /* ========================================================
+    /* =========================================================
        HOMEPAGE
-       ======================================================== */
-
+       ========================================================= */
 
     .home {
-
-      min-height:
-        calc(100vh - 78px - 68px);
+      min-height: calc(100vh - 78px - 65px);
 
       display: flex;
-
       align-items: center;
 
-      padding:
-        72px 0
-        82px;
-
+      padding: 70px 0 80px;
     }
 
-
     .home-layout {
-
       width: 100%;
 
       display: grid;
 
       grid-template-columns:
-        205px
+        190px
         minmax(0, 1fr);
 
-      gap: 72px;
+      gap: 68px;
 
       align-items: center;
 
+      animation: fadeIn 0.55s ease both;
     }
 
 
+    /* =========================================================
+       FULL GRADUATION PHOTO
 
-    /* ========================================================
-       PORTRAIT AREA
-       ======================================================== */
-
+       IMPORTANT:
+       NO fixed height
+       NO object-fit
+       NO object-position
+       Therefore the image is NOT CROPPED.
+       ========================================================= */
 
     .portrait-column {
+      width: 190px;
 
-      width: 195px;
-
-      display: flex;
-
-      flex-direction: column;
-
-      align-items: center;
-
+      align-self: center;
     }
 
-
     .portrait {
+      width: 190px;
 
-      width: 195px;
+      /* Keeps the ORIGINAL photograph proportions */
+      height: auto;
 
-      height: 290px;
+      display: block;
 
-      object-fit: cover;
-
-      object-position:
-        center 55%;
-
-      border-radius: 5px;
+      border-radius: 4px;
 
       background: var(--white);
 
       box-shadow:
-        0 12px 32px
-        rgba(24, 45, 80, 0.10);
-
+        0 12px 30px
+        rgba(23, 45, 80, 0.10);
     }
 
 
+    /* =========================================================
+       INTRODUCTION
+       ========================================================= */
 
-    /* ========================================================
-       SOCIAL / ACADEMIC ICONS
-       ======================================================== */
-
-
-    .socials {
-
-      width: 100%;
-
-      display: flex;
-
-      justify-content: center;
-
-      align-items: center;
-
-      gap: 8px;
-
-      margin-top: 17px;
-
+    .intro {
+      max-width: 760px;
     }
 
+    .small-heading {
+      margin: 0 0 13px;
 
-    .social-link {
+      color: var(--navy);
 
-      position: relative;
+      text-transform: uppercase;
 
-      width: 32px;
+      letter-spacing: 2.3px;
 
-      height: 32px;
+      font-size: 0.68rem;
+      font-weight: 800;
+    }
 
-      display: flex;
+    h1 {
+      margin: 0 0 13px;
 
-      align-items: center;
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
-      justify-content: center;
+      font-size:
+        clamp(3.1rem, 6vw, 4.75rem);
 
-      border-radius: 50%;
+      line-height: 1;
 
-      text-decoration: none;
+      font-weight: 500;
+
+      letter-spacing: -2.3px;
+
+      color: var(--black);
+    }
+
+    .role {
+      margin: 0 0 4px;
 
       color: var(--charcoal);
 
-      border:
-        1px solid transparent;
+      font-size: 1.03rem;
+      font-weight: 650;
+    }
+
+    .institution {
+      margin: 0 0 29px;
+
+      color: var(--gray);
+
+      font-size: 0.95rem;
+    }
+
+    .bio {
+      max-width: 710px;
+
+      margin: 0 0 17px;
+
+      color: var(--charcoal);
+
+      font-size: 1rem;
+    }
+
+    .personal {
+      max-width: 710px;
+
+      margin: 0;
+
+      color: var(--gray);
+
+      font-size: 0.94rem;
+    }
+
+
+    /* =========================================================
+       RESEARCH INTERESTS
+       ========================================================= */
+
+    .interests {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      margin-top: 29px;
+    }
+
+    .interest {
+      padding: 6px 11px;
+
+      border: 1px solid var(--line);
+
+      border-radius: 4px;
+
+      background: rgba(255, 255, 255, 0.45);
+
+      color: var(--charcoal);
+
+      font-size: 0.74rem;
+      font-weight: 600;
 
       transition:
         color 0.2s ease,
         border-color 0.2s ease,
         background 0.2s ease,
         transform 0.2s ease;
-
     }
 
-
-    .social-link i {
-
-      font-size: 1.08rem;
-
-    }
-
-
-    .social-link .ai {
-
-      font-size: 1.13rem;
-
-    }
-
-
-    .social-link:hover {
-
+    .interest:hover {
       color: var(--navy);
-
-      background: var(--white);
 
       border-color: var(--gold-soft);
 
-      transform: translateY(-2px);
+      background:
+        rgba(211, 165, 31, 0.06);
 
+      transform: translateY(-2px);
     }
 
 
+    /* =========================================================
+       SOCIAL / ACADEMIC ICONS
+       Remain on the RIGHT with the introduction
+       ========================================================= */
 
-    /* ========================================================
-       SOCIAL TOOLTIPS
-       ======================================================== */
+    .socials {
+      display: flex;
+      align-items: center;
 
+      gap: 16px;
+
+      margin-top: 29px;
+    }
+
+    .social-link {
+      position: relative;
+
+      width: 37px;
+      height: 37px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+
+      border: 1px solid transparent;
+
+      text-decoration: none;
+
+      color: var(--charcoal);
+
+      transition:
+        color 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .social-link i {
+      font-size: 1.23rem;
+    }
+
+    .social-link .ai {
+      font-size: 1.28rem;
+    }
+
+    .social-link:hover {
+      color: var(--navy);
+
+      border-color: var(--gold-soft);
+
+      background: var(--white);
+
+      transform: translateY(-2px);
+    }
+
+
+    /* =========================================================
+       SOCIAL ICON TOOLTIPS
+       ========================================================= */
 
     .social-link::after {
-
       content: attr(data-label);
 
       position: absolute;
 
       left: 50%;
-
-      bottom: -34px;
+      bottom: -35px;
 
       transform:
         translateX(-50%)
         translateY(-3px);
 
-      padding:
-        4px 8px;
+      padding: 4px 8px;
 
       white-space: nowrap;
 
@@ -535,11 +504,9 @@
       color: var(--white);
 
       font-size: 0.63rem;
-
       font-weight: 500;
 
       opacity: 0;
-
       visibility: hidden;
 
       pointer-events: none;
@@ -549,267 +516,31 @@
         transform 0.2s ease;
 
       z-index: 20;
-
     }
 
-
     .social-link:hover::after {
-
       opacity: 1;
-
       visibility: visible;
 
       transform:
         translateX(-50%)
         translateY(0);
-
     }
 
 
-
-    /* ========================================================
-       INTRODUCTION
-       ======================================================== */
-
-
-    .intro {
-
-      max-width: 760px;
-
-    }
-
-
-    .small-heading {
-
-      margin:
-        0 0 13px;
-
-      color: var(--navy);
-
-      text-transform: uppercase;
-
-      letter-spacing: 2.3px;
-
-      font-size: 0.68rem;
-
-      font-weight: 800;
-
-    }
-
-
-
-    /* ========================================================
-       NAME
-       ======================================================== */
-
-
-    h1 {
-
-      margin:
-        0 0 13px;
-
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-      font-size:
-        clamp(
-          3.1rem,
-          6vw,
-          4.75rem
-        );
-
-      line-height: 1;
-
-      font-weight: 500;
-
-      letter-spacing: -2.3px;
-
-      color: var(--black);
-
-    }
-
-
-
-    /* ========================================================
-       ROLE / UNIVERSITY
-       ======================================================== */
-
-
-    .role {
-
-      margin:
-        0 0 4px;
-
-      color: var(--charcoal);
-
-      font-size: 1.03rem;
-
-      font-weight: 650;
-
-    }
-
-
-    .institution {
-
-      margin:
-        0 0 29px;
-
-      color: var(--gray);
-
-      font-size: 0.95rem;
-
-    }
-
-
-
-    /* ========================================================
-       BIO
-       ======================================================== */
-
-
-    .bio {
-
-      max-width: 710px;
-
-      margin:
-        0 0 17px;
-
-      color: var(--charcoal);
-
-      font-size: 1rem;
-
-    }
-
-
-    .personal {
-
-      max-width: 710px;
-
-      margin: 0;
-
-      color: var(--gray);
-
-      font-size: 0.94rem;
-
-    }
-
-
-
-    /* ========================================================
-       RESEARCH INTERESTS
-       ======================================================== */
-
-
-    .interests {
-
-      display: flex;
-
-      flex-wrap: wrap;
-
-      gap: 8px;
-
-      margin-top: 29px;
-
-    }
-
-
-    .interest {
-
-      padding:
-        6px 11px;
-
-      border:
-        1px solid var(--line);
-
-      border-radius: 4px;
-
-      background:
-        rgba(
-          255,
-          255,
-          255,
-          0.45
-        );
-
-      color: var(--charcoal);
-
-      font-size: 0.74rem;
-
-      font-weight: 600;
-
-      transition:
-        color 0.2s ease,
-        border-color 0.2s ease,
-        background 0.2s ease,
-        transform 0.2s ease;
-
-    }
-
-
-    .interest:hover {
-
-      color: var(--navy);
-
-      border-color:
-        var(--gold-soft);
-
-      background:
-        rgba(
-          213,
-          165,
-          31,
-          0.06
-        );
-
-      transform:
-        translateY(-2px);
-
-    }
-
-
-
-    /* ========================================================
-       SMALL GOLD DETAIL
-       ======================================================== */
-
-
-    .accent-line {
-
-      width: 44px;
-
-      height: 2px;
-
-      margin:
-        32px 0 0;
-
-      background: var(--gold);
-
-      opacity: 0.9;
-
-    }
-
-
-
-    /* ========================================================
+    /* =========================================================
        BEYOND RESEARCH
-       ======================================================== */
-
+       ========================================================= */
 
     .beyond {
-
-      margin-top: 28px;
+      margin-top: 45px;
 
       padding-top: 19px;
 
-      border-top:
-        1px solid var(--line);
+      border-top: 1px solid var(--line);
 
       display: flex;
-
       align-items: center;
-
       flex-wrap: wrap;
 
       gap: 9px;
@@ -817,456 +548,280 @@
       color: var(--gray);
 
       font-size: 0.78rem;
-
     }
 
-
     .beyond-title {
-
       margin-right: 3px;
 
       color: var(--navy);
 
       font-weight: 700;
-
     }
 
-
     .dot {
-
       color: var(--gold);
 
       font-weight: 700;
-
     }
 
 
+    /* =========================================================
+       PAGE LOAD
+       ========================================================= */
 
-    /* ========================================================
-       SUBTLE LOAD ANIMATION
-       ======================================================== */
-
-
-    .home-layout {
-
-      animation:
-        pageFade
-        0.55s
-        ease
-        both;
-
-    }
-
-
-    @keyframes pageFade {
-
+    @keyframes fadeIn {
       from {
-
         opacity: 0;
-
-        transform:
-          translateY(6px);
-
+        transform: translateY(6px);
       }
 
       to {
-
         opacity: 1;
-
-        transform:
-          translateY(0);
-
+        transform: translateY(0);
       }
-
     }
 
 
-
-    /* ========================================================
+    /* =========================================================
        FOOTER
-       ======================================================== */
-
+       ========================================================= */
 
     footer {
+      border-top: 1px solid var(--line);
 
-      border-top:
-        1px solid var(--line);
-
-      padding:
-        21px 0;
+      padding: 21px 0;
 
       color: var(--gray);
 
       font-size: 0.74rem;
-
     }
 
-
     .footer-content {
-
       display: flex;
 
       align-items: center;
-
       justify-content: space-between;
 
       gap: 20px;
-
     }
 
 
-
-    /* ========================================================
+    /* =========================================================
        TABLET
-       ======================================================== */
+       ========================================================= */
 
-
-    @media
-      (max-width: 900px) {
-
+    @media (max-width: 900px) {
 
       .nav-links {
-
         gap: 17px;
-
       }
-
 
       .home-layout {
-
         grid-template-columns:
-          175px
+          165px
           minmax(0, 1fr);
 
-        gap: 45px;
-
+        gap: 44px;
       }
-
 
       .portrait-column {
-
-        width: 170px;
-
+        width: 165px;
       }
-
 
       .portrait {
+        width: 165px;
 
-        width: 170px;
-
-        height: 255px;
-
+        /* Still no cropping */
+        height: auto;
       }
-
 
       h1 {
-
         font-size: 3.6rem;
-
       }
-
     }
 
 
-
-    /* ========================================================
+    /* =========================================================
        MOBILE
-       ======================================================== */
+       ========================================================= */
 
-
-    @media
-      (max-width: 720px) {
-
+    @media (max-width: 720px) {
 
       .navigation {
-
         min-height: auto;
 
-        padding:
-          15px 0;
-
+        padding: 15px 0;
       }
-
 
       .brand-name {
-
         display: none;
-
       }
 
-
       .nav-links {
-
-        max-width:
-          calc(100vw - 90px);
+        max-width: calc(100vw - 90px);
 
         overflow-x: auto;
 
         gap: 15px;
 
         scrollbar-width: none;
-
       }
-
 
       .nav-links::-webkit-scrollbar {
-
         display: none;
-
       }
 
-
       .nav-links a {
-
-        padding:
-          10px 0;
+        padding: 10px 0;
 
         white-space: nowrap;
 
         font-size: 0.74rem;
-
       }
-
 
       .nav-links a::after {
-
         bottom: 5px;
-
       }
-
 
       .home {
-
-        padding:
-          50px 0
-          60px;
-
+        padding: 48px 0 60px;
       }
 
-
       .home-layout {
-
         display: flex;
 
         flex-direction: column;
 
         align-items: flex-start;
 
-        gap: 37px;
-
+        gap: 34px;
       }
-
 
       .portrait-column {
-
         width: 145px;
-
-        align-items: center;
-
       }
-
 
       .portrait {
-
         width: 145px;
 
-        height: 215px;
-
+        /* Full photograph preserved on mobile too */
+        height: auto;
       }
-
-
-      .socials {
-
-        gap: 4px;
-
-        margin-top: 13px;
-
-      }
-
-
-      .social-link {
-
-        width: 27px;
-
-        height: 27px;
-
-      }
-
-
-      .social-link i {
-
-        font-size: 0.98rem;
-
-      }
-
-
-      .social-link .ai {
-
-        font-size: 1rem;
-
-      }
-
 
       h1 {
-
         font-size: 3rem;
 
         letter-spacing: -1.7px;
-
       }
-
 
       .small-heading {
-
         font-size: 0.63rem;
-
       }
 
+      .socials {
+        gap: 11px;
+      }
+
+      .social-link {
+        width: 32px;
+        height: 32px;
+      }
 
       .footer-content {
-
         flex-direction: column;
 
         align-items: flex-start;
 
         gap: 4px;
-
       }
-
     }
-
 
   </style>
 
 </head>
 
 
-
 <body>
 
 
-  <!-- ========================================================
+  <!-- =========================================================
        HEADER
-       ======================================================== -->
-
+       ========================================================= -->
 
   <header class="site-header">
 
-
     <div class="container">
 
-
       <nav class="navigation">
-
-
-        <!-- Logo -->
 
         <a
           class="brand"
           href="index.html"
         >
 
-
           <span class="brand-logo">
-
             FA
-
           </span>
-
 
           <span class="brand-name">
-
             Franklina Addae
-
           </span>
-
 
         </a>
 
 
-
-        <!-- Navigation -->
-
         <div class="nav-links">
 
-
           <a href="about.html">
-
             About
-
           </a>
-
 
           <a href="research.html">
-
             Research
-
           </a>
-
 
           <a href="publications.html">
-
             Publications
-
           </a>
-
 
           <a href="projects.html">
-
             Projects
-
           </a>
-
 
           <a href="cv.html">
-
             CV
-
           </a>
-
 
           <a href="contact.html">
-
             Contact
-
           </a>
-
 
         </div>
 
-
       </nav>
 
-
     </div>
-
 
   </header>
 
 
 
-  <!-- ========================================================
+  <!-- =========================================================
        HOMEPAGE
-       ======================================================== -->
-
+       ========================================================= -->
 
   <main class="home">
 
-
     <div class="container">
-
 
       <div class="home-layout">
 
 
-
         <!-- ===================================================
-             GRADUATION PORTRAIT + SOCIAL LINKS
+             FULL GRADUATION PORTRAIT
              =================================================== -->
 
-
         <aside class="portrait-column">
-
 
           <img
             class="portrait"
@@ -1274,13 +829,91 @@
             alt="Franklina Addae"
           >
 
+        </aside>
 
 
-          <!-- SOCIAL / ACADEMIC PROFILES -->
 
+        <!-- ===================================================
+             INTRODUCTION
+             =================================================== -->
+
+        <section class="intro">
+
+          <p class="small-heading">
+            Applied Statistics · Research
+          </p>
+
+
+          <h1>
+            Franklina Addae
+          </h1>
+
+
+          <p class="role">
+            Doctoral Researcher in Applied Statistics
+          </p>
+
+
+          <p class="institution">
+            University of Northern Colorado
+          </p>
+
+
+          <p class="bio">
+
+            I am an applied statistician and doctoral researcher
+            interested in causal inference, machine learning,
+            public health, education, and policy-focused research.
+            My work centers on using statistical methods and
+            large-scale data to investigate questions with
+            practical, real-world implications.
+
+          </p>
+
+
+          <p class="personal">
+
+            I enjoy learning new methods, exploring new ideas,
+            and finding clear ways to communicate what complex
+            data can tell us.
+
+          </p>
+
+
+
+          <!-- RESEARCH INTERESTS -->
+
+          <div class="interests">
+
+            <span class="interest">
+              Causal Inference
+            </span>
+
+            <span class="interest">
+              Machine Learning
+            </span>
+
+            <span class="interest">
+              Public Health
+            </span>
+
+            <span class="interest">
+              Education
+            </span>
+
+            <span class="interest">
+              Policy Research
+            </span>
+
+          </div>
+
+
+
+          <!-- =================================================
+               SOCIAL / ACADEMIC PROFILES
+               ================================================= -->
 
           <div class="socials">
-
 
 
             <!-- GitHub -->
@@ -1294,9 +927,7 @@
               data-label="GitHub"
             >
 
-              <i
-                class="fa-brands fa-github"
-              ></i>
+              <i class="fa-brands fa-github"></i>
 
             </a>
 
@@ -1313,9 +944,7 @@
               data-label="LinkedIn"
             >
 
-              <i
-                class="fa-brands fa-linkedin-in"
-              ></i>
+              <i class="fa-brands fa-linkedin-in"></i>
 
             </a>
 
@@ -1332,9 +961,7 @@
               data-label="Google Scholar"
             >
 
-              <i
-                class="ai ai-google-scholar"
-              ></i>
+              <i class="ai ai-google-scholar"></i>
 
             </a>
 
@@ -1351,9 +978,7 @@
               data-label="ResearchGate"
             >
 
-              <i
-                class="ai ai-researchgate"
-              ></i>
+              <i class="ai ai-researchgate"></i>
 
             </a>
 
@@ -1370,9 +995,7 @@
               data-label="ORCID"
             >
 
-              <i
-                class="ai ai-orcid"
-              ></i>
+              <i class="ai ai-orcid"></i>
 
             </a>
 
@@ -1380,239 +1003,77 @@
           </div>
 
 
-        </aside>
 
-
-
-        <!-- ===================================================
-             INTRODUCTION
-             =================================================== -->
-
-
-        <section class="intro">
-
-
-          <p class="small-heading">
-
-            Applied Statistics · Research
-
-          </p>
-
-
-
-          <h1>
-
-            Franklina Addae
-
-          </h1>
-
-
-
-          <p class="role">
-
-            Doctoral Researcher in Applied Statistics
-
-          </p>
-
-
-
-          <p class="institution">
-
-            University of Northern Colorado
-
-          </p>
-
-
-
-          <!-- Professional bio -->
-
-          <p class="bio">
-
-            I am an applied statistician and doctoral
-            researcher interested in causal inference,
-            machine learning, public health, education,
-            and policy-focused research. My work centers
-            on using statistical methods and large-scale
-            data to investigate questions with practical,
-            real-world implications.
-
-          </p>
-
-
-
-          <!-- Personal line -->
-
-          <p class="personal">
-
-            I enjoy learning new methods, exploring new
-            ideas, and finding clear ways to communicate
-            what complex data can tell us.
-
-          </p>
-
-
-
-          <!-- Research interests -->
-
-          <div class="interests">
-
-
-            <span class="interest">
-
-              Causal Inference
-
-            </span>
-
-
-            <span class="interest">
-
-              Machine Learning
-
-            </span>
-
-
-            <span class="interest">
-
-              Public Health
-
-            </span>
-
-
-            <span class="interest">
-
-              Education
-
-            </span>
-
-
-            <span class="interest">
-
-              Policy Research
-
-            </span>
-
-
-          </div>
-
-
-
-          <!-- Small color detail -->
-
-          <div class="accent-line"></div>
-
-
-
-          <!-- Beyond research -->
+          <!-- BEYOND RESEARCH -->
 
           <div class="beyond">
 
-
             <span class="beyond-title">
-
               Beyond research
-
             </span>
 
-
             <span>
-
               Exploring new places
-
             </span>
-
 
             <span class="dot">
-
               ·
-
             </span>
 
-
             <span>
-
               Staying active
-
             </span>
-
 
             <span class="dot">
-
               ·
-
             </span>
 
-
             <span>
-
               Creative projects
-
             </span>
-
 
             <span class="dot">
-
               ·
-
             </span>
-
 
             <span>
-
               Life in Colorado
-
             </span>
-
 
           </div>
-
 
         </section>
 
 
       </div>
 
-
     </div>
-
 
   </main>
 
 
 
-  <!-- ========================================================
+  <!-- =========================================================
        FOOTER
-       ======================================================== -->
-
+       ========================================================= -->
 
   <footer>
 
-
-    <div
-      class="container footer-content"
-    >
-
+    <div class="container footer-content">
 
       <span>
-
         © 2026 Franklina Addae
-
       </span>
-
 
       <span>
-
         Applied Statistics · Research · Data
-
       </span>
-
 
     </div>
-
 
   </footer>
 
 
 </body>
-
 
 </html>
