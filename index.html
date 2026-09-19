@@ -1,792 +1,1385 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Franklina Addae | Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Franklina Addae | Applied Statistics</title>
+  <meta
+    name="description"
+    content="Franklina Addae — PhD student in Applied Statistics with interests in causal inference, public health, machine learning, and applied statistical research."
+  >
+
   <style>
+
+    /* =========================================================
+       FRANKLINA ADDAE — ACADEMIC PORTFOLIO
+       ========================================================= */
+
     :root {
-      /* UNC-inspired palette (Blue + Gold) */
-      --navy: #003A8F;       /* UNC Blue */
-      --slate: #1f3c73;
-      --muted: #5b6f95;
-      --white: #ffffff;
-      --bg: #f4f7ff;
-      --line: rgba(0, 58, 143, 0.18);
 
-      --blue: #003A8F;       /* primary */
-      --purple: #1d4ed8;     /* accent blue variation */
-      --teal: #0ea5a4;       /* secondary accent */
-      --gold: #FDB913;       /* UNC Gold */
-      --pink: #f59e0b;       /* warm accent (gold/orange blend) */
+      /* Portrait-inspired palette */
+      --charcoal: #20201f;
+      --black: #161615;
+      --graphite: #373633;
 
-      --shadow: 0 18px 50px rgba(0, 58, 143, 0.12);
-      --shadow-strong: 0 24px 70px rgba(0, 58, 143, 0.18);
+      --taupe: #8b7c6d;
+      --bronze: #a38768;
+      --warm-gray: #6e6963;
 
-      --radius-xl: 30px;
-      --radius-lg: 22px;
-      --radius-md: 16px;
-      --max: 1160px;
+      --cream: #f5f1ea;
+      --ivory: #fbf9f5;
+      --soft-white: #fffdfa;
+      --line: #ddd6cc;
+
+      --max-width: 1240px;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--navy);
-      background:
-        radial-gradient(circle at 10% 10%, rgba(124, 58, 237, 0.10), transparent 20%),
-        radial-gradient(circle at 85% 15%, rgba(37, 99, 235, 0.10), transparent 20%),
-        radial-gradient(circle at 80% 80%, rgba(15, 118, 110, 0.10), transparent 22%),
-        linear-gradient(180deg, #f8fbff 0%, #f8fafc 100%);
-      line-height: 1.6;
-      overflow-x: hidden;
+      background: var(--ivory);
+      color: var(--charcoal);
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Helvetica,
+        Arial,
+        sans-serif;
+      line-height: 1.7;
     }
 
+
+    a {
+      color: inherit;
+    }
+
+
     .container {
-      width: min(var(--max), 92%);
+      width: min(var(--max-width), 90%);
       margin: 0 auto;
     }
 
-    .nav-wrap {
+
+    /* =========================================================
+       NAVIGATION
+       ========================================================= */
+
+    .site-header {
+      background: rgba(251, 249, 245, 0.96);
+      border-bottom: 1px solid var(--line);
       position: sticky;
       top: 0;
-      z-index: 100;
-      backdrop-filter: blur(14px);
-      background: rgba(255,255,255,0.78);
-      border-bottom: 1px solid rgba(255,255,255,0.65);
+      z-index: 1000;
+      backdrop-filter: blur(12px);
     }
 
+
     nav {
+      min-height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
-      padding: 14px 0;
+      gap: 30px;
     }
 
-    .brand {
-      font-weight: 800;
-      font-size: 1.05rem;
-      letter-spacing: 0.3px;
-      background: linear-gradient(135deg, var(--blue), var(--purple));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
 
-    .nav-links {
+    .identity {
       display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--slate);
-      font-weight: 700;
-      font-size: 0.95rem;
-      transition: color 0.2s ease;
-    }
-
-    .nav-links a:hover { color: var(--blue); }
-
-    .hero {
-      padding: 42px 0 28px;
-      position: relative;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 26px;
-      align-items: stretch;
-    }
-
-    .glass {
-      background: rgba(255,255,255,0.72);
-      border: 1px solid rgba(255,255,255,0.78);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(16px);
-    }
-
-    .hero-card {
-      border-radius: var(--radius-xl);
-      padding: 34px;
-      position: relative;
-      overflow: hidden;
-      isolation: isolate;
-    }
-
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      inset: auto -40px -50px auto;
-      width: 260px;
-      height: 260px;
-      background: radial-gradient(circle, rgba(124, 58, 237, 0.16), transparent 68%);
-      z-index: -1;
-    }
-
-    .eyebrow {
-      display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      font-weight: 800;
-      color: var(--blue);
-      background: rgba(37, 99, 235, 0.09);
-      margin-bottom: 16px;
-    }
-
-    h1 {
-      margin: 0 0 14px;
-      font-size: clamp(2.5rem, 5vw, 4.4rem);
-      line-height: 1.02;
-      letter-spacing: -1.2px;
-    }
-
-    .gradient-name {
-      background: linear-gradient(135deg, var(--navy), var(--blue) 55%, var(--purple));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .lead {
-      font-size: 1.08rem;
-      color: var(--muted);
-      max-width: 720px;
-      margin: 0 0 22px;
-    }
-
-    .badge-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 20px 0 24px;
-    }
-
-    .badge {
-      border-radius: 999px;
-      padding: 9px 13px;
-      font-size: 0.9rem;
-      font-weight: 800;
-      color: white;
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
-    }
-
-    .b1 { background: linear-gradient(135deg, var(--blue), #60a5fa); }
-    .b2 { background: linear-gradient(135deg, var(--purple), #a78bfa); }
-    .b3 { background: linear-gradient(135deg, var(--teal), #2dd4bf); }
-    .b4 { background: linear-gradient(135deg, var(--gold), #fbbf24); }
-    .b5 { background: linear-gradient(135deg, var(--pink), #f472b6); }
-
-    .button-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 8px;
-    }
-
-    .btn {
+      gap: 13px;
       text-decoration: none;
-      font-weight: 800;
-      padding: 13px 18px;
-      border-radius: 14px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-strong);
-    }
 
-    .btn-primary {
-      color: white;
-      background: linear-gradient(135deg, var(--blue), var(--purple));
-    }
+    .monogram {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--charcoal);
+      color: var(--cream);
 
-    .btn-secondary {
-      color: var(--navy);
-      background: rgba(255,255,255,0.86);
-      border: 1px solid rgba(148, 163, 184, 0.22);
-    }
-
-    .hero-side {
-      display: grid;
-      gap: 18px;
-    }
-
-    .profile-panel {
-      border-radius: var(--radius-xl);
-      padding: 24px;
-      display: grid;
-      gap: 18px;
-      align-content: start;
-    }
-
-    .headshot-wrap {
       display: flex;
       align-items: center;
       justify-content: center;
-      padding-top: 6px;
+
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -1px;
+
+      border: 2px solid var(--bronze);
     }
 
-    .headshot {
-      width: 190px;
-      height: 190px;
-      object-fit: cover;
-      border-radius: 28px;
-      border: 4px solid rgba(255,255,255,0.9);
-      box-shadow: 0 20px 50px rgba(37, 99, 235, 0.18);
-      transition: transform 0.25s ease;
+
+    .brand-name {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: 0.1px;
     }
 
-    .headshot:hover { transform: translateY(-4px) rotate(-1deg); }
 
-    .mini-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.86), rgba(255,255,255,0.72));
-      border: 1px solid rgba(255,255,255,0.8);
-      border-radius: 18px;
-      padding: 18px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .mini-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
-    }
-
-    .mini-card h3, .mini-card h4 { margin: 0 0 8px; }
-    .mini-card p, .mini-card li { margin: 0; color: var(--muted); }
-    .mini-card ul { margin: 0; padding-left: 18px; }
-
-    section { padding: 26px 0 30px; }
-
-    .section-title {
+    .nav-links {
       display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 20px;
-      margin-bottom: 18px;
-    }
-
-    h2 {
-      margin: 0;
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
-      letter-spacing: -0.6px;
-    }
-
-    .section-intro {
-      max-width: 760px;
-      color: var(--muted);
-      margin: 10px 0 0;
-    }
-
-    .stats-grid,
-    .grid-2,
-    .grid-3,
-    .timeline,
-    .contact-grid {
-      display: grid;
-      gap: 20px;
-    }
-
-    .stats-grid { grid-template-columns: repeat(4, minmax(0,1fr)); }
-    .grid-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
-    .grid-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
-    .contact-grid { grid-template-columns: 1fr 1fr; }
-
-    .stat-card,
-    .card {
-      border-radius: var(--radius-lg);
-      padding: 22px;
-      border: 1px solid rgba(255,255,255,0.82);
-      background: rgba(255,255,255,0.76);
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(14px);
-      transition: transform 0.22s ease, box-shadow 0.22s ease;
-    }
-
-    .stat-card:hover,
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-strong);
-    }
-
-    .stat-number {
-      font-size: 1.8rem;
-      font-weight: 900;
-      margin-bottom: 6px;
-      letter-spacing: -0.7px;
-    }
-
-    .stat-card:nth-child(1) .stat-number { color: var(--blue); }
-    .stat-card:nth-child(2) .stat-number { color: var(--purple); }
-    .stat-card:nth-child(3) .stat-number { color: var(--teal); }
-    .stat-card:nth-child(4) .stat-number { color: var(--gold); }
-
-    .card h3 { margin: 0 0 10px; }
-    .card p, .card li { color: var(--muted); }
-
-    .feature-shell {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 20px;
-      align-items: start;
-    }
-
-    .project-image {
-      width: 100%;
-      border-radius: 20px;
-      border: 1px solid var(--line);
-      background: white;
-      box-shadow: 0 20px 40px rgba(15,23,42,0.10);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .project-image:hover {
-      transform: scale(1.01);
-      box-shadow: 0 26px 60px rgba(37, 99, 235, 0.16);
-    }
-
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 14px 0 18px;
-    }
-
-    .pill {
-      display: inline-flex;
       align-items: center;
-      padding: 7px 12px;
-      border-radius: 999px;
-      font-size: 0.82rem;
-      font-weight: 800;
-      color: var(--slate);
-      background: rgba(37, 99, 235, 0.08);
+      gap: 30px;
     }
 
-    .project-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 16px;
-    }
 
-    .link-btn {
+    .nav-links a {
       text-decoration: none;
-      padding: 11px 15px;
-      border-radius: 12px;
-      font-weight: 800;
-      color: var(--navy);
-      background: rgba(255,255,255,0.88);
-      border: 1px solid var(--line);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .link-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow);
-    }
-
-    .color-bar {
-      height: 8px;
-      width: 110px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, var(--blue), var(--purple), var(--pink), var(--gold), var(--teal));
-      margin-bottom: 14px;
-    }
-
-    .interest-card:nth-child(1) { border-top: 5px solid var(--blue); }
-    .interest-card:nth-child(2) { border-top: 5px solid var(--purple); }
-    .interest-card:nth-child(3) { border-top: 5px solid var(--teal); }
-
-    .skill-list, .method-list {
-      margin: 0;
-      padding-left: 18px;
-    }
-
-    .timeline {
-      grid-template-columns: repeat(2, minmax(0,1fr));
-    }
-
-    .timeline-item {
+      font-size: 0.94rem;
+      font-weight: 600;
+      color: var(--graphite);
       position: relative;
-      padding-left: 18px;
     }
 
-    .timeline-item::before {
+
+    .nav-links a::after {
       content: "";
       position: absolute;
       left: 0;
-      top: 8px;
-      width: 8px;
-      height: 8px;
+      bottom: -7px;
+      width: 0;
+      height: 2px;
+      background: var(--bronze);
+      transition: width 0.2s ease;
+    }
+
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    .hero {
+      padding: 80px 0 72px;
+    }
+
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 0.82fr 1.18fr;
+      gap: 74px;
+      align-items: center;
+    }
+
+
+    /* LEFT PROFILE */
+
+    .profile-column {
+      text-align: center;
+      padding-right: 65px;
+      border-right: 1px solid var(--line);
+    }
+
+
+    .portrait {
+      width: 270px;
+      height: 270px;
+      object-fit: cover;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--blue), var(--purple));
+
+      border: 7px solid var(--soft-white);
+      box-shadow:
+        0 0 0 1px var(--line),
+        0 20px 45px rgba(32, 32, 31, 0.12);
     }
 
-    .contact-card a {
-      color: var(--blue);
-      font-weight: 800;
+
+    .profile-name {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 2rem;
+      margin: 28px 0 3px;
+      color: var(--black);
+    }
+
+
+    .profile-role {
+      margin: 0;
+      color: var(--warm-gray);
+      font-size: 1rem;
+    }
+
+
+    .profile-school {
+      margin: 2px 0 0;
+      color: var(--warm-gray);
+      font-size: 0.95rem;
+    }
+
+
+    .social-row {
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+
+
+    .social-link {
+      width: 43px;
+      height: 43px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
       text-decoration: none;
+      font-weight: 700;
+      font-size: 0.8rem;
+
+      background: var(--soft-white);
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease;
     }
 
-    .contact-card a:hover { text-decoration: underline; }
+
+    .social-link:hover {
+      transform: translateY(-3px);
+      background: var(--charcoal);
+      color: white;
+    }
+
+
+    /* RIGHT INTRODUCTION */
+
+    .welcome {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3.3rem, 7vw, 5.5rem);
+      line-height: 1;
+      margin: 0 0 27px;
+      color: var(--black);
+      letter-spacing: -2px;
+    }
+
+
+    .welcome-accent {
+      color: var(--bronze);
+    }
+
+
+    .intro {
+      font-size: 1.08rem;
+      color: var(--graphite);
+      margin-bottom: 19px;
+      max-width: 760px;
+    }
+
+
+    .intro strong {
+      color: var(--black);
+    }
+
+
+    .research-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 30px;
+    }
+
+
+    .research-tag {
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background: var(--cream);
+      font-size: 0.83rem;
+      font-weight: 600;
+      color: var(--graphite);
+    }
+
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 30px;
+    }
+
+
+    .button {
+      display: inline-block;
+      padding: 12px 19px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 650;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+    }
+
+
+    .button-primary {
+      background: var(--charcoal);
+      color: white;
+      border: 1px solid var(--charcoal);
+    }
+
+
+    .button-primary:hover {
+      background: var(--bronze);
+      border-color: var(--bronze);
+    }
+
+
+    .button-secondary {
+      border: 1px solid var(--line);
+      background: transparent;
+    }
+
+
+    .button-secondary:hover {
+      border-color: var(--bronze);
+      color: var(--bronze);
+    }
+
+
+    /* =========================================================
+       GENERAL SECTIONS
+       ========================================================= */
+
+    section {
+      padding: 82px 0;
+    }
+
+
+    .alternate {
+      background: var(--cream);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+
+    .section-kicker {
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      color: var(--bronze);
+      font-weight: 700;
+      font-size: 0.73rem;
+      margin-bottom: 9px;
+    }
+
+
+    .section-heading {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.2rem, 4vw, 3.3rem);
+      font-weight: 500;
+      margin: 0 0 18px;
+      color: var(--black);
+      letter-spacing: -1px;
+    }
+
+
+    .section-intro {
+      max-width: 760px;
+      color: var(--warm-gray);
+      margin: 0 0 42px;
+      font-size: 1rem;
+    }
+
+
+    /* =========================================================
+       FEATURED PROJECT
+       ========================================================= */
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+
+    .project-image {
+      width: 100%;
+      background: white;
+      border: 1px solid var(--line);
+      padding: 12px;
+    }
+
+
+    .project-label {
+      color: var(--bronze);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+
+    .project-title {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 2rem;
+      line-height: 1.25;
+      margin: 10px 0 18px;
+      color: var(--black);
+    }
+
+
+    .project-description {
+      color: var(--graphite);
+    }
+
+
+    .method-list {
+      padding-left: 19px;
+      color: var(--graphite);
+      margin: 22px 0;
+    }
+
+
+    .method-list li {
+      margin-bottom: 5px;
+    }
+
+
+    /* =========================================================
+       RESEARCH INTERESTS
+       ========================================================= */
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 35px;
+    }
+
+
+    .research-item {
+      border-top: 2px solid var(--bronze);
+      padding-top: 22px;
+    }
+
+
+    .research-number {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--bronze);
+      font-size: 0.9rem;
+    }
+
+
+    .research-item h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.45rem;
+      margin: 9px 0;
+      color: var(--black);
+    }
+
+
+    .research-item p {
+      color: var(--warm-gray);
+      margin: 0;
+    }
+
+
+    /* =========================================================
+       EXPERIENCE
+       ========================================================= */
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+    }
+
+
+    .experience-block h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.6rem;
+      font-weight: 500;
+      margin-top: 0;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+
+    .clean-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+
+    .clean-list li {
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(221, 214, 204, 0.75);
+      color: var(--graphite);
+    }
+
+
+    .academic-item {
+      padding: 0 0 22px;
+      margin-bottom: 22px;
+      border-bottom: 1px solid var(--line);
+    }
+
+
+    .academic-item strong {
+      font-family: Georgia, "Times New Roman", serif;
+      display: block;
+      font-size: 1.08rem;
+      color: var(--black);
+      margin-bottom: 4px;
+    }
+
+
+    .academic-item span {
+      color: var(--warm-gray);
+    }
+
+
+    /* =========================================================
+       CONTACT
+       ========================================================= */
+
+    .contact-section {
+      text-align: center;
+    }
+
+
+    .contact-section .section-intro {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
 
     footer {
-      padding: 34px 0 44px;
-      text-align: center;
-      color: var(--muted);
+      border-top: 1px solid var(--line);
+      padding: 30px 0;
+      color: var(--warm-gray);
+      font-size: 0.85rem;
     }
 
-    @media (max-width: 980px) {
-      .hero-grid,
-      .feature-shell,
-      .stats-grid,
-      .grid-2,
-      .grid-3,
-      .timeline,
-      .contact-grid {
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+    }
+
+
+    .footer-monogram {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--charcoal);
+      font-weight: 700;
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+
+    @media (max-width: 900px) {
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .profile-column {
+        padding-right: 0;
+        padding-bottom: 50px;
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .project-grid,
+      .experience-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero { padding-top: 28px; }
+      .research-grid {
+        grid-template-columns: 1fr;
+      }
+
     }
 
-    @media (max-width: 700px) {
+
+    @media (max-width: 720px) {
+
       nav {
         flex-direction: column;
         align-items: flex-start;
+        padding: 15px 0;
       }
 
-      .hero-card,
-      .profile-panel,
-      .card,
-      .stat-card {
-        padding: 20px;
+      .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
       }
 
-      .headshot {
-        width: 160px;
-        height: 160px;
+      .hero {
+        padding-top: 55px;
       }
 
-      .button-row,
-      .project-links {
+      .portrait {
+        width: 220px;
+        height: 220px;
+      }
+
+      .welcome {
+        font-size: 3.3rem;
+      }
+
+      section {
+        padding: 62px 0;
+      }
+
+      .footer-inner {
         flex-direction: column;
-        align-items: stretch;
+        text-align: center;
       }
+
     }
+
   </style>
 </head>
+
+
 <body>
-  <div class="nav-wrap">
+
+
+  <!-- =======================================================
+       NAVIGATION
+       ======================================================= -->
+
+  <header class="site-header">
+
     <div class="container">
+
       <nav>
-        <div class="brand">Franklina Addae</div>
+
+        <a class="identity" href="#home">
+
+          <div class="monogram">FA</div>
+
+          <div class="brand-name">
+            Franklina Addae
+          </div>
+
+        </a>
+
+
         <div class="nav-links">
+
           <a href="#about">About</a>
-          <a href="#project">Featured Project</a>
-          <a href="#research">Research</a>
+
+          <a href="#project">Research</a>
+
+          <a href="#interests">Interests</a>
+
           <a href="#experience">Experience</a>
+
           <a href="#contact">Contact</a>
+
         </div>
+
       </nav>
+
     </div>
-  </div>
 
-  <header class="hero">
-    <div class="container hero-grid">
-      <div class="glass hero-card">
-        <div class="eyebrow">Applied Statistics • Public Health • Causal Inference</div>
-        <h1><span class="gradient-name">Franklina Addae</span></h1>
-        <p class="lead">
-          I am a statistician in training with a strong interest in causal inference, public health, and policy-focused research. I enjoy turning complex datasets into meaningful insights that can inform real-world decisions.
-          
-          Outside of research, I enjoy staying active, exploring new places, and spending time on creative projects. I value balance, curiosity, and continuous learning, whether that’s through data, new experiences, or collaborating with others. My goal is to combine strong statistical methods with practical impact while growing both professionally and personally.
-        </p>
-
-        <div class="badge-row">
-          <span class="badge b1">R</span>
-          <span class="badge b2">SAS</span>
-          <span class="badge b3">Causal Inference</span>
-          <span class="badge b4">BRFSS</span>
-          <span class="badge b5">LaTeX</span>
-        </div>
-
-        <div class="button-row">
-          <a class="btn btn-primary" href="https://github.com/franklinaadwoaaddae-wq/aca-medicaid-thesis" target="_blank">View Thesis Repository</a>
-          <a class="btn btn-secondary" href="https://www.linkedin.com/in/franklina-a-246054160" target="_blank">Visit LinkedIn</a>
-          <a class="btn btn-secondary" href="#project">See Featured Work</a>
-        </div>
-      </div>
-
-      <div class="glass profile-panel">
-        <div class="headshot-wrap">
-          <img src="FA_Headshot.jpg" alt="Franklina Addae headshot" class="headshot" />
-        </div>
-
-        <div class="mini-card">
-          <h3>Current Highlight</h3>
-          <p><strong>Master’s Thesis:</strong> Did Medicaid Expansion Increase Preventive Care?</p>
-        </div>
-
-        <div class="mini-card">
-          <h4>Methods Used</h4>
-          <ul>
-            <li>Difference-in-Differences</li>
-            <li>Event Study Analysis</li>
-            <li>Double Machine Learning</li>
-          </ul>
-        </div>
-
-        <div class="mini-card">
-          <h4>Focus Areas</h4>
-          <p>Health policy evaluation, preventive care utilization, observational data, and reproducible statistical analysis.</p>
-        </div>
-      </div>
-    </div>
   </header>
 
-  <section id="about">
-    <div class="container">
-      <div class="section-title">
-        <div>
-          <div class="color-bar"></div>
-          <h2>About</h2>
-          <p class="section-intro">A quick overview of the work I care about and the kinds of questions I enjoy studying.</p>
-        </div>
-      </div>
 
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-number">1</div>
-          <div><strong>Thesis Focus</strong></div>
-          <div>Public health policy and preventive care.</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">3</div>
-          <div><strong>Core Methods</strong></div>
-          <div>DiD, event study, and Double ML.</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">2+</div>
-          <div><strong>Main Tools</strong></div>
-          <div>R, SAS, and LaTeX workflows.</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">1</div>
-          <div><strong>Goal</strong></div>
-          <div>Use statistics to support better decisions.</div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section id="project">
-    <div class="container">
-      <div class="section-title">
-        <div>
-          <div class="color-bar"></div>
-          <h2>Featured Project</h2>
-          <p class="section-intro">A thesis project centered on Medicaid expansion, preventive care, and policy-relevant statistical evidence.</p>
-        </div>
-      </div>
+  <!-- =======================================================
+       HERO / ABOUT
+       ======================================================= -->
 
-      <div class="feature-shell">
-        <div class="card">
-          <img src="output/Rplot07.png" alt="Featured thesis plot" class="project-image" />
-        </div>
+  <main id="home">
 
-        <div class="card">
-          <h3>Did Medicaid Expansion Increase Preventive Care?</h3>
-          <p>
-            This project evaluates whether Medicaid expansion was associated with increased preventive care utilization using BRFSS data and modern causal inference methods.
+    <section class="hero" id="about">
+
+      <div class="container hero-grid">
+
+
+        <!-- LEFT SIDE -->
+
+        <div class="profile-column">
+
+          <img
+            src="FA_Headshot.jpg"
+            alt="Franklina Addae"
+            class="portrait"
+          >
+
+
+          <h1 class="profile-name">
+            Franklina Addae
+          </h1>
+
+
+          <p class="profile-role">
+            PhD Student in Applied Statistics
           </p>
 
-          <div class="pill-row">
-            <span class="pill">BRFSS</span>
-            <span class="pill">Health Policy</span>
-            <span class="pill">Event Study</span>
-            <span class="pill">Double ML</span>
-          </div>
 
-          <p>
-            The figure shown here provides a visual summary from the analysis. Overall, the results suggest improvement in preventive care outcomes following expansion.
+          <p class="profile-school">
+            University of Northern Colorado
           </p>
 
-          <ul class="method-list">
-            <li>Policy-focused applied research question</li>
-            <li>Modern observational data methods</li>
-            <li>Reproducible code and documentation</li>
-          </ul>
 
-          <div class="project-links">
-            <a class="link-btn" href="https://github.com/franklinaadwoaaddae-wq/aca-medicaid-thesis" target="_blank">Open GitHub Project</a>
-            <a class="link-btn" href="https://github.com/franklinaadwoaaddae-wq" target="_blank">See GitHub Profile</a>
+          <div class="social-row">
+
+            <a
+              class="social-link"
+              href="https://github.com/franklinaadwoaaddae-wq"
+              target="_blank"
+              title="GitHub"
+            >
+              GH
+            </a>
+
+
+            <a
+              class="social-link"
+              href="https://www.linkedin.com/in/franklina-a-246054160"
+              target="_blank"
+              title="LinkedIn"
+            >
+              in
+            </a>
+
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section id="research">
-    <div class="container">
-      <div class="section-title">
+        </div>
+
+
+
+        <!-- RIGHT SIDE -->
+
         <div>
-          <div class="color-bar"></div>
-          <h2>Research Interests</h2>
-          <p class="section-intro">Areas that shape the kinds of projects and methods I want to keep developing.</p>
-        </div>
-      </div>
 
-      <div class="grid-3">
-        <div class="card interest-card">
-          <h3>Causal Inference</h3>
-          <p>Estimating treatment and policy effects from observational data using applied statistical methods.</p>
-        </div>
-        <div class="card interest-card">
-          <h3>Public Health Analytics</h3>
-          <p>Using statistical evidence to understand healthcare access, preventive care, and community outcomes.</p>
-        </div>
-        <div class="card interest-card">
-          <h3>Reproducible Research</h3>
-          <p>Creating clean workflows and research outputs that are transparent, organized, and easy to communicate.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+          <h2 class="welcome">
+            Akwaaba<span class="welcome-accent">.</span>
+          </h2>
 
-  <section id="experience">
-    <div class="container">
-      <div class="section-title">
-        <div>
-          <div class="color-bar"></div>
-          <h2>Experience Snapshot</h2>
-          <p class="section-intro">A quick view of the academic and technical strengths behind my current portfolio.</p>
-        </div>
-      </div>
 
-      <div class="grid-2">
-        <div class="card">
-          <h3>Technical Skills</h3>
-          <ul class="skill-list">
-            <li>R and SAS programming</li>
-            <li>Data cleaning and visualization</li>
-            <li>Difference-in-Differences analysis</li>
-            <li>Event study methods</li>
-            <li>Double Machine Learning</li>
-            <li>LaTeX and research reporting</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Academic Highlights</h3>
-          <div class="timeline">
-            <div class="timeline-item">
-              <strong>Master’s Thesis</strong><br />
-              Public health and policy evaluation using BRFSS data.
-            </div>
-            <div class="timeline-item">
-              <strong>Applied Statistics</strong><br />
-              Focused training in research methods and statistical analysis.
-            </div>
-            <div class="timeline-item">
-              <strong>Reproducible Workflow</strong><br />
-              Organized code, outputs, and written research documentation.
-            </div>
-            <div class="timeline-item">
-              <strong>Professional Portfolio</strong><br />
-              Building a public-facing research presence through GitHub.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container">
-      <div class="section-title">
-        <div>
-          <div class="color-bar"></div>
-          <h2>Contact</h2>
-          <p class="section-intro">You can connect with me through GitHub and LinkedIn.</p>
-        </div>
-      </div>
-
-      <div class="contact-grid">
-        <div class="card contact-card">
-          <h3>Find Me Online</h3>
-          <p><a href="https://github.com/franklinaadwoaaddae-wq" target="_blank">GitHub Profile</a></p>
-          <p><a href="https://www.linkedin.com/in/franklina-a-246054160" target="_blank">LinkedIn</a></p>
-        </div>
-
-        <div class="card">
-          <h3>Portfolio Note</h3>
-          <p>
-            This website highlights my current research portfolio and will continue to grow with future projects, presentations, and academic work.
+          <p class="intro">
+            I am a <strong>PhD student in Applied Statistics</strong> with
+            research interests in causal inference, public health,
+            machine learning, and policy-focused research. I enjoy
+            turning complex datasets into meaningful statistical
+            evidence that can inform real-world decisions.
           </p>
+
+
+          <p class="intro">
+            My research interests center on the application of modern
+            statistical methods to substantive problems, particularly
+            questions involving health policy, preventive care,
+            education, and large-scale observational data.
+          </p>
+
+
+          <p class="intro">
+            I am especially interested in causal inference,
+            statistical computing, reproducible research, and the
+            growing intersection between machine learning and applied
+            statistical research.
+          </p>
+
+
+          <p class="intro">
+            Outside of research, I enjoy staying active, exploring new
+            places, and spending time on creative projects. I value
+            curiosity, continuous learning, and using quantitative
+            methods to address questions with practical impact.
+          </p>
+
+
+          <div class="research-tags">
+
+            <span class="research-tag">Causal Inference</span>
+
+            <span class="research-tag">Machine Learning</span>
+
+            <span class="research-tag">Public Health</span>
+
+            <span class="research-tag">Statistical Computing</span>
+
+            <span class="research-tag">R</span>
+
+            <span class="research-tag">SAS</span>
+
+            <span class="research-tag">LaTeX</span>
+
+          </div>
+
+
+          <div class="hero-actions">
+
+            <a
+              class="button button-primary"
+              href="https://github.com/franklinaadwoaaddae-wq"
+              target="_blank"
+            >
+              GitHub
+            </a>
+
+
+            <a
+              class="button button-secondary"
+              href="https://www.linkedin.com/in/franklina-a-246054160"
+              target="_blank"
+            >
+              LinkedIn
+            </a>
+
+
+            <a
+              class="button button-secondary"
+              href="#project"
+            >
+              View Research
+            </a>
+
+          </div>
+
         </div>
+
       </div>
-    </div>
-  </section>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FEATURED RESEARCH
+         ===================================================== -->
+
+    <section class="alternate" id="project">
+
+      <div class="container">
+
+        <div class="section-kicker">
+          Selected Work
+        </div>
+
+        <h2 class="section-heading">
+          Featured Research
+        </h2>
+
+        <p class="section-intro">
+          Selected applied statistical research combining modern
+          quantitative methods with policy-relevant questions.
+        </p>
+
+
+        <div class="project-grid">
+
+
+          <div>
+
+            <img
+              src="output/Rplot07.png"
+              alt="Medicaid expansion thesis analysis"
+              class="project-image"
+            >
+
+          </div>
+
+
+          <div>
+
+            <div class="project-label">
+              Master's Thesis
+            </div>
+
+
+            <h3 class="project-title">
+              Did Medicaid Expansion Increase Preventive Care?
+            </h3>
+
+
+            <p class="project-description">
+              This project evaluates whether Medicaid expansion was
+              associated with increased preventive care utilization
+              using BRFSS data and modern causal inference methods.
+            </p>
+
+
+            <ul class="method-list">
+
+              <li>Difference-in-Differences</li>
+
+              <li>Event Study Analysis</li>
+
+              <li>Double Machine Learning</li>
+
+              <li>Large-scale BRFSS data</li>
+
+              <li>Reproducible statistical analysis</li>
+
+            </ul>
+
+
+            <p class="project-description">
+              The research focuses on policy-relevant evidence and the
+              use of modern observational-data methods to examine
+              changes in preventive care following Medicaid expansion.
+            </p>
+
+
+            <div class="hero-actions">
+
+              <a
+                class="button button-primary"
+                href="https://github.com/franklinaadwoaaddae-wq/aca-medicaid-thesis"
+                target="_blank"
+              >
+                View Project
+              </a>
+
+
+              <a
+                class="button button-secondary"
+                href="https://github.com/franklinaadwoaaddae-wq"
+                target="_blank"
+              >
+                GitHub Profile
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         RESEARCH INTERESTS
+         ===================================================== -->
+
+    <section id="interests">
+
+      <div class="container">
+
+        <div class="section-kicker">
+          Research
+        </div>
+
+
+        <h2 class="section-heading">
+          Research Interests
+        </h2>
+
+
+        <p class="section-intro">
+          Areas that shape the questions, methods, and applied
+          research problems I am interested in developing further.
+        </p>
+
+
+        <div class="research-grid">
+
+
+          <article class="research-item">
+
+            <div class="research-number">
+              01
+            </div>
+
+            <h3>
+              Causal Inference
+            </h3>
+
+            <p>
+              Estimating treatment and policy effects from
+              observational data using modern applied statistical
+              methods.
+            </p>
+
+          </article>
+
+
+
+          <article class="research-item">
+
+            <div class="research-number">
+              02
+            </div>
+
+            <h3>
+              Public Health Analytics
+            </h3>
+
+            <p>
+              Using statistical evidence to understand healthcare
+              access, preventive care, health policy, and population
+              outcomes.
+            </p>
+
+          </article>
+
+
+
+          <article class="research-item">
+
+            <div class="research-number">
+              03
+            </div>
+
+            <h3>
+              Machine Learning
+            </h3>
+
+            <p>
+              Exploring statistical and machine-learning approaches
+              for large-scale data and applied research questions.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         EXPERIENCE
+         ===================================================== -->
+
+    <section class="alternate" id="experience">
+
+      <div class="container">
+
+        <div class="section-kicker">
+          Background
+        </div>
+
+
+        <h2 class="section-heading">
+          Experience & Skills
+        </h2>
+
+
+        <p class="section-intro">
+          A snapshot of the technical and academic experience
+          supporting my current research.
+        </p>
+
+
+        <div class="experience-grid">
+
+
+          <div class="experience-block">
+
+            <h3>
+              Technical Skills
+            </h3>
+
+
+            <ul class="clean-list">
+
+              <li>R Programming</li>
+
+              <li>SAS Programming</li>
+
+              <li>Data Cleaning & Visualization</li>
+
+              <li>Difference-in-Differences</li>
+
+              <li>Event Study Methods</li>
+
+              <li>Double Machine Learning</li>
+
+              <li>Statistical Computing</li>
+
+              <li>LaTeX & Research Reporting</li>
+
+              <li>Reproducible Research Workflows</li>
+
+            </ul>
+
+          </div>
+
+
+
+          <div class="experience-block">
+
+            <h3>
+              Academic Highlights
+            </h3>
+
+
+            <div class="academic-item">
+
+              <strong>
+                PhD in Applied Statistics
+              </strong>
+
+              <span>
+                University of Northern Colorado · Present
+              </span>
+
+            </div>
+
+
+            <div class="academic-item">
+
+              <strong>
+                Master's Research
+              </strong>
+
+              <span>
+                Public health and policy evaluation using BRFSS data
+                and modern causal inference methods.
+              </span>
+
+            </div>
+
+
+            <div class="academic-item">
+
+              <strong>
+                Applied Statistical Research
+              </strong>
+
+              <span>
+                Developing experience with large datasets,
+                statistical modeling, reproducible workflows, and
+                research communication.
+              </span>
+
+            </div>
+
+
+            <div class="academic-item">
+
+              <strong>
+                Research Portfolio
+              </strong>
+
+              <span>
+                Building a public research portfolio through GitHub
+                containing statistical projects, code, documentation,
+                and research outputs.
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CONTACT
+         ===================================================== -->
+
+    <section id="contact">
+
+      <div class="container contact-section">
+
+        <div class="section-kicker">
+          Connect
+        </div>
+
+
+        <h2 class="section-heading">
+          Contact
+        </h2>
+
+
+        <p class="section-intro">
+          My research portfolio will continue to grow with new
+          projects, publications, presentations, and doctoral work.
+          You can follow my work through GitHub or connect with me on
+          LinkedIn.
+        </p>
+
+
+        <div class="contact-links">
+
+          <a
+            class="button button-primary"
+            href="https://github.com/franklinaadwoaaddae-wq"
+            target="_blank"
+          >
+            GitHub
+          </a>
+
+
+          <a
+            class="button button-secondary"
+            href="https://www.linkedin.com/in/franklina-a-246054160"
+            target="_blank"
+          >
+            LinkedIn
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- =======================================================
+       FOOTER
+       ======================================================= -->
 
   <footer>
-    © 2026 Franklina Addae · Portfolio Website
-  </footer>
-  <script>
-    // ===== Google Analytics Custom Event Tracking =====
 
-    // Helper to safely send events
+    <div class="container footer-inner">
+
+      <div>
+        © 2026 Franklina Addae
+      </div>
+
+      <div class="footer-monogram">
+        FA · Applied Statistics
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =======================================================
+       ANALYTICS EVENT TRACKING
+       ======================================================= -->
+
+  <script>
+
     function trackEvent(name, params = {}) {
-      if (typeof gtag === 'function') {
-        gtag('event', name, params);
+
+      if (typeof gtag === "function") {
+
+        gtag("event", name, params);
+
       }
+
     }
 
-    // 1) Button click tracking (GitHub / LinkedIn / CTAs)
-    document.querySelectorAll('a').forEach(function(link) {
-      link.addEventListener('click', function() {
-        const href = link.getAttribute('href') || '';
-        if (href.includes('github.com')) {
-          trackEvent('click_github', { link_text: link.textContent.trim() });
+
+    document.querySelectorAll("a").forEach(function(link) {
+
+      link.addEventListener("click", function() {
+
+        const href = link.getAttribute("href") || "";
+
+
+        if (href.includes("github.com")) {
+
+          trackEvent("click_github", {
+            link_text: link.textContent.trim()
+          });
+
         }
-        if (href.includes('linkedin.com')) {
-          trackEvent('click_linkedin', { link_text: link.textContent.trim() });
+
+
+        if (href.includes("linkedin.com")) {
+
+          trackEvent("click_linkedin", {
+            link_text: link.textContent.trim()
+          });
+
         }
-        if (link.classList.contains('btn')) {
-          trackEvent('click_cta', { label: link.textContent.trim() });
-        }
+
       });
+
     });
 
-    // 2) Page section view tracking (fires once per section)
+
     const observed = new Set();
-    const sections = document.querySelectorAll('section, header');
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const id = entry.target.id || entry.target.tagName;
-          if (!observed.has(id)) {
-            observed.add(id);
-            trackEvent('view_section', { section: id });
+    const sections =
+      document.querySelectorAll("section, header");
+
+
+    const observer =
+      new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            const id =
+              entry.target.id ||
+              entry.target.tagName;
+
+
+            if (!observed.has(id)) {
+
+              observed.add(id);
+
+              trackEvent("view_section", {
+                section: id
+              });
+
+            }
+
           }
-        }
+
+        });
+
+      }, {
+        threshold: 0.4
       });
-    }, { threshold: 0.4 });
 
-    sections.forEach(sec => observer.observe(sec));
 
-      </script>
+    sections.forEach(section => {
+
+      observer.observe(section);
+
+    });
+
+  </script>
+
+
 </body>
+
 </html>
