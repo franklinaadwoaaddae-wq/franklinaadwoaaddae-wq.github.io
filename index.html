@@ -12,10 +12,13 @@
     content="Franklina Addae — doctoral researcher in Applied Statistics at the University of Northern Colorado."
   >
 
-  <!-- Browser Tab Icon -->
+  <!-- ========================================================
+       BROWSER TAB ICON
+       ======================================================== -->
+
   <link
     rel="icon"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23182d50'/%3E%3Ctext x='50' y='64' text-anchor='middle' font-family='Georgia' font-size='43' font-weight='bold' fill='white'%3EFA%3C/text%3E%3C/svg%3E"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23172d50'/%3E%3Ctext x='50' y='64' text-anchor='middle' font-family='Georgia' font-size='43' font-weight='bold' fill='white'%3EFA%3C/text%3E%3C/svg%3E"
   >
 
   <!-- Font Awesome -->
@@ -30,12 +33,13 @@
     href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
   >
 
+
   <style>
 
-    /* =========================================================
+    /* ========================================================
        COLOR PALETTE
        Inspired by the graduation photograph
-       ========================================================= */
+       ======================================================== */
 
     :root {
       --black: #191a1d;
@@ -56,9 +60,9 @@
     }
 
 
-    /* =========================================================
+    /* ========================================================
        GENERAL
-       ========================================================= */
+       ======================================================== */
 
     * {
       box-sizing: border-box;
@@ -83,6 +87,7 @@
       color: var(--black);
 
       line-height: 1.65;
+
       -webkit-font-smoothing: antialiased;
     }
 
@@ -101,16 +106,19 @@
     }
 
 
-    /* =========================================================
+    /* ========================================================
        HEADER
-       ========================================================= */
+       ======================================================== */
 
     .site-header {
       position: sticky;
+
       top: 0;
+
       z-index: 100;
 
       background: rgba(250, 249, 246, 0.96);
+
       backdrop-filter: blur(12px);
 
       border-bottom: 1px solid var(--line);
@@ -120,20 +128,24 @@
       min-height: 78px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
 
       gap: 30px;
     }
 
 
-    /* =========================================================
+    /* ========================================================
        BRAND
-       ========================================================= */
+       ======================================================== */
 
     .brand {
       display: flex;
+
       align-items: center;
+
       gap: 13px;
 
       text-decoration: none;
@@ -141,19 +153,28 @@
 
     .brand-logo {
       width: 40px;
+
       height: 40px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
       border-radius: 50%;
 
       background: var(--navy);
+
       color: var(--white);
 
-      font-family: Georgia, "Times New Roman", serif;
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
       font-size: 0.94rem;
+
       font-weight: 700;
 
       box-shadow:
@@ -174,19 +195,26 @@
     }
 
     .brand-name {
-      font-family: Georgia, "Times New Roman", serif;
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
       font-size: 1.08rem;
+
       font-weight: 600;
     }
 
 
-    /* =========================================================
+    /* ========================================================
        NAVIGATION
-       ========================================================= */
+       ======================================================== */
 
     .nav-links {
       display: flex;
+
       align-items: center;
+
       gap: 27px;
     }
 
@@ -200,6 +228,7 @@
       color: var(--charcoal);
 
       font-size: 0.84rem;
+
       font-weight: 600;
 
       transition: color 0.2s ease;
@@ -211,9 +240,11 @@
       position: absolute;
 
       left: 0;
+
       bottom: 21px;
 
       width: 0;
+
       height: 2px;
 
       background: var(--gold);
@@ -230,14 +261,15 @@
     }
 
 
-    /* =========================================================
+    /* ========================================================
        HOMEPAGE
-       ========================================================= */
+       ======================================================== */
 
     .home {
       min-height: calc(100vh - 78px - 65px);
 
       display: flex;
+
       align-items: center;
 
       padding: 70px 0 80px;
@@ -260,15 +292,13 @@
     }
 
 
-    /* =========================================================
-       FULL GRADUATION PHOTO
+    /* ========================================================
+       GRADUATION PHOTO
 
        IMPORTANT:
-       NO fixed height
-       NO object-fit
-       NO object-position
-       Therefore the image is NOT CROPPED.
-       ========================================================= */
+       The photograph is NOT cropped.
+       There is no fixed height and no object-fit.
+       ======================================================== */
 
     .portrait-column {
       width: 190px;
@@ -279,7 +309,6 @@
     .portrait {
       width: 190px;
 
-      /* Keeps the ORIGINAL photograph proportions */
       height: auto;
 
       display: block;
@@ -294,9 +323,9 @@
     }
 
 
-    /* =========================================================
+    /* ========================================================
        INTRODUCTION
-       ========================================================= */
+       ======================================================== */
 
     .intro {
       max-width: 760px;
@@ -312,6 +341,7 @@
       letter-spacing: 2.3px;
 
       font-size: 0.68rem;
+
       font-weight: 800;
     }
 
@@ -341,6 +371,7 @@
       color: var(--charcoal);
 
       font-size: 1.03rem;
+
       font-weight: 650;
     }
 
@@ -351,6 +382,11 @@
 
       font-size: 0.95rem;
     }
+
+
+    /* ========================================================
+       BIO
+       ======================================================== */
 
     .bio {
       max-width: 710px;
@@ -373,12 +409,13 @@
     }
 
 
-    /* =========================================================
+    /* ========================================================
        RESEARCH INTERESTS
-       ========================================================= */
+       ======================================================== */
 
     .interests {
       display: flex;
+
       flex-wrap: wrap;
 
       gap: 8px;
@@ -398,6 +435,7 @@
       color: var(--charcoal);
 
       font-size: 0.74rem;
+
       font-weight: 600;
 
       transition:
@@ -412,23 +450,24 @@
 
       border-color: var(--gold-soft);
 
-      background:
-        rgba(211, 165, 31, 0.06);
+      background: rgba(211, 165, 31, 0.06);
 
       transform: translateY(-2px);
     }
 
 
-    /* =========================================================
-       SOCIAL / ACADEMIC ICONS
-       Remain on the RIGHT with the introduction
-       ========================================================= */
+    /* ========================================================
+       SOCIAL + ACADEMIC PROFILE ICONS
+       ======================================================== */
 
     .socials {
       display: flex;
+
       align-items: center;
 
-      gap: 16px;
+      flex-wrap: wrap;
+
+      gap: 14px;
 
       margin-top: 29px;
     }
@@ -437,10 +476,13 @@
       position: relative;
 
       width: 37px;
+
       height: 37px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: center;
 
       border-radius: 50%;
@@ -477,9 +519,9 @@
     }
 
 
-    /* =========================================================
-       SOCIAL ICON TOOLTIPS
-       ========================================================= */
+    /* ========================================================
+       ICON TOOLTIPS
+       ======================================================== */
 
     .social-link::after {
       content: attr(data-label);
@@ -487,6 +529,7 @@
       position: absolute;
 
       left: 50%;
+
       bottom: -35px;
 
       transform:
@@ -504,9 +547,11 @@
       color: var(--white);
 
       font-size: 0.63rem;
+
       font-weight: 500;
 
       opacity: 0;
+
       visibility: hidden;
 
       pointer-events: none;
@@ -520,6 +565,7 @@
 
     .social-link:hover::after {
       opacity: 1;
+
       visibility: visible;
 
       transform:
@@ -528,9 +574,9 @@
     }
 
 
-    /* =========================================================
+    /* ========================================================
        BEYOND RESEARCH
-       ========================================================= */
+       ======================================================== */
 
     .beyond {
       margin-top: 45px;
@@ -540,7 +586,9 @@
       border-top: 1px solid var(--line);
 
       display: flex;
+
       align-items: center;
+
       flex-wrap: wrap;
 
       gap: 9px;
@@ -565,26 +613,28 @@
     }
 
 
-    /* =========================================================
-       PAGE LOAD
-       ========================================================= */
+    /* ========================================================
+       PAGE LOAD ANIMATION
+       ======================================================== */
 
     @keyframes fadeIn {
       from {
         opacity: 0;
+
         transform: translateY(6px);
       }
 
       to {
         opacity: 1;
+
         transform: translateY(0);
       }
     }
 
 
-    /* =========================================================
+    /* ========================================================
        FOOTER
-       ========================================================= */
+       ======================================================== */
 
     footer {
       border-top: 1px solid var(--line);
@@ -600,15 +650,16 @@
       display: flex;
 
       align-items: center;
+
       justify-content: space-between;
 
       gap: 20px;
     }
 
 
-    /* =========================================================
+    /* ========================================================
        TABLET
-       ========================================================= */
+       ======================================================== */
 
     @media (max-width: 900px) {
 
@@ -631,7 +682,6 @@
       .portrait {
         width: 165px;
 
-        /* Still no cropping */
         height: auto;
       }
 
@@ -641,9 +691,9 @@
     }
 
 
-    /* =========================================================
+    /* ========================================================
        MOBILE
-       ========================================================= */
+       ======================================================== */
 
     @media (max-width: 720px) {
 
@@ -704,7 +754,6 @@
       .portrait {
         width: 145px;
 
-        /* Full photograph preserved on mobile too */
         height: auto;
       }
 
@@ -719,11 +768,12 @@
       }
 
       .socials {
-        gap: 11px;
+        gap: 10px;
       }
 
       .social-link {
         width: 32px;
+
         height: 32px;
       }
 
@@ -744,15 +794,18 @@
 <body>
 
 
-  <!-- =========================================================
+  <!-- ========================================================
        HEADER
-       ========================================================= -->
+       ======================================================== -->
 
   <header class="site-header">
 
     <div class="container">
 
       <nav class="navigation">
+
+
+        <!-- Brand -->
 
         <a
           class="brand"
@@ -769,6 +822,8 @@
 
         </a>
 
+
+        <!-- Navigation -->
 
         <div class="nav-links">
 
@@ -806,9 +861,9 @@
 
 
 
-  <!-- =========================================================
+  <!-- ========================================================
        HOMEPAGE
-       ========================================================= -->
+       ======================================================== -->
 
   <main class="home">
 
@@ -818,7 +873,7 @@
 
 
         <!-- ===================================================
-             FULL GRADUATION PORTRAIT
+             FULL GRADUATION PHOTO
              =================================================== -->
 
         <aside class="portrait-column">
@@ -839,6 +894,7 @@
 
         <section class="intro">
 
+
           <p class="small-heading">
             Applied Statistics · Research
           </p>
@@ -858,6 +914,8 @@
             University of Northern Colorado
           </p>
 
+
+          <!-- Bio -->
 
           <p class="bio">
 
@@ -881,7 +939,9 @@
 
 
 
-          <!-- RESEARCH INTERESTS -->
+          <!-- =================================================
+               RESEARCH INTERESTS
+               ================================================= -->
 
           <div class="interests">
 
@@ -910,10 +970,25 @@
 
 
           <!-- =================================================
-               SOCIAL / ACADEMIC PROFILES
+               SOCIAL + ACADEMIC PROFILES
                ================================================= -->
 
           <div class="socials">
+
+
+            <!-- Email -->
+
+            <a
+              class="social-link"
+              href="mailto:franklina.adwoa.addae@gmail.com"
+              aria-label="Email Franklina Addae"
+              data-label="Email"
+            >
+
+              <i class="fa-solid fa-envelope"></i>
+
+            </a>
+
 
 
             <!-- GitHub -->
@@ -1004,7 +1079,9 @@
 
 
 
-          <!-- BEYOND RESEARCH -->
+          <!-- =================================================
+               BEYOND RESEARCH
+               ================================================= -->
 
           <div class="beyond">
 
@@ -1042,6 +1119,7 @@
 
           </div>
 
+
         </section>
 
 
@@ -1053,9 +1131,9 @@
 
 
 
-  <!-- =========================================================
+  <!-- ========================================================
        FOOTER
-       ========================================================= -->
+       ======================================================== -->
 
   <footer>
 
