@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About | Franklina Addae</title>
+
+  <meta
+    name="description"
+    content="About Franklina Addae, doctoral researcher in Applied Statistics at the University of Northern Colorado."
+  >
+
+  <!-- FA Favicon -->
+  <link
+    rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='47' fill='%230b2a4a' stroke='%23c89218' stroke-width='4'/%3E%3Ctext x='50' y='64' text-anchor='middle' font-family='Georgia' font-size='43' fill='%23d6a62a'%3EFA%3C/text%3E%3C/svg%3E"
+  >
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  >
+
+  <!-- Academicons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
+  >
+
+  <style>
+
+    /* ========================================================
+       COLORS
+       ======================================================== */
+
+    :root {
+      --navy: #0b2a4a;
+      --navy-soft: #173d64;
+
+      --gold: #c89218;
+      --gold-light: #ddb957;
+
+      --sandstone: #c88f72;
+      --sandstone-light: #ead8c8;
+
+      --cream: #f6f0e7;
+      --cream-light: #fbf8f2;
+
+      --text: #172334;
+      --text-soft: #4f5660;
+
+      --line: #ded1bf;
+      --white: #ffffff;
+
+      --max-width: 1180px;
+    }
+
+
+    /* ========================================================
+       GENERAL
+       ======================================================== */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      color: var(--text);
+
+      background: var(--cream);
+
+      line-height: 1.65;
+
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(90%, var(--max-width));
+      margin: 0 auto;
+    }
+
+
+    /* ========================================================
+       HEADER
+       ======================================================== */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+
+      z-index: 100;
+
+      background: rgba(248, 243, 235, 0.96);
+
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+
+      border-bottom: 1px solid rgba(11, 42, 74, 0.10);
+    }
+
+    .navigation {
+      min-height: 84px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 35px;
+    }
+
+
+    /* ========================================================
+       BRAND
+       ======================================================== */
+
+    .brand {
+      display: flex;
+      align-items: center;
+
+      gap: 16px;
+
+      text-decoration: none;
+    }
+
+    .brand-logo {
+      width: 52px;
+      height: 52px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      flex-shrink: 0;
+
+      border-radius: 50%;
+
+      background: var(--navy);
+
+      color: var(--gold-light);
+
+      border: 2px solid var(--gold);
+
+      font-size: 1.25rem;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .brand:hover .brand-logo {
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 7px 18px
+        rgba(11, 42, 74, 0.14);
+    }
+
+    .brand-name {
+      color: var(--navy);
+
+      font-size: 1.35rem;
+
+      font-weight: 600;
+
+      letter-spacing: 0.2px;
+    }
+
+
+    /* ========================================================
+       NAVIGATION
+       ======================================================== */
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+
+      gap: 33px;
+    }
+
+    .nav-links a {
+      position: relative;
+
+      padding: 31px 0 27px;
+
+      color: var(--navy);
+
+      text-decoration: none;
+
+      font-size: 0.94rem;
+
+      font-weight: 500;
+    }
+
+    .nav-links a::after {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      bottom: 21px;
+
+      width: 0;
+      height: 3px;
+
+      background: var(--gold);
+
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-links a.active {
+      font-weight: 700;
+    }
+
+
+    /* ========================================================
+       PAGE BACKGROUND
+       ======================================================== */
+
+    .page {
+      position: relative;
+
+      min-height: calc(100vh - 84px);
+
+      overflow: hidden;
+
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(250, 246, 239, 0.97) 0%,
+          rgba(250, 246, 239, 0.94) 45%,
+          rgba(248, 241, 231, 0.87) 70%,
+          rgba(239, 218, 195, 0.77) 100%
+        ),
+        url("mountain-bg.jpg");
+
+      background-size: cover;
+
+      background-position: center;
+
+      background-attachment: fixed;
+    }
+
+    .page::before {
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      pointer-events: none;
+
+      background:
+        radial-gradient(
+          circle at 80% 30%,
+          rgba(200, 143, 114, 0.10),
+          transparent 35%
+        );
+    }
+
+
+    /* ========================================================
+       PAGE INTRODUCTION
+       ======================================================== */
+
+    .page-heading {
+      position: relative;
+
+      z-index: 2;
+
+      padding: 56px 0 28px;
+    }
+
+    .eyebrow {
+      margin: 0 0 7px;
+
+      color: var(--gold);
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      font-size: 0.72rem;
+
+      font-weight: 800;
+
+      letter-spacing: 3px;
+
+      text-transform: uppercase;
+    }
+
+    .page-heading h1 {
+      margin: 0;
+
+      color: var(--navy);
+
+      font-size: clamp(3rem, 6vw, 4.6rem);
+
+      line-height: 1;
+
+      font-weight: 600;
+
+      letter-spacing: -2px;
+    }
+
+    .heading-line {
+      width: 65px;
+      height: 3px;
+
+      margin-top: 16px;
+
+      background: var(--gold);
+    }
+
+
+    /* ========================================================
+       ABOUT INTRO
+       ======================================================== */
+
+    .about-intro {
+      position: relative;
+
+      z-index: 2;
+
+      display: grid;
+
+      grid-template-columns: 235px minmax(0, 1fr);
+
+      gap: 52px;
+
+      align-items: start;
+
+      padding: 12px 0 50px;
+    }
+
+    .about-photo {
+      width: 235px;
+
+      height: auto;
+
+      border-radius: 7px;
+
+      border: 1px solid rgba(11, 42, 74, 0.08);
+
+      box-shadow:
+        0 14px 30px
+        rgba(56, 43, 29, 0.15);
+    }
+
+    .about-copy {
+      max-width: 760px;
+    }
+
+    .about-copy h2 {
+      margin: 0 0 16px;
+
+      color: var(--navy);
+
+      font-size: 1.7rem;
+
+      font-weight: 600;
+    }
+
+    .about-copy p {
+      margin: 0 0 17px;
+
+      color: var(--text);
+
+      font-size: 1rem;
+    }
+
+    .about-copy strong {
+      color: var(--navy);
+    }
+
+
+    /* ========================================================
+       CONTENT SECTIONS
+       ======================================================== */
+
+    .details {
+      position: relative;
+
+      z-index: 2;
+
+      padding-bottom: 65px;
+    }
+
+    .section {
+      padding: 31px 0;
+
+      border-top: 1px solid rgba(200, 146, 24, 0.42);
+    }
+
+    .section-layout {
+      display: grid;
+
+      grid-template-columns: 210px minmax(0, 1fr);
+
+      gap: 55px;
+    }
+
+    .section-title {
+      margin: 0;
+
+      color: var(--navy);
+
+      font-size: 1.22rem;
+
+      font-weight: 700;
+    }
+
+    .section-title::after {
+      content: "";
+
+      display: block;
+
+      width: 37px;
+      height: 2px;
+
+      margin-top: 9px;
+
+      background: var(--gold);
+    }
+
+    .section-content {
+      max-width: 780px;
+    }
+
+
+    /* ========================================================
+       EDUCATION
+       ======================================================== */
+
+    .education-item {
+      margin-bottom: 24px;
+    }
+
+    .education-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .degree {
+      margin: 0 0 3px;
+
+      color: var(--navy);
+
+      font-size: 1.03rem;
+
+      font-weight: 700;
+    }
+
+    .school {
+      margin: 0 0 2px;
+
+      color: var(--text);
+
+      font-size: 0.94rem;
+    }
+
+    .education-note {
+      margin: 0;
+
+      color: var(--text-soft);
+
+      font-size: 0.87rem;
+    }
+
+
+    /* ========================================================
+       RESEARCH INTERESTS
+       ======================================================== */
+
+    .interest-list {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+    }
+
+    .interest {
+      padding: 8px 15px;
+
+      border: 1px solid rgba(200, 146, 24, 0.82);
+
+      border-radius: 22px;
+
+      background: rgba(250, 246, 239, 0.73);
+
+      color: var(--navy);
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      font-size: 0.76rem;
+
+      font-weight: 700;
+
+      backdrop-filter: blur(4px);
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .interest:hover {
+      transform: translateY(-2px);
+
+      background: rgba(255, 255, 255, 0.90);
+    }
+
+
+    /* ========================================================
+       RESEARCH APPROACH
+       ======================================================== */
+
+    .approach-text {
+      margin: 0;
+
+      color: var(--text);
+
+      font-size: 0.97rem;
+
+      line-height: 1.7;
+    }
+
+
+    /* ========================================================
+       BEYOND RESEARCH
+       ======================================================== */
+
+    .beyond-items {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+      gap: 13px;
+    }
+
+    .beyond-item {
+      padding: 17px 14px;
+
+      background:
+        rgba(250, 246, 239, 0.67);
+
+      border: 1px solid rgba(11, 42, 74, 0.09);
+
+      border-top: 2px solid var(--gold);
+
+      border-radius: 5px;
+
+      color: var(--navy);
+
+      text-align: center;
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      font-size: 0.77rem;
+
+      font-weight: 600;
+
+      backdrop-filter: blur(5px);
+    }
+
+    .beyond-item i {
+      display: block;
+
+      margin-bottom: 8px;
+
+      color: var(--gold);
+
+      font-size: 1.2rem;
+    }
+
+
+    /* ========================================================
+       SOCIAL LINKS
+       ======================================================== */
+
+    .socials {
+      display: flex;
+
+      align-items: center;
+
+      flex-wrap: wrap;
+
+      gap: 11px;
+    }
+
+    .social-link {
+      width: 43px;
+      height: 43px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+
+      border: 2px solid var(--gold);
+
+      background: var(--navy);
+
+      color: var(--white);
+
+      text-decoration: none;
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .social-link:hover {
+      transform: translateY(-3px);
+
+      background: var(--navy-soft);
+
+      color: var(--gold-light);
+    }
+
+    .social-link i {
+      font-size: 1.1rem;
+    }
+
+    .social-link .ai {
+      font-size: 1.2rem;
+    }
+
+
+    /* ========================================================
+       FOOTER
+       ======================================================== */
+
+    footer {
+      position: relative;
+
+      z-index: 5;
+
+      padding: 18px 0;
+
+      background: var(--navy);
+
+      border-top: 2px solid var(--gold);
+
+      color: rgba(255, 255, 255, 0.86);
+    }
+
+    .footer-content {
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+
+      font-size: 0.75rem;
+    }
+
+    .footer-tagline {
+      color: rgba(255, 255, 255, 0.80);
+
+      font-style: italic;
+    }
+
+
+    /* ========================================================
+       TABLET
+       ======================================================== */
+
+    @media (max-width: 900px) {
+
+      .nav-links {
+        gap: 18px;
+      }
+
+      .about-intro {
+        grid-template-columns: 190px minmax(0, 1fr);
+
+        gap: 35px;
+      }
+
+      .about-photo {
+        width: 190px;
+      }
+
+      .section-layout {
+        grid-template-columns: 170px minmax(0, 1fr);
+
+        gap: 35px;
+      }
+
+      .beyond-items {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+      }
+
+    }
+
+
+    /* ========================================================
+       MOBILE
+       ======================================================== */
+
+    @media (max-width: 760px) {
+
+      .navigation {
+        min-height: auto;
+
+        padding: 13px 0;
+      }
+
+      .brand-logo {
+        width: 42px;
+        height: 42px;
+
+        font-size: 1rem;
+      }
+
+      .brand-name {
+        display: none;
+      }
+
+      .nav-links {
+        max-width: calc(100vw - 85px);
+
+        overflow-x: auto;
+
+        gap: 17px;
+
+        scrollbar-width: none;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav-links a {
+        padding: 9px 0;
+
+        white-space: nowrap;
+
+        font-size: 0.75rem;
+      }
+
+      .nav-links a::after {
+        bottom: 3px;
+      }
+
+      .page {
+        background-attachment: scroll;
+
+        background-position: 65% center;
+      }
+
+      .page-heading {
+        padding-top: 40px;
+      }
+
+      .about-intro {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 29px;
+      }
+
+      .about-photo {
+        width: min(245px, 75vw);
+      }
+
+      .section-layout {
+        display: block;
+      }
+
+      .section-title {
+        margin-bottom: 23px;
+      }
+
+      .beyond-items {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+      }
+
+      .footer-content {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 4px;
+      }
+
+    }
+
+
+    @media (max-width: 460px) {
+
+      .beyond-items {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- ========================================================
+       HEADER
+       ======================================================== -->
+
+  <header class="site-header">
+
+    <div class="container">
+
+      <nav class="navigation">
+
+        <a
+          class="brand"
+          href="index.html"
+        >
+
+          <span class="brand-logo">
+            FA
+          </span>
+
+          <span class="brand-name">
+            Franklina Addae
+          </span>
+
+        </a>
+
+
+        <div class="nav-links">
+
+          <a
+            class="active"
+            href="about.html"
+          >
+            About
+          </a>
+
+          <a href="research.html">
+            Research
+          </a>
+
+          <a href="publications.html">
+            Publications
+          </a>
+
+          <a href="projects.html">
+            Projects
+          </a>
+
+          <a href="cv.html">
+            CV
+          </a>
+
+          <a href="contact.html">
+            Contact
+          </a>
+
+        </div>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- ========================================================
+       ABOUT PAGE
+       ======================================================== -->
+
+  <main class="page">
+
+
+    <!-- PAGE TITLE -->
+
+    <div class="container page-heading">
+
+      <p class="eyebrow">
+        Get to know me
+      </p>
+
+      <h1>
+        About
+      </h1>
+
+      <div class="heading-line"></div>
+
+    </div>
+
+
+
+    <!-- ======================================================
+         INTRODUCTION
+         ====================================================== -->
+
+    <div class="container about-intro">
+
+
+      <!-- FULL PHOTO — NO CROPPING -->
+
+      <div>
+
+        <img
+          class="about-photo"
+          src="FA_Headshot.jpg"
+          alt="Franklina Addae"
+        >
+
+      </div>
+
+
+      <div class="about-copy">
+
+        <h2>
+          Hello, I'm Franklina.
+        </h2>
+
+
+        <p>
+          I am a doctoral researcher in
+          <strong>Applied Statistics</strong> at the
+          <strong>University of Northern Colorado</strong>.
+          My research interests sit at the intersection of
+          statistical methodology and real-world questions,
+          particularly in causal inference, machine learning,
+          public health, education, and policy research.
+        </p>
+
+
+        <p>
+          I am especially interested in working with complex
+          and large-scale data to understand patterns,
+          evaluate interventions, and produce evidence that
+          can contribute to meaningful decision-making.
+          I enjoy the process of moving from a substantive
+          research question to a thoughtful statistical
+          analysis and then communicating the results in a
+          way that is both rigorous and understandable.
+        </p>
+
+
+        <p>
+          My broader goal is to continue developing as an
+          applied statistician while contributing to research
+          that connects strong quantitative methods with
+          practical impact.
+        </p>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- ======================================================
+         DETAILS
+         ====================================================== -->
+
+    <div class="container details">
+
+
+      <!-- ====================================================
+           EDUCATION
+           ==================================================== -->
+
+      <section class="section">
+
+        <div class="section-layout">
+
+          <h2 class="section-title">
+            Education
+          </h2>
+
+
+          <div class="section-content">
+
+
+            <div class="education-item">
+
+              <p class="degree">
+                Ph.D. in Applied Statistics and Research Methods
+              </p>
+
+              <p class="school">
+                University of Northern Colorado
+              </p>
+
+              <p class="education-note">
+                Doctoral studies · Current
+              </p>
+
+            </div>
+
+
+            <div class="education-item">
+
+              <p class="degree">
+                M.S. in Applied Statistics and Research Methods
+              </p>
+
+              <p class="school">
+                University of Northern Colorado
+              </p>
+
+              <p class="education-note">
+                Graduate research focused on causal inference,
+                preventive health care, and large-scale
+                observational data.
+              </p>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ====================================================
+           RESEARCH INTERESTS
+           ==================================================== -->
+
+      <section class="section">
+
+        <div class="section-layout">
+
+          <h2 class="section-title">
+            Research Interests
+          </h2>
+
+
+          <div class="section-content">
+
+            <div class="interest-list">
+
+              <span class="interest">
+                Causal Inference
+              </span>
+
+              <span class="interest">
+                Machine Learning
+              </span>
+
+              <span class="interest">
+                Public Health
+              </span>
+
+              <span class="interest">
+                Education
+              </span>
+
+              <span class="interest">
+                Policy Research
+              </span>
+
+              <span class="interest">
+                Statistical Computing
+              </span>
+
+              <span class="interest">
+                Large-Scale Data
+              </span>
+
+              <span class="interest">
+                Reproducible Research
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ====================================================
+           RESEARCH APPROACH
+           ==================================================== -->
+
+      <section class="section">
+
+        <div class="section-layout">
+
+          <h2 class="section-title">
+            Research Approach
+          </h2>
+
+
+          <div class="section-content">
+
+            <p class="approach-text">
+
+              I am drawn to research questions where statistical
+              methods can help clarify complex real-world
+              relationships. My work emphasizes careful research
+              design, transparent analysis, reproducible
+              workflows, and clear communication. I am
+              particularly interested in methods that help
+              researchers move beyond describing patterns in
+              data toward understanding the effects of policies,
+              programs, and interventions.
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ====================================================
+           BEYOND RESEARCH
+           ==================================================== -->
+
+      <section class="section">
+
+        <div class="section-layout">
+
+          <h2 class="section-title">
+            Beyond Research
+          </h2>
+
+
+          <div class="section-content">
+
+            <div class="beyond-items">
+
+
+              <div class="beyond-item">
+
+                <i class="fa-solid fa-mountain-sun"></i>
+
+                Exploring new places
+
+              </div>
+
+
+              <div class="beyond-item">
+
+                <i class="fa-solid fa-person-running"></i>
+
+                Staying active
+
+              </div>
+
+
+              <div class="beyond-item">
+
+                <i class="fa-solid fa-lightbulb"></i>
+
+                Creative projects
+
+              </div>
+
+
+              <div class="beyond-item">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                Life in Colorado
+
+              </div>
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ====================================================
+           CONNECT
+           ==================================================== -->
+
+      <section class="section">
+
+        <div class="section-layout">
+
+          <h2 class="section-title">
+            Connect
+          </h2>
+
+
+          <div class="section-content">
+
+            <div class="socials">
+
+
+              <a
+                class="social-link"
+                href="mailto:franklina.adwoa.addae@gmail.com"
+                aria-label="Email"
+              >
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+
+
+              <a
+                class="social-link"
+                href="https://github.com/franklinaadwoaaddae-wq"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+              >
+                <i class="fa-brands fa-github"></i>
+              </a>
+
+
+              <a
+                class="social-link"
+                href="https://www.linkedin.com/in/franklina-a-246054160"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+
+
+              <a
+                class="social-link"
+                href="https://scholar.google.com/citations?user=blxx2e4AAAAJ&hl=en"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Google Scholar"
+              >
+                <i class="ai ai-google-scholar"></i>
+              </a>
+
+
+              <a
+                class="social-link"
+                href="https://www.researchgate.net/profile/Franklina-Addae-2"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="ResearchGate"
+              >
+                <i class="ai ai-researchgate"></i>
+              </a>
+
+
+              <a
+                class="social-link"
+                href="https://orcid.org/0009-0004-3648-9271"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="ORCID"
+              >
+                <i class="ai ai-orcid"></i>
+              </a>
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+    </div>
+
+  </main>
+
+
+
+  <!-- ========================================================
+       FOOTER
+       ======================================================== -->
+
+  <footer>
+
+    <div class="container footer-content">
+
+      <span>
+        © 2026 Franklina Addae
+      </span>
+
+      <span class="footer-tagline">
+        Applied Statistics · Research · Data for People and Possibility
+      </span>
+
+    </div>
+
+  </footer>
+
+
+</body>
+
+</html>
