@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Projects | Franklina Addae</title>
+
+  <meta
+    name="description"
+    content="Selected research and statistical projects by Franklina Addae."
+  >
+
+  <!-- FA Favicon -->
+  <link
+    rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='47' fill='%230b2a4a' stroke='%23c89218' stroke-width='4'/%3E%3Ctext x='50' y='64' text-anchor='middle' font-family='Georgia' font-size='43' fill='%23d6a62a'%3EFA%3C/text%3E%3C/svg%3E"
+  >
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  >
+
+  <style>
+
+    /* ========================================================
+       COLORS
+       ======================================================== */
+
+    :root {
+      --navy: #0b2a4a;
+      --navy-soft: #173d64;
+
+      --gold: #c89218;
+      --gold-light: #ddb957;
+
+      --sandstone: #c88f72;
+      --sandstone-light: #ead8c8;
+
+      --cream: #f6f0e7;
+      --cream-light: #fbf8f2;
+
+      --text: #172334;
+      --text-soft: #4f5660;
+
+      --white: #ffffff;
+
+      --max-width: 1180px;
+    }
+
+
+    /* ========================================================
+       GENERAL
+       ======================================================== */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      color: var(--text);
+
+      background: var(--cream);
+
+      line-height: 1.65;
+
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(90%, var(--max-width));
+      margin: 0 auto;
+    }
+
+
+    /* ========================================================
+       HEADER
+       ======================================================== */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+
+      z-index: 100;
+
+      background: rgba(248, 243, 235, 0.96);
+
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+
+      border-bottom: 1px solid rgba(11, 42, 74, 0.10);
+    }
+
+    .navigation {
+      min-height: 84px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 35px;
+    }
+
+
+    /* ========================================================
+       BRAND
+       ======================================================== */
+
+    .brand {
+      display: flex;
+      align-items: center;
+
+      gap: 16px;
+
+      text-decoration: none;
+    }
+
+    .brand-logo {
+      width: 52px;
+      height: 52px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      flex-shrink: 0;
+
+      border-radius: 50%;
+
+      background: var(--navy);
+
+      color: var(--gold-light);
+
+      border: 2px solid var(--gold);
+
+      font-size: 1.25rem;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .brand:hover .brand-logo {
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 7px 18px
+        rgba(11, 42, 74, 0.14);
+    }
+
+    .brand-name {
+      color: var(--navy);
+
+      font-size: 1.35rem;
+
+      font-weight: 600;
+
+      letter-spacing: 0.2px;
+    }
+
+
+    /* ========================================================
+       NAVIGATION
+       ======================================================== */
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+
+      gap: 36px;
+    }
+
+    .nav-links a {
+      position: relative;
+
+      padding: 31px 0 27px;
+
+      color: var(--navy);
+
+      text-decoration: none;
+
+      font-size: 0.94rem;
+
+      font-weight: 500;
+    }
+
+    .nav-links a::after {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      bottom: 21px;
+
+      width: 0;
+      height: 3px;
+
+      background: var(--gold);
+
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-links a.active {
+      font-weight: 700;
+    }
+
+
+    /* ========================================================
+       MOUNTAIN BACKGROUND
+       ======================================================== */
+
+    .page {
+      position: relative;
+
+      min-height: calc(100vh - 84px);
+
+      overflow: hidden;
+
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(250, 246, 239, 0.97) 0%,
+          rgba(250, 246, 239, 0.95) 42%,
+          rgba(248, 241, 231, 0.89) 70%,
+          rgba(239, 218, 195, 0.78) 100%
+        ),
+        url("mountain-bg.jpg");
+
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .page::before {
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      pointer-events: none;
+
+      background:
+        radial-gradient(
+          circle at 80% 30%,
+          rgba(200, 143, 114, 0.10),
+          transparent 35%
+        );
+    }
+
+
+    /* ========================================================
+       PAGE HEADING
+       ======================================================== */
+
+    .page-heading {
+      position: relative;
+
+      z-index: 2;
+
+      padding: 56px 0 24px;
+    }
+
+    .eyebrow {
+      margin: 0 0 7px;
+
+      color: var(--gold);
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      font-size: 0.72rem;
+
+      font-weight: 800;
+
+      letter-spacing: 3px;
+
+      text-transform: uppercase;
+    }
+
+    .page-heading h1 {
+      margin: 0;
+
+      color: var(--navy);
+
+      font-size: clamp(3rem, 6vw, 4.6rem);
+
+      line-height: 1;
+
+      font-weight: 600;
+
+      letter-spacing: -2px;
+    }
+
+    .heading-line {
+      width: 65px;
+      height: 3px;
+
+      margin-top: 16px;
+
+      background: var(--gold);
+    }
+
+    .page-intro {
+      position: relative;
+
+      z-index: 2;
+
+      max-width: 810px;
+
+      margin: 0;
+
+      padding: 8px 0 43px;
+
+      color: var(--text);
+
+      font-size: 1rem;
+
+      line-height: 1.75;
+    }
+
+
+    /* ========================================================
+       PROJECTS
+       ======================================================== */
+
+    .projects-content {
+      position: relative;
+
+      z-index: 2;
+
+      padding-bottom: 70px;
+    }
+
+    .project {
+      padding: 36px 0 48px;
+
+      border-top: 1px solid rgba(200, 146, 24, 0.45);
+    }
+
+    .project-grid {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1.25fr)
+        minmax(280px, 0.75fr);
+
+      gap: 55px;
+
+      align-items: start;
+    }
+
+
+    /* ========================================================
+       PROJECT INFORMATION
+       ======================================================== */
+
+    .project-number {
+      margin: 0 0 8px;
+
+      color: var(--gold);
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      font-size: 0.69rem;
+
+      font-weight: 800;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+    }
+
+    .project-title {
+      margin: 0 0 13px;
+
+      color: var(--navy);
+
+      font-size: clamp(1.65rem, 3vw, 2.25rem);
+
+      line-height: 1.3;
+
+      font-weight: 600;
+    }
+
+    .project-subtitle {
+      margin: 0 0 24px;
+
+      color: var(--gold);
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      font-size: 0.78rem;
+
+      font-weight: 700;
+
+      letter-spacing: 0.5px;
+    }
+
+    .project-description {
+      margin: 0 0 18px;
+
+      color: var(--text);
+
+      font-size: 0.97rem;
+
+      line-height: 1.72;
+    }
+
+
+    /* ========================================================
+       PROJECT DETAILS
+       ======================================================== */
+
+    .details-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 13px;
+
+      margin: 26px 0;
+    }
+
+    .detail {
+      padding: 16px 17px;
+
+      background:
+        rgba(250, 246, 239, 0.68);
+
+      border: 1px solid rgba(11, 42, 74, 0.08);
+
+      border-top: 2px solid var(--gold);
+
+      border-radius: 5px;
+
+      backdrop-filter: blur(5px);
+    }
+
+    .detail-label {
+      display: block;
+
+      margin-bottom: 5px;
+
+      color: var(--gold);
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      font-size: 0.62rem;
+
+      font-weight: 800;
+
+      letter-spacing: 1.2px;
+
+      text-transform: uppercase;
+    }
+
+    .detail-value {
+      color: var(--navy);
+
+      font-size: 0.86rem;
+
+      font-weight: 600;
+
+      line-height: 1.45;
+    }
+
+
+    /* ========================================================
+       METHODS
+       ======================================================== */
+
+    .methods-title {
+      margin: 26px 0 11px;
+
+      color: var(--navy);
+
+      font-size: 0.95rem;
+    }
+
+    .tags {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 9px;
+    }
+
+    .tag {
+      padding: 7px 13px;
+
+      border:
+        1px solid
+        rgba(200, 146, 24, 0.80);
+
+      border-radius: 20px;
+
+      background:
+        rgba(250, 246, 239, 0.72);
+
+      color: var(--navy);
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      font-size: 0.7rem;
+
+      font-weight: 700;
+    }
+
+
+    /* ========================================================
+       PROJECT BUTTONS
+       ======================================================== */
+
+    .project-links {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      margin-top: 28px;
+    }
+
+    .project-link {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+      padding: 10px 16px;
+
+      border-radius: 4px;
+
+      text-decoration: none;
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      font-size: 0.75rem;
+
+      font-weight: 700;
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .project-link.primary {
+      background: var(--navy);
+
+      color: var(--white);
+    }
+
+    .project-link.primary i {
+      color: var(--gold-light);
+    }
+
+    .project-link.secondary {
+      border: 1px solid var(--gold);
+
+      background:
+        rgba(250, 246, 239, 0.65);
+
+      color: var(--navy);
+    }
+
+    .project-link:hover {
+      transform: translateY(-2px);
+    }
+
+    .project-link.primary:hover {
+      background: var(--navy-soft);
+    }
+
+    .project-link.secondary:hover {
+      background: var(--white);
+    }
+
+
+    /* ========================================================
+       PROJECT VISUAL
+       ======================================================== */
+
+    .project-visual {
+      position: sticky;
+
+      top: 120px;
+    }
+
+    .visual-frame {
+      padding: 13px;
+
+      background:
+        rgba(250, 246, 239, 0.76);
+
+      border:
+        1px solid
+        rgba(11, 42, 74, 0.10);
+
+      border-radius: 7px;
+
+      box-shadow:
+        0 12px 30px
+        rgba(56, 43, 29, 0.10);
+
+      backdrop-filter: blur(6px);
+    }
+
+    .visual-frame img {
+      width: 100%;
+
+      height: auto;
+
+      border-radius: 3px;
+    }
+
+    .visual-caption {
+      margin: 11px 3px 2px;
+
+      color: var(--text-soft);
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      font-size: 0.69rem;
+
+      line-height: 1.5;
+    }
+
+
+    /* ========================================================
+       MORE PROJECTS
+       ======================================================== */
+
+    .more-projects {
+      padding: 34px 0 10px;
+
+      border-top:
+        1px solid
+        rgba(200, 146, 24, 0.45);
+    }
+
+    .more-projects-grid {
+      display: grid;
+
+      grid-template-columns:
+        220px minmax(0, 1fr);
+
+      gap: 52px;
+    }
+
+    .more-title {
+      margin: 0;
+
+      color: var(--navy);
+
+      font-size: 1.2rem;
+
+      line-height: 1.4;
+    }
+
+    .more-title::after {
+      content: "";
+
+      display: block;
+
+      width: 38px;
+      height: 2px;
+
+      margin-top: 10px;
+
+      background: var(--gold);
+    }
+
+    .more-copy {
+      max-width: 760px;
+    }
+
+    .more-copy p {
+      margin: 0;
+
+      color: var(--text-soft);
+
+      font-size: 0.93rem;
+
+      line-height: 1.7;
+    }
+
+
+    /* ========================================================
+       FOOTER
+       ======================================================== */
+
+    footer {
+      position: relative;
+
+      z-index: 5;
+
+      padding: 18px 0;
+
+      background: var(--navy);
+
+      border-top: 2px solid var(--gold);
+
+      color:
+        rgba(255, 255, 255, 0.86);
+    }
+
+    .footer-content {
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+
+      font-size: 0.75rem;
+    }
+
+    .footer-tagline {
+      color:
+        rgba(255, 255, 255, 0.80);
+
+      font-style: italic;
+    }
+
+
+    /* ========================================================
+       TABLET
+       ======================================================== */
+
+    @media (max-width: 900px) {
+
+      .nav-links {
+        gap: 20px;
+      }
+
+      .project-grid {
+        grid-template-columns:
+          minmax(0, 1fr) 270px;
+
+        gap: 35px;
+      }
+
+      .more-projects-grid {
+        grid-template-columns:
+          180px minmax(0, 1fr);
+
+        gap: 35px;
+      }
+
+    }
+
+
+    /* ========================================================
+       MOBILE
+       ======================================================== */
+
+    @media (max-width: 760px) {
+
+      .navigation {
+        min-height: auto;
+
+        padding: 13px 0;
+      }
+
+      .brand-logo {
+        width: 42px;
+        height: 42px;
+
+        font-size: 1rem;
+      }
+
+      .brand-name {
+        display: none;
+      }
+
+      .nav-links {
+        max-width:
+          calc(100vw - 85px);
+
+        overflow-x: auto;
+
+        gap: 17px;
+
+        scrollbar-width: none;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav-links a {
+        padding: 9px 0;
+
+        white-space: nowrap;
+
+        font-size: 0.75rem;
+      }
+
+      .nav-links a::after {
+        bottom: 3px;
+      }
+
+      .page {
+        background-attachment: scroll;
+
+        background-position: 65% center;
+      }
+
+      .page-heading {
+        padding-top: 40px;
+      }
+
+      .project-grid {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 35px;
+      }
+
+      .project-visual {
+        position: static;
+
+        width: 100%;
+
+        max-width: 480px;
+      }
+
+      .details-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .more-projects-grid {
+        display: block;
+      }
+
+      .more-title {
+        margin-bottom: 24px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 4px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- ========================================================
+       HEADER
+       ======================================================== -->
+
+  <header class="site-header">
+
+    <div class="container">
+
+      <nav class="navigation">
+
+
+        <a
+          class="brand"
+          href="index.html"
+        >
+
+          <span class="brand-logo">
+            FA
+          </span>
+
+          <span class="brand-name">
+            Franklina Addae
+          </span>
+
+        </a>
+
+
+        <div class="nav-links">
+
+          <a href="about.html">
+            About
+          </a>
+
+          <a href="research.html">
+            Research
+          </a>
+
+          <a
+            class="active"
+            href="projects.html"
+          >
+            Projects
+          </a>
+
+          <a href="cv.html">
+            CV
+          </a>
+
+          <a href="contact.html">
+            Contact
+          </a>
+
+        </div>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- ========================================================
+       PROJECTS PAGE
+       ======================================================== -->
+
+  <main class="page">
+
+
+    <!-- PAGE HEADING -->
+
+    <div class="container page-heading">
+
+      <p class="eyebrow">
+        Selected Work
+      </p>
+
+      <h1>
+        Projects
+      </h1>
+
+      <div class="heading-line"></div>
+
+    </div>
+
+
+    <div class="container">
+
+      <p class="page-intro">
+
+        Selected research and statistical projects that
+        demonstrate my interests in causal inference,
+        large-scale data, statistical computing, and
+        applied research.
+
+      </p>
+
+    </div>
+
+
+
+    <!-- ======================================================
+         PROJECT CONTENT
+         ====================================================== -->
+
+    <div class="container projects-content">
+
+
+      <!-- ====================================================
+           PROJECT 01
+           ==================================================== -->
+
+      <article class="project">
+
+        <div class="project-grid">
+
+
+          <!-- LEFT SIDE -->
+
+          <div>
+
+
+            <p class="project-number">
+              Featured Research Project
+            </p>
+
+
+            <h2 class="project-title">
+
+              Delayed but Durable: Causal Evidence on
+              Medicaid Expansion and Preventive Care,
+              2012–2024
+
+            </h2>
+
+
+            <p class="project-subtitle">
+
+              Causal Inference · Public Health · Health Policy
+
+            </p>
+
+
+            <p class="project-description">
+
+              This research investigates whether Medicaid
+              expansion increased the use of preventive health
+              services in the United States. Using large-scale
+              Behavioral Risk Factor Surveillance System data,
+              the study examines changes in preventive care
+              across states and over time.
+
+            </p>
+
+
+            <p class="project-description">
+
+              The analysis combines modern causal-inference
+              approaches with machine-learning methods to study
+              policy effects across several preventive health
+              outcomes. The project emphasizes careful research
+              design, dynamic treatment effects, reproducible
+              statistical workflows, and the interpretation of
+              policy-relevant findings.
+
+            </p>
+
+
+
+            <!-- PROJECT DETAILS -->
+
+            <div class="details-grid">
+
+
+              <div class="detail">
+
+                <span class="detail-label">
+                  Data
+                </span>
+
+                <span class="detail-value">
+                  Behavioral Risk Factor Surveillance System
+                  (BRFSS)
+                </span>
+
+              </div>
+
+
+              <div class="detail">
+
+                <span class="detail-label">
+                  Study Period
+                </span>
+
+                <span class="detail-value">
+                  2012–2024
+                </span>
+
+              </div>
+
+
+              <div class="detail">
+
+                <span class="detail-label">
+                  Research Area
+                </span>
+
+                <span class="detail-value">
+                  Causal Inference & Health Policy
+                </span>
+
+              </div>
+
+
+              <div class="detail">
+
+                <span class="detail-label">
+                  Computing
+                </span>
+
+                <span class="detail-value">
+                  R · Reproducible Workflow
+                </span>
+
+              </div>
+
+
+            </div>
+
+
+
+            <!-- METHODS -->
+
+            <h3 class="methods-title">
+              Methods & Tools
+            </h3>
+
+
+            <div class="tags">
+
+              <span class="tag">
+                Difference-in-Differences
+              </span>
+
+              <span class="tag">
+                Event Study Analysis
+              </span>
+
+              <span class="tag">
+                Double Machine Learning
+              </span>
+
+              <span class="tag">
+                Survey Data
+              </span>
+
+              <span class="tag">
+                R
+              </span>
+
+              <span class="tag">
+                GitHub
+              </span>
+
+              <span class="tag">
+                LaTeX
+              </span>
+
+            </div>
+
+
+
+            <!-- LINKS -->
+
+            <div class="project-links">
+
+
+              <a
+                class="project-link primary"
+                href="https://github.com/franklinaadwoaaddae-wq/aca-medicaid-thesis"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+
+                <i class="fa-brands fa-github"></i>
+
+                View Repository
+
+              </a>
+
+
+              <a
+                class="project-link secondary"
+                href="research.html"
+              >
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+                Research Interests
+
+              </a>
+
+
+            </div>
+
+
+          </div>
+
+
+
+          <!-- RIGHT SIDE: PROJECT FIGURE -->
+
+          <div class="project-visual">
+
+            <div class="visual-frame">
+
+              <img
+                src="output/Rplot07.png"
+                alt="Visualization from Medicaid expansion and preventive care research"
+              >
+
+              <p class="visual-caption">
+
+                Selected visualization from the Medicaid
+                expansion and preventive care research project.
+
+              </p>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </article>
+
+
+
+      <!-- ====================================================
+           FUTURE PROJECTS
+           ==================================================== -->
+
+      <section class="more-projects">
+
+        <div class="more-projects-grid">
+
+
+          <h2 class="more-title">
+            More Work
+          </h2>
+
+
+          <div class="more-copy">
+
+            <p>
+
+              Additional research and statistical projects will
+              be added as they develop. This portfolio will
+              continue to document work across causal inference,
+              machine learning, education, public health, and
+              statistical computing.
+
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </section>
+
+
+    </div>
+
+  </main>
+
+
+
+  <!-- ========================================================
+       FOOTER
+       ======================================================== -->
+
+  <footer>
+
+    <div class="container footer-content">
+
+      <span>
+        © 2026 Franklina Addae
+      </span>
+
+      <span class="footer-tagline">
+        Applied Statistics · Research · Data for People and Possibility
+      </span>
+
+    </div>
+
+  </footer>
+
+
+</body>
+
+</html>
