@@ -1,152 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Franklina Addae | Applied Statistics</title>
-  <meta
-    name="description"
-    content="Franklina Addae — PhD student in Applied Statistics with interests in causal inference, public health, machine learning, and applied statistical research."
-  >
+  <title>Franklina Addae | Applied Statistics & Research</title>
+  <meta name="description"
+        content="Franklina Addae — doctoral researcher in Applied Statistics working across causal inference, machine learning, public health, education, and large-scale data." />
 
   <style>
-
     /* =========================================================
-       FRANKLINA ADDAE — ACADEMIC PORTFOLIO
+       FRANKLINA ADDAE — PERSONAL RESEARCH PORTFOLIO
        ========================================================= */
 
     :root {
+      --ink: #1d1c1a;
+      --ink-soft: #393632;
+      --muted: #706a63;
 
-      /* Portrait-inspired palette */
-      --charcoal: #20201f;
-      --black: #161615;
-      --graphite: #373633;
+      --ivory: #fbf8f2;
+      --cream: #f2ece2;
+      --paper: #fffdf9;
 
-      --taupe: #8b7c6d;
-      --bronze: #a38768;
-      --warm-gray: #6e6963;
+      --taupe: #a18f7b;
+      --bronze: #9b7655;
+      --bronze-dark: #76563c;
+      --sand: #d9cabb;
 
-      --cream: #f5f1ea;
-      --ivory: #fbf9f5;
-      --soft-white: #fffdfa;
-      --line: #ddd6cc;
+      --line: rgba(67, 57, 47, 0.15);
 
-      --max-width: 1240px;
+      --shadow: 0 22px 60px rgba(40, 34, 28, 0.10);
+      --shadow-soft: 0 12px 35px rgba(40, 34, 28, 0.07);
+
+      --max: 1220px;
+      --radius: 24px;
     }
-
 
     * {
       box-sizing: border-box;
     }
 
-
     html {
       scroll-behavior: smooth;
     }
 
-
     body {
       margin: 0;
       background: var(--ivory);
-      color: var(--charcoal);
+      color: var(--ink);
       font-family:
+        Inter,
+        ui-sans-serif,
         -apple-system,
         BlinkMacSystemFont,
         "Segoe UI",
-        Helvetica,
-        Arial,
         sans-serif;
-      line-height: 1.7;
+      line-height: 1.65;
+      overflow-x: hidden;
     }
 
+    body::before {
+      content: "";
+      position: fixed;
+      width: 480px;
+      height: 480px;
+      border-radius: 50%;
+      background: rgba(161, 143, 123, 0.08);
+      top: -220px;
+      right: -170px;
+      z-index: -5;
+      filter: blur(4px);
+    }
 
     a {
       color: inherit;
     }
 
-
-    .container {
-      width: min(var(--max-width), 90%);
-      margin: 0 auto;
+    img {
+      display: block;
+      max-width: 100%;
     }
 
+    .container {
+      width: min(var(--max), 90%);
+      margin: 0 auto;
+    }
 
     /* =========================================================
        NAVIGATION
        ========================================================= */
 
     .site-header {
-      background: rgba(251, 249, 245, 0.96);
-      border-bottom: 1px solid var(--line);
       position: sticky;
       top: 0;
       z-index: 1000;
-      backdrop-filter: blur(12px);
+      background: rgba(251, 248, 242, 0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
     }
 
-
-    nav {
+    .nav {
       min-height: 78px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 30px;
+      align-items: center;
+      gap: 28px;
     }
 
-
-    .identity {
+    .brand {
       display: flex;
       align-items: center;
-      gap: 13px;
+      gap: 12px;
       text-decoration: none;
     }
 
-
-    .monogram {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: var(--charcoal);
-      color: var(--cream);
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 17px;
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      background: var(--ink);
+      color: var(--ivory);
+      border-radius: 14px 14px 14px 4px;
+      font-family: Georgia, serif;
       font-weight: 700;
       letter-spacing: -1px;
-
-      border: 2px solid var(--bronze);
+      box-shadow: 5px 5px 0 var(--sand);
+      transition: transform 0.25s ease;
     }
 
+    .brand:hover .brand-mark {
+      transform: rotate(-4deg) translateY(-2px);
+    }
 
-    .brand-name {
+    .brand-text {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.25rem;
+      font-size: 1.18rem;
       font-weight: 600;
-      letter-spacing: 0.1px;
     }
-
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 30px;
+      gap: 27px;
     }
-
 
     .nav-links a {
       text-decoration: none;
-      font-size: 0.94rem;
-      font-weight: 600;
-      color: var(--graphite);
+      font-size: 0.9rem;
+      font-weight: 650;
+      color: var(--ink-soft);
       position: relative;
     }
-
 
     .nav-links a::after {
       content: "";
@@ -159,339 +164,480 @@
       transition: width 0.2s ease;
     }
 
-
-    .nav-links a:hover::after {
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
       width: 100%;
     }
-
 
     /* =========================================================
        HERO
        ========================================================= */
 
     .hero {
-      padding: 80px 0 72px;
+      min-height: calc(100vh - 78px);
+      display: flex;
+      align-items: center;
+      padding: 70px 0 90px;
+      position: relative;
     }
-
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 0.82fr 1.18fr;
-      gap: 74px;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 80px;
       align-items: center;
     }
 
-
-    /* LEFT PROFILE */
-
-    .profile-column {
-      text-align: center;
-      padding-right: 65px;
-      border-right: 1px solid var(--line);
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2.2px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--bronze-dark);
+      margin-bottom: 22px;
     }
 
-
-    .portrait {
-      width: 270px;
-      height: 270px;
-      object-fit: cover;
-      border-radius: 50%;
-
-      border: 7px solid var(--soft-white);
-      box-shadow:
-        0 0 0 1px var(--line),
-        0 20px 45px rgba(32, 32, 31, 0.12);
+    .eyebrow::before {
+      content: "";
+      width: 38px;
+      height: 2px;
+      background: var(--bronze);
     }
 
-
-    .profile-name {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 2rem;
-      margin: 28px 0 3px;
-      color: var(--black);
-    }
-
-
-    .profile-role {
+    .hero h1 {
       margin: 0;
-      color: var(--warm-gray);
-      font-size: 1rem;
-    }
-
-
-    .profile-school {
-      margin: 2px 0 0;
-      color: var(--warm-gray);
-      font-size: 0.95rem;
-    }
-
-
-    .social-row {
-      margin-top: 25px;
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-    }
-
-
-    .social-link {
-      width: 43px;
-      height: 43px;
-      border-radius: 50%;
-      border: 1px solid var(--line);
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.8rem;
-
-      background: var(--soft-white);
-      transition:
-        transform 0.2s ease,
-        background 0.2s ease,
-        color 0.2s ease;
-    }
-
-
-    .social-link:hover {
-      transform: translateY(-3px);
-      background: var(--charcoal);
-      color: white;
-    }
-
-
-    /* RIGHT INTRODUCTION */
-
-    .welcome {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(3.3rem, 7vw, 5.5rem);
-      line-height: 1;
-      margin: 0 0 27px;
-      color: var(--black);
-      letter-spacing: -2px;
+      font-weight: 500;
+      font-size: clamp(4.2rem, 8vw, 7.4rem);
+      line-height: 0.88;
+      letter-spacing: -4px;
     }
 
-
-    .welcome-accent {
+    .hero h1 span {
+      display: block;
       color: var(--bronze);
+      margin-left: 65px;
     }
 
-
-    .intro {
-      font-size: 1.08rem;
-      color: var(--graphite);
-      margin-bottom: 19px;
-      max-width: 760px;
+    .hero-tagline {
+      max-width: 690px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+      line-height: 1.4;
+      margin: 35px 0 20px;
+      color: var(--ink-soft);
     }
 
-
-    .intro strong {
-      color: var(--black);
+    .hero-copy {
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 28px;
     }
 
-
-    .research-tags {
+    .current-line {
       display: flex;
       flex-wrap: wrap;
+      align-items: center;
       gap: 9px;
-      margin-top: 30px;
+      margin: 28px 0;
     }
 
+    .current-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      font-weight: 800;
+      margin-right: 4px;
+    }
 
-    .research-tag {
-      padding: 8px 14px;
+    .topic {
+      position: relative;
       border: 1px solid var(--line);
-      border-radius: 30px;
-      background: var(--cream);
-      font-size: 0.83rem;
-      font-weight: 600;
-      color: var(--graphite);
+      background: var(--paper);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 650;
+      cursor: default;
+      transition: all 0.2s ease;
     }
 
+    .topic:hover {
+      background: var(--ink);
+      color: white;
+      transform: translateY(-2px);
+    }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 13px;
+      gap: 12px;
       margin-top: 30px;
     }
 
-
-    .button {
-      display: inline-block;
-      padding: 12px 19px;
+    .btn {
+      padding: 12px 18px;
+      border-radius: 8px;
       text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 650;
-      border-radius: 4px;
+      font-size: 0.88rem;
+      font-weight: 750;
       transition: all 0.2s ease;
     }
 
-
-    .button-primary {
-      background: var(--charcoal);
+    .btn-dark {
+      background: var(--ink);
       color: white;
-      border: 1px solid var(--charcoal);
+      border: 1px solid var(--ink);
     }
 
-
-    .button-primary:hover {
-      background: var(--bronze);
-      border-color: var(--bronze);
+    .btn-dark:hover {
+      background: var(--bronze-dark);
+      border-color: var(--bronze-dark);
+      transform: translateY(-2px);
     }
 
-
-    .button-secondary {
-      border: 1px solid var(--line);
+    .btn-light {
       background: transparent;
+      border: 1px solid var(--line);
     }
 
-
-    .button-secondary:hover {
+    .btn-light:hover {
       border-color: var(--bronze);
-      color: var(--bronze);
+      color: var(--bronze-dark);
+      transform: translateY(-2px);
     }
-
 
     /* =========================================================
-       GENERAL SECTIONS
+       CREATIVE PORTRAIT
        ========================================================= */
 
-    section {
-      padding: 82px 0;
+    .portrait-stage {
+      position: relative;
+      min-height: 570px;
+      display: grid;
+      place-items: center;
     }
 
+    .portrait-backdrop {
+      position: absolute;
+      width: 82%;
+      height: 88%;
+      background: var(--cream);
+      border-radius: 48% 48% 26px 26px;
+      transform: rotate(4deg);
+      right: 2%;
+      top: 4%;
+    }
 
-    .alternate {
+    .portrait-lines {
+      position: absolute;
+      width: 72%;
+      height: 82%;
+      border: 1px solid var(--taupe);
+      border-radius: 48% 48% 24px 24px;
+      transform: rotate(-5deg);
+      left: 2%;
+      top: 10%;
+      opacity: 0.6;
+    }
+
+    .portrait-frame {
+      position: relative;
+      width: 82%;
+      max-width: 410px;
+      height: 525px;
+      overflow: hidden;
+
+      border-radius:
+        48% 48% 30px 30px /
+        30% 30% 8% 8%;
+
+      box-shadow: var(--shadow);
+      background: var(--cream);
+      transition: transform 0.4s ease;
+    }
+
+    .portrait-frame:hover {
+      transform: translateY(-8px) rotate(-1deg);
+    }
+
+    .portrait-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform 0.6s ease;
+    }
+
+    .portrait-frame:hover img {
+      transform: scale(1.035);
+    }
+
+    .floating-note {
+      position: absolute;
+      bottom: 34px;
+      left: -8px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      padding: 15px 18px;
+      border-radius: 14px;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.82rem;
+      max-width: 210px;
+      transform: rotate(-2deg);
+    }
+
+    .floating-note strong {
+      display: block;
+      color: var(--bronze-dark);
+      margin-bottom: 2px;
+    }
+
+    .dot-decoration {
+      position: absolute;
+      right: -10px;
+      top: 75px;
+      display: grid;
+      grid-template-columns: repeat(4, 5px);
+      gap: 9px;
+    }
+
+    .dot-decoration span {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--taupe);
+      opacity: 0.55;
+    }
+
+    /* =========================================================
+       SOCIAL / RESEARCH IDENTITY
+       ========================================================= */
+
+    .identity-rail {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    .identity-link {
+      min-width: 42px;
+      height: 42px;
+      padding: 0 13px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      text-decoration: none;
+      color: var(--ink);
+      transition: all 0.2s ease;
+    }
+
+    .identity-link svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    .identity-link .short-label {
+      font-size: 0.74rem;
+      font-weight: 800;
+    }
+
+    .identity-link:hover {
+      background: var(--ink);
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-soft);
+    }
+
+    /* =========================================================
+       SECTION BASICS
+       ========================================================= */
+
+    section.content-section {
+      padding: 105px 0;
+    }
+
+    .cream-section {
       background: var(--cream);
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
     }
 
+    .section-head {
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr;
+      gap: 70px;
+      align-items: start;
+      margin-bottom: 60px;
+    }
 
-    .section-kicker {
-      text-transform: uppercase;
-      letter-spacing: 2.5px;
+    .section-number {
       color: var(--bronze);
-      font-weight: 700;
-      font-size: 0.73rem;
-      margin-bottom: 9px;
+      font-family: Georgia, serif;
+      font-size: 0.95rem;
     }
 
-
-    .section-heading {
+    .section-title {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2.2rem, 4vw, 3.3rem);
+      font-size: clamp(2.6rem, 5vw, 4.6rem);
+      line-height: 1;
       font-weight: 500;
-      margin: 0 0 18px;
-      color: var(--black);
-      letter-spacing: -1px;
+      letter-spacing: -2px;
+      margin: 5px 0 0;
     }
 
-
-    .section-intro {
-      max-width: 760px;
-      color: var(--warm-gray);
-      margin: 0 0 42px;
-      font-size: 1rem;
+    .section-description {
+      color: var(--muted);
+      max-width: 680px;
+      margin: 8px 0 0;
+      font-size: 1.02rem;
     }
-
 
     /* =========================================================
-       FEATURED PROJECT
+       FEATURED RESEARCH
        ========================================================= */
 
-    .project-grid {
+    .feature-card {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 55px;
-      align-items: center;
+      grid-template-columns: 1.05fr 0.95fr;
+      overflow: hidden;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
+    .feature-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
 
-    .project-image {
+    .feature-visual {
+      padding: 30px;
+      background: #eee8df;
+      display: grid;
+      place-items: center;
+    }
+
+    .feature-visual img {
       width: 100%;
+      border-radius: 12px;
       background: white;
       border: 1px solid var(--line);
-      padding: 12px;
     }
 
+    .feature-copy {
+      padding: 50px;
+    }
 
-    .project-label {
-      color: var(--bronze);
-      font-size: 0.8rem;
-      font-weight: 700;
+    .project-type {
       text-transform: uppercase;
       letter-spacing: 2px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: var(--bronze-dark);
     }
 
-
-    .project-title {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 2rem;
-      line-height: 1.25;
-      margin: 10px 0 18px;
-      color: var(--black);
+    .feature-copy h3 {
+      font-family: Georgia, serif;
+      font-size: clamp(2rem, 3.2vw, 3rem);
+      line-height: 1.12;
+      font-weight: 500;
+      margin: 14px 0 20px;
     }
 
-
-    .project-description {
-      color: var(--graphite);
+    .feature-copy p {
+      color: var(--muted);
     }
 
-
-    .method-list {
-      padding-left: 19px;
-      color: var(--graphite);
-      margin: 22px 0;
+    .method-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 24px 0;
     }
 
-
-    .method-list li {
-      margin-bottom: 5px;
+    .method-tag {
+      padding: 7px 11px;
+      background: var(--cream);
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
     }
-
 
     /* =========================================================
        RESEARCH INTERESTS
        ========================================================= */
 
-    .research-grid {
+    .interest-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 35px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
     }
 
-
-    .research-item {
-      border-top: 2px solid var(--bronze);
-      padding-top: 22px;
+    .interest-card {
+      min-height: 270px;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--paper);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
     }
 
+    .interest-card::before {
+      content: "";
+      position: absolute;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: var(--cream);
+      right: -50px;
+      bottom: -50px;
+      transition: transform 0.3s ease;
+    }
 
-    .research-number {
-      font-family: Georgia, "Times New Roman", serif;
+    .interest-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--taupe);
+    }
+
+    .interest-card:hover::before {
+      transform: scale(1.4);
+    }
+
+    .interest-index {
+      font-family: Georgia, serif;
       color: var(--bronze);
       font-size: 0.9rem;
     }
 
-
-    .research-item h3 {
-      font-family: Georgia, "Times New Roman", serif;
+    .interest-card h3 {
+      font-family: Georgia, serif;
       font-size: 1.45rem;
-      margin: 9px 0;
-      color: var(--black);
+      margin: 45px 0 12px;
+      font-weight: 500;
     }
 
-
-    .research-item p {
-      color: var(--warm-gray);
-      margin: 0;
+    .interest-card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      position: relative;
+      z-index: 2;
     }
-
 
     /* =========================================================
        EXPERIENCE
@@ -500,886 +646,918 @@
     .experience-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 70px;
+      gap: 65px;
     }
 
-
-    .experience-block h3 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.6rem;
+    .experience-column h3 {
+      font-family: Georgia, serif;
+      font-size: 1.7rem;
       font-weight: 500;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 15px;
       margin-top: 0;
-      padding-bottom: 12px;
+    }
+
+    .experience-item {
+      padding: 20px 0;
       border-bottom: 1px solid var(--line);
     }
 
-
-    .clean-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-
-    .clean-list li {
-      padding: 11px 0;
-      border-bottom: 1px solid rgba(221, 214, 204, 0.75);
-      color: var(--graphite);
-    }
-
-
-    .academic-item {
-      padding: 0 0 22px;
-      margin-bottom: 22px;
-      border-bottom: 1px solid var(--line);
-    }
-
-
-    .academic-item strong {
-      font-family: Georgia, "Times New Roman", serif;
+    .experience-item strong {
       display: block;
+      font-family: Georgia, serif;
       font-size: 1.08rem;
-      color: var(--black);
       margin-bottom: 4px;
     }
 
-
-    .academic-item span {
-      color: var(--warm-gray);
+    .experience-item span,
+    .experience-item p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 0.9rem;
     }
 
+    /* =========================================================
+       BEYOND THE DATA / FUN FACTS
+       ========================================================= */
+
+    .fun-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+
+    .fun-card {
+      min-height: 220px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      padding: 24px;
+      background: var(--paper);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+      cursor: default;
+    }
+
+    .fun-card:nth-child(even) {
+      transform: translateY(22px);
+    }
+
+    .fun-card:hover {
+      background: var(--ink);
+      color: white;
+      transform: translateY(-7px) rotate(-1deg);
+    }
+
+    .fun-card:nth-child(even):hover {
+      transform: translateY(15px) rotate(1deg);
+    }
+
+    .fun-icon {
+      font-size: 1.7rem;
+    }
+
+    .fun-card h3 {
+      font-family: Georgia, serif;
+      font-weight: 500;
+      margin: 0 0 8px;
+      font-size: 1.15rem;
+    }
+
+    .fun-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .fun-card:hover p {
+      color: rgba(255,255,255,0.72);
+    }
 
     /* =========================================================
        CONTACT
        ========================================================= */
 
-    .contact-section {
-      text-align: center;
+    .contact-panel {
+      background: var(--ink);
+      color: var(--ivory);
+      border-radius: 28px;
+      padding: 70px;
+      position: relative;
+      overflow: hidden;
     }
 
-
-    .contact-section .section-intro {
-      margin-left: auto;
-      margin-right: auto;
+    .contact-panel::after {
+      content: "FA";
+      position: absolute;
+      right: -20px;
+      bottom: -80px;
+      font-family: Georgia, serif;
+      font-size: 15rem;
+      color: rgba(255,255,255,0.035);
+      line-height: 1;
     }
 
-
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 14px;
+    .contact-panel h2 {
+      font-family: Georgia, serif;
+      font-weight: 500;
+      font-size: clamp(2.6rem, 5vw, 4.6rem);
+      line-height: 1;
+      margin: 0 0 20px;
+      max-width: 700px;
     }
 
+    .contact-panel p {
+      max-width: 670px;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .contact-panel .identity-rail {
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact-panel .identity-link {
+      background: rgba(255,255,255,0.08);
+      color: white;
+      border-color: rgba(255,255,255,0.14);
+    }
+
+    .contact-panel .identity-link:hover {
+      background: var(--ivory);
+      color: var(--ink);
+    }
 
     /* =========================================================
        FOOTER
        ========================================================= */
 
     footer {
-      border-top: 1px solid var(--line);
-      padding: 30px 0;
-      color: var(--warm-gray);
-      font-size: 0.85rem;
+      padding: 32px 0 40px;
     }
-
 
     .footer-inner {
       display: flex;
       justify-content: space-between;
       gap: 20px;
-      align-items: center;
+      color: var(--muted);
+      font-size: 0.82rem;
     }
 
+    /* =========================================================
+       REVEAL ANIMATION
+       ========================================================= */
 
-    .footer-monogram {
-      font-family: Georgia, "Times New Roman", serif;
-      color: var(--charcoal);
-      font-weight: 700;
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
     }
 
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     /* =========================================================
        RESPONSIVE
        ========================================================= */
 
-    @media (max-width: 900px) {
+    @media (max-width: 1050px) {
+      .hero-grid,
+      .feature-card {
+        grid-template-columns: 1fr;
+      }
 
       .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 50px;
+        gap: 55px;
       }
 
-      .profile-column {
-        padding-right: 0;
-        padding-bottom: 50px;
-        border-right: none;
-        border-bottom: 1px solid var(--line);
+      .portrait-stage {
+        order: -1;
+        min-height: 500px;
       }
 
-      .project-grid,
-      .experience-grid {
-        grid-template-columns: 1fr;
+      .portrait-frame {
+        height: 470px;
       }
 
-      .research-grid {
-        grid-template-columns: 1fr;
+      .interest-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
+      .fun-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .fun-card:nth-child(even) {
+        transform: none;
+      }
     }
 
-
-    @media (max-width: 720px) {
-
-      nav {
-        flex-direction: column;
+    @media (max-width: 760px) {
+      .nav {
+        padding: 14px 0;
         align-items: flex-start;
-        padding: 15px 0;
       }
 
       .nav-links {
-        gap: 15px;
-        flex-wrap: wrap;
+        display: none;
       }
 
       .hero {
-        padding-top: 55px;
+        padding-top: 45px;
       }
 
-      .portrait {
-        width: 220px;
-        height: 220px;
+      .hero h1 {
+        font-size: 4.1rem;
+        letter-spacing: -3px;
       }
 
-      .welcome {
-        font-size: 3.3rem;
+      .hero h1 span {
+        margin-left: 28px;
       }
 
-      section {
-        padding: 62px 0;
+      .portrait-stage {
+        min-height: 430px;
+      }
+
+      .portrait-frame {
+        width: 84%;
+        height: 410px;
+      }
+
+      .floating-note {
+        left: 0;
+      }
+
+      .section-head,
+      .experience-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .interest-grid,
+      .fun-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-copy,
+      .contact-panel {
+        padding: 32px;
+      }
+
+      section.content-section {
+        padding: 75px 0;
+      }
+
+      .identity-link {
+        padding: 0 11px;
       }
 
       .footer-inner {
         flex-direction: column;
-        text-align: center;
       }
-
     }
-
   </style>
 </head>
 
-
 <body>
 
-
-  <!-- =======================================================
-       NAVIGATION
-       ======================================================= -->
-
+  <!-- NAVIGATION -->
   <header class="site-header">
-
     <div class="container">
-
-      <nav>
-
-        <a class="identity" href="#home">
-
-          <div class="monogram">FA</div>
-
-          <div class="brand-name">
-            Franklina Addae
-          </div>
-
+      <nav class="nav">
+        <a href="#home" class="brand">
+          <div class="brand-mark">FA</div>
+          <div class="brand-text">Franklina Addae</div>
         </a>
 
-
         <div class="nav-links">
-
           <a href="#about">About</a>
-
-          <a href="#project">Research</a>
-
+          <a href="#research">Research</a>
           <a href="#interests">Interests</a>
-
           <a href="#experience">Experience</a>
-
+          <a href="#beyond">Beyond the Data</a>
           <a href="#contact">Contact</a>
-
         </div>
-
       </nav>
-
     </div>
-
   </header>
 
 
-
-  <!-- =======================================================
-       HERO / ABOUT
-       ======================================================= -->
-
+  <!-- HERO -->
   <main id="home">
-
     <section class="hero" id="about">
-
       <div class="container hero-grid">
 
+        <div class="hero-copy-column">
 
-        <!-- LEFT SIDE -->
+          <div class="eyebrow">
+            Applied Statistics · Research · Data
+          </div>
 
-        <div class="profile-column">
-
-          <img
-            src="FA_Headshot.jpg"
-            alt="Franklina Addae"
-            class="portrait"
-          >
-
-
-          <h1 class="profile-name">
-            Franklina Addae
+          <h1>
+            Franklina
+            <span>Addae.</span>
           </h1>
 
-
-          <p class="profile-role">
-            PhD Student in Applied Statistics
+          <p class="hero-tagline">
+            I use statistics to understand what works,
+            for whom, and why.
           </p>
 
-
-          <p class="profile-school">
-            University of Northern Colorado
+          <p class="hero-copy">
+            I am a doctoral researcher in Applied Statistics at the
+            University of Northern Colorado. My interests sit at the
+            intersection of causal inference, machine learning,
+            public health, education, and large-scale data.
           </p>
 
+          <p class="hero-copy">
+            I enjoy transforming complex data into evidence that is
+            rigorous, interpretable, and useful for real-world
+            decision making.
+          </p>
 
-          <div class="social-row">
-
-            <a
-              class="social-link"
-              href="https://github.com/franklinaadwoaaddae-wq"
-              target="_blank"
-              title="GitHub"
-            >
-              GH
-            </a>
-
-
-            <a
-              class="social-link"
-              href="https://www.linkedin.com/in/franklina-a-246054160"
-              target="_blank"
-              title="LinkedIn"
-            >
-              in
-            </a>
-
+          <div class="current-line">
+            <span class="current-label">Currently exploring</span>
+            <span class="topic">Causal Inference</span>
+            <span class="topic">Machine Learning</span>
+            <span class="topic">Education Data</span>
+            <span class="topic">Health Policy</span>
           </div>
-
-        </div>
-
-
-
-        <!-- RIGHT SIDE -->
-
-        <div>
-
-          <h2 class="welcome">
-            Akwaaba<span class="welcome-accent">.</span>
-          </h2>
-
-
-          <p class="intro">
-            I am a <strong>PhD student in Applied Statistics</strong> with
-            research interests in causal inference, public health,
-            machine learning, and policy-focused research. I enjoy
-            turning complex datasets into meaningful statistical
-            evidence that can inform real-world decisions.
-          </p>
-
-
-          <p class="intro">
-            My research interests center on the application of modern
-            statistical methods to substantive problems, particularly
-            questions involving health policy, preventive care,
-            education, and large-scale observational data.
-          </p>
-
-
-          <p class="intro">
-            I am especially interested in causal inference,
-            statistical computing, reproducible research, and the
-            growing intersection between machine learning and applied
-            statistical research.
-          </p>
-
-
-          <p class="intro">
-            Outside of research, I enjoy staying active, exploring new
-            places, and spending time on creative projects. I value
-            curiosity, continuous learning, and using quantitative
-            methods to address questions with practical impact.
-          </p>
-
-
-          <div class="research-tags">
-
-            <span class="research-tag">Causal Inference</span>
-
-            <span class="research-tag">Machine Learning</span>
-
-            <span class="research-tag">Public Health</span>
-
-            <span class="research-tag">Statistical Computing</span>
-
-            <span class="research-tag">R</span>
-
-            <span class="research-tag">SAS</span>
-
-            <span class="research-tag">LaTeX</span>
-
-          </div>
-
 
           <div class="hero-actions">
-
-            <a
-              class="button button-primary"
-              href="https://github.com/franklinaadwoaaddae-wq"
-              target="_blank"
-            >
-              GitHub
+            <a class="btn btn-dark" href="#research">
+              Explore my research
             </a>
 
+            <a class="btn btn-light"
+               href="https://github.com/franklinaadwoaaddae-wq"
+               target="_blank"
+               rel="noopener noreferrer">
+              View GitHub
+            </a>
+          </div>
 
-            <a
-              class="button button-secondary"
-              href="https://www.linkedin.com/in/franklina-a-246054160"
-              target="_blank"
-            >
-              LinkedIn
+          <!-- RESEARCH IDENTITY LINKS -->
+          <div class="identity-rail">
+
+            <!-- GitHub -->
+            <a class="identity-link"
+               href="https://github.com/franklinaadwoaaddae-wq"
+               target="_blank"
+               rel="noopener noreferrer"
+               title="GitHub"
+               aria-label="GitHub">
+
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 .7C5.7.7.6 5.8.6 12.1c0 5 3.3 9.3 7.8 10.8.6.1.8-.3.8-.6v-2.3c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11.2 11.2 0 015.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6a11.5 11.5 0 007.8-10.8C23.4 5.8 18.3.7 12 .7z"/>
+              </svg>
             </a>
 
+            <!-- LinkedIn -->
+            <a class="identity-link"
+               href="https://www.linkedin.com/in/franklina-a-246054160"
+               target="_blank"
+               rel="noopener noreferrer"
+               title="LinkedIn"
+               aria-label="LinkedIn">
 
-            <a
-              class="button button-secondary"
-              href="#project"
-            >
-              View Research
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5.3 3.5A2.3 2.3 0 113 5.8a2.3 2.3 0 012.3-2.3zM3.4 8.1h3.8V21H3.4V8.1zm6.2 0h3.6v1.8h.1c.5-1 1.8-2.2 3.8-2.2 4 0 4.8 2.7 4.8 6.1V21h-3.8v-6.4c0-1.5 0-3.5-2.2-3.5s-2.5 1.7-2.5 3.4V21H9.6V8.1z"/>
+              </svg>
+            </a>
+
+            <!-- Google Scholar -->
+            <a class="identity-link"
+               href="https://scholar.google.com/citations?user=blxx2e4AAAAJ&hl=en"
+               target="_blank"
+               rel="noopener noreferrer"
+               title="Google Scholar"
+               aria-label="Google Scholar">
+
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2L1.5 8.3 12 14.5l8.1-4.8V16h2.4V8.3L12 2zm-6 11.2V17c0 2.2 2.7 4 6 4s6-1.8 6-4v-3.8L12 16.8l-6-3.6z"/>
+              </svg>
+            </a>
+
+            <!-- ResearchGate -->
+            <a class="identity-link"
+               href="https://www.researchgate.net/profile/Franklina-Addae-2"
+               target="_blank"
+               rel="noopener noreferrer"
+               title="ResearchGate"
+               aria-label="ResearchGate">
+              <span class="short-label">RG</span>
+            </a>
+
+            <!-- ORCID -->
+            <a class="identity-link"
+               href="https://orcid.org/0009-0004-3648-9271"
+               target="_blank"
+               rel="noopener noreferrer"
+               title="ORCID"
+               aria-label="ORCID">
+              <span class="short-label">iD</span>
             </a>
 
           </div>
-
         </div>
 
-      </div>
 
+        <!-- CREATIVE PORTRAIT -->
+        <div class="portrait-stage">
+
+          <div class="portrait-backdrop"></div>
+          <div class="portrait-lines"></div>
+
+          <div class="portrait-frame">
+            <img src="FA_Headshot.jpg"
+                 alt="Franklina Addae" />
+          </div>
+
+          <div class="floating-note">
+            <strong>Based in Colorado</strong>
+            Statistics, research & a little mountain air.
+          </div>
+
+          <div class="dot-decoration" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+          </div>
+
+        </div>
+      </div>
     </section>
 
 
-
-    <!-- =====================================================
-         FEATURED RESEARCH
-         ===================================================== -->
-
-    <section class="alternate" id="project">
-
+    <!-- FEATURED RESEARCH -->
+    <section class="content-section cream-section" id="research">
       <div class="container">
 
-        <div class="section-kicker">
-          Selected Work
-        </div>
-
-        <h2 class="section-heading">
-          Featured Research
-        </h2>
-
-        <p class="section-intro">
-          Selected applied statistical research combining modern
-          quantitative methods with policy-relevant questions.
-        </p>
-
-
-        <div class="project-grid">
-
-
+        <div class="section-head reveal">
           <div>
-
-            <img
-              src="output/Rplot07.png"
-              alt="Medicaid expansion thesis analysis"
-              class="project-image"
-            >
-
+            <div class="section-number">01 / Research</div>
+            <h2 class="section-title">Selected work.</h2>
           </div>
 
+          <p class="section-description">
+            My work combines applied statistics with substantive
+            questions in health, policy, education, and other areas
+            where careful analysis can improve how we understand
+            real-world outcomes.
+          </p>
+        </div>
 
-          <div>
+        <article class="feature-card reveal">
 
-            <div class="project-label">
-              Master's Thesis
+          <div class="feature-visual">
+            <img src="output/Rplot07.png"
+                 alt="Visualization from Medicaid expansion research" />
+          </div>
+
+          <div class="feature-copy">
+
+            <div class="project-type">
+              Master's Research · Causal Inference
             </div>
 
-
-            <h3 class="project-title">
+            <h3>
               Did Medicaid Expansion Increase Preventive Care?
             </h3>
 
-
-            <p class="project-description">
-              This project evaluates whether Medicaid expansion was
-              associated with increased preventive care utilization
-              using BRFSS data and modern causal inference methods.
+            <p>
+              This research examines preventive care utilization
+              following Medicaid expansion using large-scale BRFSS
+              data and modern causal inference methods.
             </p>
 
+            <div class="method-tags">
+              <span class="method-tag">BRFSS</span>
+              <span class="method-tag">Difference-in-Differences</span>
+              <span class="method-tag">Event Study</span>
+              <span class="method-tag">Double ML</span>
+              <span class="method-tag">R</span>
+            </div>
 
-            <ul class="method-list">
-
-              <li>Difference-in-Differences</li>
-
-              <li>Event Study Analysis</li>
-
-              <li>Double Machine Learning</li>
-
-              <li>Large-scale BRFSS data</li>
-
-              <li>Reproducible statistical analysis</li>
-
-            </ul>
-
-
-            <p class="project-description">
-              The research focuses on policy-relevant evidence and the
-              use of modern observational-data methods to examine
-              changes in preventive care following Medicaid expansion.
+            <p>
+              The project emphasizes policy-relevant statistical
+              evidence, reproducible analysis, and methods designed
+              for observational data.
             </p>
-
 
             <div class="hero-actions">
-
-              <a
-                class="button button-primary"
-                href="https://github.com/franklinaadwoaaddae-wq/aca-medicaid-thesis"
-                target="_blank"
-              >
-                View Project
+              <a class="btn btn-dark"
+                 href="https://github.com/franklinaadwoaaddae-wq/aca-medicaid-thesis"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                Explore project
               </a>
-
-
-              <a
-                class="button button-secondary"
-                href="https://github.com/franklinaadwoaaddae-wq"
-                target="_blank"
-              >
-                GitHub Profile
-              </a>
-
             </div>
 
           </div>
-
-        </div>
+        </article>
 
       </div>
-
     </section>
 
 
-
-    <!-- =====================================================
-         RESEARCH INTERESTS
-         ===================================================== -->
-
-    <section id="interests">
-
+    <!-- RESEARCH INTERESTS -->
+    <section class="content-section" id="interests">
       <div class="container">
 
-        <div class="section-kicker">
-          Research
+        <div class="section-head reveal">
+          <div>
+            <div class="section-number">02 / Interests</div>
+            <h2 class="section-title">Questions I like to chase.</h2>
+          </div>
+
+          <p class="section-description">
+            I am interested in both the statistical methodology and
+            the substantive questions behind an analysis—especially
+            when large or complex datasets can reveal something useful.
+          </p>
         </div>
 
+        <div class="interest-grid">
 
-        <h2 class="section-heading">
-          Research Interests
-        </h2>
-
-
-        <p class="section-intro">
-          Areas that shape the questions, methods, and applied
-          research problems I am interested in developing further.
-        </p>
-
-
-        <div class="research-grid">
-
-
-          <article class="research-item">
-
-            <div class="research-number">
-              01
-            </div>
-
-            <h3>
-              Causal Inference
-            </h3>
-
+          <article class="interest-card reveal">
+            <div class="interest-index">01</div>
+            <h3>Causal Inference</h3>
             <p>
               Estimating treatment and policy effects from
-              observational data using modern applied statistical
-              methods.
+              observational data using modern statistical methods.
             </p>
-
           </article>
 
-
-
-          <article class="research-item">
-
-            <div class="research-number">
-              02
-            </div>
-
-            <h3>
-              Public Health Analytics
-            </h3>
-
+          <article class="interest-card reveal">
+            <div class="interest-index">02</div>
+            <h3>Machine Learning</h3>
             <p>
-              Using statistical evidence to understand healthcare
-              access, preventive care, health policy, and population
-              outcomes.
+              Exploring statistical learning approaches for complex,
+              high-dimensional, and large-scale applied data.
             </p>
-
           </article>
 
-
-
-          <article class="research-item">
-
-            <div class="research-number">
-              03
-            </div>
-
-            <h3>
-              Machine Learning
-            </h3>
-
+          <article class="interest-card reveal">
+            <div class="interest-index">03</div>
+            <h3>Health & Policy</h3>
             <p>
-              Exploring statistical and machine-learning approaches
-              for large-scale data and applied research questions.
+              Studying healthcare access, preventive care, policy
+              interventions, and population-level outcomes.
             </p>
+          </article>
 
+          <article class="interest-card reveal">
+            <div class="interest-index">04</div>
+            <h3>Education Data</h3>
+            <p>
+              Using quantitative methods and large-scale educational
+              data to investigate meaningful questions about students
+              and educational systems.
+            </p>
           </article>
 
         </div>
-
       </div>
-
     </section>
 
 
-
-    <!-- =====================================================
-         EXPERIENCE
-         ===================================================== -->
-
-    <section class="alternate" id="experience">
-
+    <!-- EXPERIENCE -->
+    <section class="content-section cream-section" id="experience">
       <div class="container">
 
-        <div class="section-kicker">
-          Background
+        <div class="section-head reveal">
+          <div>
+            <div class="section-number">03 / Background</div>
+            <h2 class="section-title">Research toolkit.</h2>
+          </div>
+
+          <p class="section-description">
+            My training continues to evolve across statistical
+            methodology, computing, reproducible research, and
+            research communication.
+          </p>
         </div>
-
-
-        <h2 class="section-heading">
-          Experience & Skills
-        </h2>
-
-
-        <p class="section-intro">
-          A snapshot of the technical and academic experience
-          supporting my current research.
-        </p>
-
 
         <div class="experience-grid">
 
+          <div class="experience-column reveal">
+            <h3>Academic</h3>
 
-          <div class="experience-block">
+            <div class="experience-item">
+              <strong>Doctoral Study · Applied Statistics</strong>
+              <span>University of Northern Colorado</span>
+            </div>
 
-            <h3>
-              Technical Skills
-            </h3>
+            <div class="experience-item">
+              <strong>Master's Research</strong>
+              <p>
+                Applied causal inference and health-policy research
+                using large-scale observational data.
+              </p>
+            </div>
 
-
-            <ul class="clean-list">
-
-              <li>R Programming</li>
-
-              <li>SAS Programming</li>
-
-              <li>Data Cleaning & Visualization</li>
-
-              <li>Difference-in-Differences</li>
-
-              <li>Event Study Methods</li>
-
-              <li>Double Machine Learning</li>
-
-              <li>Statistical Computing</li>
-
-              <li>LaTeX & Research Reporting</li>
-
-              <li>Reproducible Research Workflows</li>
-
-            </ul>
-
+            <div class="experience-item">
+              <strong>Research Portfolio</strong>
+              <p>
+                Building reproducible public projects through GitHub,
+                statistical code, documentation, and research outputs.
+              </p>
+            </div>
           </div>
 
+          <div class="experience-column reveal">
+            <h3>Methods & Tools</h3>
 
-
-          <div class="experience-block">
-
-            <h3>
-              Academic Highlights
-            </h3>
-
-
-            <div class="academic-item">
-
-              <strong>
-                PhD in Applied Statistics
-              </strong>
-
-              <span>
-                University of Northern Colorado · Present
-              </span>
-
+            <div class="experience-item">
+              <strong>Programming</strong>
+              <span>R · SAS</span>
             </div>
 
-
-            <div class="academic-item">
-
-              <strong>
-                Master's Research
-              </strong>
-
+            <div class="experience-item">
+              <strong>Methods</strong>
               <span>
-                Public health and policy evaluation using BRFSS data
-                and modern causal inference methods.
+                Causal inference · Difference-in-Differences ·
+                Event studies · Double Machine Learning
               </span>
-
             </div>
 
-
-            <div class="academic-item">
-
-              <strong>
-                Applied Statistical Research
-              </strong>
-
+            <div class="experience-item">
+              <strong>Research Workflow</strong>
               <span>
-                Developing experience with large datasets,
-                statistical modeling, reproducible workflows, and
-                research communication.
+                Data cleaning · Visualization · Reproducibility ·
+                LaTeX · GitHub
               </span>
-
             </div>
-
-
-            <div class="academic-item">
-
-              <strong>
-                Research Portfolio
-              </strong>
-
-              <span>
-                Building a public research portfolio through GitHub
-                containing statistical projects, code, documentation,
-                and research outputs.
-              </span>
-
-            </div>
-
           </div>
 
         </div>
-
       </div>
-
     </section>
 
 
+    <!-- FUN FACTS -->
+    <section class="content-section" id="beyond">
+      <div class="container">
 
-    <!-- =====================================================
-         CONTACT
-         ===================================================== -->
+        <div class="section-head reveal">
+          <div>
+            <div class="section-number">04 / Beyond the Data</div>
+            <h2 class="section-title">There is life outside R.</h2>
+          </div>
 
-    <section id="contact">
-
-      <div class="container contact-section">
-
-        <div class="section-kicker">
-          Connect
+          <p class="section-description">
+            Research is a big part of my world—but not the whole thing.
+            A few things that keep life interesting beyond models,
+            manuscripts, and datasets.
+          </p>
         </div>
 
+        <div class="fun-grid">
 
-        <h2 class="section-heading">
-          Contact
-        </h2>
+          <article class="fun-card reveal">
+            <div class="fun-icon">📊</div>
+            <div>
+              <h3>Research brain</h3>
+              <p>
+                I enjoy taking complicated data and finding the story
+                hidden inside it.
+              </p>
+            </div>
+          </article>
 
+          <article class="fun-card reveal">
+            <div class="fun-icon">🏔️</div>
+            <div>
+              <h3>Colorado life</h3>
+              <p>
+                Graduate school comes with a pretty impressive
+                mountain backdrop.
+              </p>
+            </div>
+          </article>
 
-        <p class="section-intro">
-          My research portfolio will continue to grow with new
-          projects, publications, presentations, and doctoral work.
-          You can follow my work through GitHub or connect with me on
-          LinkedIn.
-        </p>
+          <article class="fun-card reveal">
+            <div class="fun-icon">✈️</div>
+            <div>
+              <h3>Explorer</h3>
+              <p>
+                I enjoy exploring new places and stepping outside my
+                usual environment.
+              </p>
+            </div>
+          </article>
 
+          <article class="fun-card reveal">
+            <div class="fun-icon">🎨</div>
+            <div>
+              <h3>Creative side</h3>
+              <p>
+                I enjoy creative projects and appreciate thoughtful,
+                intentional design.
+              </p>
+            </div>
+          </article>
 
-        <div class="contact-links">
-
-          <a
-            class="button button-primary"
-            href="https://github.com/franklinaadwoaaddae-wq"
-            target="_blank"
-          >
-            GitHub
-          </a>
-
-
-          <a
-            class="button button-secondary"
-            href="https://www.linkedin.com/in/franklina-a-246054160"
-            target="_blank"
-          >
-            LinkedIn
-          </a>
+          <article class="fun-card reveal">
+            <div class="fun-icon">✨</div>
+            <div>
+              <h3>Always learning</h3>
+              <p>
+                New methods, new tools, new questions—I like having
+                something new to figure out.
+              </p>
+            </div>
+          </article>
 
         </div>
-
       </div>
+    </section>
 
+
+    <!-- CONTACT -->
+    <section class="content-section" id="contact">
+      <div class="container">
+
+        <div class="contact-panel reveal">
+
+          <div class="section-number">
+            05 / Connect
+          </div>
+
+          <h2>
+            Research, ideas, and what comes next.
+          </h2>
+
+          <p>
+            Follow my research and projects through GitHub, Google
+            Scholar, ResearchGate, ORCID, or connect with me
+            professionally on LinkedIn.
+          </p>
+
+          <div class="identity-rail">
+
+            <a class="identity-link"
+               href="https://github.com/franklinaadwoaaddae-wq"
+               target="_blank"
+               rel="noopener noreferrer">
+              <span class="short-label">GitHub</span>
+            </a>
+
+            <a class="identity-link"
+               href="https://www.linkedin.com/in/franklina-a-246054160"
+               target="_blank"
+               rel="noopener noreferrer">
+              <span class="short-label">LinkedIn</span>
+            </a>
+
+            <a class="identity-link"
+               href="https://scholar.google.com/citations?user=blxx2e4AAAAJ&hl=en"
+               target="_blank"
+               rel="noopener noreferrer">
+              <span class="short-label">Scholar</span>
+            </a>
+
+            <a class="identity-link"
+               href="https://www.researchgate.net/profile/Franklina-Addae-2"
+               target="_blank"
+               rel="noopener noreferrer">
+              <span class="short-label">ResearchGate</span>
+            </a>
+
+            <a class="identity-link"
+               href="https://orcid.org/0009-0004-3648-9271"
+               target="_blank"
+               rel="noopener noreferrer">
+              <span class="short-label">ORCID</span>
+            </a>
+
+          </div>
+
+        </div>
+      </div>
     </section>
 
   </main>
 
 
-
-  <!-- =======================================================
-       FOOTER
-       ======================================================= -->
-
+  <!-- FOOTER -->
   <footer>
-
     <div class="container footer-inner">
-
-      <div>
-        © 2026 Franklina Addae
-      </div>
-
-      <div class="footer-monogram">
-        FA · Applied Statistics
-      </div>
-
+      <span>© 2026 Franklina Addae</span>
+      <span>Applied Statistics · Research · Data</span>
     </div>
-
   </footer>
 
 
-
-  <!-- =======================================================
-       ANALYTICS EVENT TRACKING
-       ======================================================= -->
-
+  <!-- INTERACTIONS -->
   <script>
 
-    function trackEvent(name, params = {}) {
+    // Scroll reveal
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.14 }
+    );
 
-      if (typeof gtag === "function") {
-
-        gtag("event", name, params);
-
-      }
-
-    }
-
-
-    document.querySelectorAll("a").forEach(function(link) {
-
-      link.addEventListener("click", function() {
-
-        const href = link.getAttribute("href") || "";
-
-
-        if (href.includes("github.com")) {
-
-          trackEvent("click_github", {
-            link_text: link.textContent.trim()
-          });
-
-        }
-
-
-        if (href.includes("linkedin.com")) {
-
-          trackEvent("click_linkedin", {
-            link_text: link.textContent.trim()
-          });
-
-        }
-
-      });
-
+    document.querySelectorAll(".reveal").forEach((element) => {
+      revealObserver.observe(element);
     });
 
 
-    const observed = new Set();
+    // Active navigation section
+    const pageSections = document.querySelectorAll(
+      "section[id]"
+    );
 
-    const sections =
-      document.querySelectorAll("section, header");
+    const navigationLinks = document.querySelectorAll(
+      ".nav-links a"
+    );
 
-
-    const observer =
-      new IntersectionObserver((entries) => {
-
-        entries.forEach(entry => {
-
+    const sectionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
 
-            const id =
-              entry.target.id ||
-              entry.target.tagName;
+            navigationLinks.forEach((link) => {
+              link.classList.remove("active");
+            });
 
+            const activeLink = document.querySelector(
+              '.nav-links a[href="#' +
+              entry.target.id +
+              '"]'
+            );
 
-            if (!observed.has(id)) {
-
-              observed.add(id);
-
-              trackEvent("view_section", {
-                section: id
-              });
-
+            if (activeLink) {
+              activeLink.classList.add("active");
             }
-
           }
-
         });
+      },
+      {
+        threshold: 0.35
+      }
+    );
 
-      }, {
-        threshold: 0.4
+    pageSections.forEach((section) => {
+      sectionObserver.observe(section);
+    });
+
+
+    // Existing analytics-compatible click tracking
+    function trackEvent(name, params = {}) {
+      if (typeof gtag === "function") {
+        gtag("event", name, params);
+      }
+    }
+
+    document.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+
+        const href = link.getAttribute("href") || "";
+
+        if (href.includes("github.com")) {
+          trackEvent("click_github", {
+            link_text: link.textContent.trim()
+          });
+        }
+
+        if (href.includes("linkedin.com")) {
+          trackEvent("click_linkedin", {
+            link_text: link.textContent.trim()
+          });
+        }
+
+        if (href.includes("scholar.google.com")) {
+          trackEvent("click_google_scholar");
+        }
+
+        if (href.includes("researchgate.net")) {
+          trackEvent("click_researchgate");
+        }
+
+        if (href.includes("orcid.org")) {
+          trackEvent("click_orcid");
+        }
+
       });
-
-
-    sections.forEach(section => {
-
-      observer.observe(section);
-
     });
 
   </script>
 
-
 </body>
-
 </html>
