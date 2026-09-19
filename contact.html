@@ -39,21 +39,15 @@
     :root {
       --navy: #0b2a4a;
       --navy-soft: #173d64;
-
       --gold: #c89218;
       --gold-light: #ddb957;
-
       --sandstone: #c88f72;
       --sandstone-light: #ead8c8;
-
       --cream: #f6f0e7;
       --cream-light: #fbf8f2;
-
       --text: #172334;
       --text-soft: #4f5660;
-
       --white: #ffffff;
-
       --max-width: 1180px;
     }
 
@@ -79,9 +73,7 @@
         serif;
 
       color: var(--text);
-
       background: var(--cream);
-
       line-height: 1.65;
 
       -webkit-font-smoothing: antialiased;
@@ -104,7 +96,6 @@
     .site-header {
       position: sticky;
       top: 0;
-
       z-index: 100;
 
       background: rgba(248, 243, 235, 0.96);
@@ -152,7 +143,6 @@
       border-radius: 50%;
 
       background: var(--navy);
-
       color: var(--gold-light);
 
       border: 2px solid var(--gold);
@@ -176,7 +166,6 @@
       color: var(--navy);
 
       font-size: 1.35rem;
-
       font-weight: 600;
 
       letter-spacing: 0.2px;
@@ -204,7 +193,6 @@
       text-decoration: none;
 
       font-size: 0.94rem;
-
       font-weight: 500;
     }
 
@@ -256,9 +244,7 @@
         url("mountain-bg.jpg");
 
       background-size: cover;
-
       background-position: center;
-
       background-attachment: fixed;
     }
 
@@ -266,7 +252,6 @@
       content: "";
 
       position: absolute;
-
       inset: 0;
 
       pointer-events: none;
@@ -306,7 +291,6 @@
         sans-serif;
 
       font-size: 0.72rem;
-
       font-weight: 800;
 
       letter-spacing: 3px;
@@ -402,7 +386,6 @@
 
     .email-button {
       display: inline-flex;
-
       align-items: center;
 
       gap: 10px;
@@ -414,7 +397,6 @@
       border-radius: 4px;
 
       background: var(--navy);
-
       color: var(--white);
 
       text-decoration: none;
@@ -428,7 +410,6 @@
         sans-serif;
 
       font-size: 0.78rem;
-
       font-weight: 700;
 
       transition:
@@ -495,7 +476,6 @@
 
     .contact-item {
       display: flex;
-
       align-items: flex-start;
 
       gap: 14px;
@@ -520,7 +500,6 @@
       height: 37px;
 
       display: flex;
-
       align-items: center;
       justify-content: center;
 
@@ -529,7 +508,6 @@
       border-radius: 50%;
 
       background: var(--navy);
-
       color: var(--gold-light);
     }
 
@@ -553,7 +531,6 @@
         sans-serif;
 
       font-size: 0.61rem;
-
       font-weight: 800;
 
       letter-spacing: 1.1px;
@@ -579,7 +556,7 @@
 
 
     /* ========================================================
-       ACADEMIC & PROFESSIONAL PROFILES
+       FIND ME ONLINE
        ======================================================== */
 
     .profile-section {
@@ -639,7 +616,6 @@
 
     .profile-link {
       display: flex;
-
       align-items: center;
 
       gap: 13px;
@@ -668,7 +644,6 @@
         sans-serif;
 
       font-size: 0.78rem;
-
       font-weight: 700;
 
       backdrop-filter: blur(5px);
@@ -698,6 +673,35 @@
       font-size: 1.15rem;
 
       text-align: center;
+    }
+
+
+    /* ========================================================
+       OWLINDEX OWL ICON
+       ======================================================== */
+
+    .owl-icon {
+      width: 22px;
+      height: 22px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      flex-shrink: 0;
+    }
+
+    .owl-icon svg {
+      width: 21px;
+      height: 21px;
+
+      fill: none;
+      stroke: var(--gold);
+
+      stroke-width: 1.9;
+
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
 
@@ -1227,7 +1231,80 @@
             rel="noopener noreferrer"
           >
 
-            <i class="fa-solid fa-feather"></i>
+            <!-- Owl symbol -->
+            <span
+              class="owl-icon"
+              aria-hidden="true"
+            >
+
+              <svg
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+
+                <!-- Owl ears/head -->
+                <path
+                  d="M5.2 8.4
+                     4.2 4.6
+                     8.2 6.5
+                     C9.3 5.9 10.6 5.6 12 5.6
+                     C13.4 5.6 14.7 5.9 15.8 6.5
+                     L19.8 4.6
+                     L18.8 8.4
+                     C19.6 9.6 20 11 20 12.5
+                     C20 17 16.4 20.5 12 20.5
+                     C7.6 20.5 4 17 4 12.5
+                     C4 11 4.4 9.6 5.2 8.4Z"
+                />
+
+                <!-- Left eye -->
+                <circle
+                  cx="8.7"
+                  cy="11.7"
+                  r="2.1"
+                />
+
+                <!-- Right eye -->
+                <circle
+                  cx="15.3"
+                  cy="11.7"
+                  r="2.1"
+                />
+
+                <!-- Pupils -->
+                <circle
+                  cx="8.7"
+                  cy="11.7"
+                  r="0.45"
+                  fill="var(--gold)"
+                  stroke="none"
+                />
+
+                <circle
+                  cx="15.3"
+                  cy="11.7"
+                  r="0.45"
+                  fill="var(--gold)"
+                  stroke="none"
+                />
+
+                <!-- Beak -->
+                <path
+                  d="M10.8 14.3
+                     L12 15.8
+                     L13.2 14.3"
+                />
+
+                <!-- Chest detail -->
+                <path
+                  d="M8.7 17
+                     C9.6 18 10.7 18.5 12 18.5
+                     C13.3 18.5 14.4 18 15.3 17"
+                />
+
+              </svg>
+
+            </span>
 
             OwlIndex
 
