@@ -13,12 +13,12 @@
   >
 
   <!-- ========================================================
-       BROWSER TAB ICON
+       FA FAVICON
        ======================================================== -->
 
   <link
     rel="icon"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23172d50'/%3E%3Ctext x='50' y='64' text-anchor='middle' font-family='Georgia' font-size='43' font-weight='bold' fill='white'%3EFA%3C/text%3E%3C/svg%3E"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='47' fill='%230b2a4a' stroke='%23c89218' stroke-width='4'/%3E%3Ctext x='50' y='64' text-anchor='middle' font-family='Georgia' font-size='43' fill='%23d6a62a'%3EFA%3C/text%3E%3C/svg%3E"
   >
 
   <!-- Font Awesome -->
@@ -38,30 +38,36 @@
 
     /* ========================================================
        COLOR PALETTE
-       Inspired by the graduation photograph
+       Graduation photo + sandstone inspiration
        ======================================================== */
 
     :root {
-      --black: #191a1d;
-      --charcoal: #34363a;
-      --gray: #77797d;
 
-      --navy: #172d50;
-      --navy-soft: #29466e;
+      --navy: #0b2a4a;
+      --navy-soft: #173d64;
 
-      --gold: #d3a51f;
-      --gold-soft: #ead9a4;
+      --gold: #c89218;
+      --gold-light: #ddb957;
 
-      --background: #faf9f6;
+      --sandstone: #c88f72;
+      --sandstone-light: #ead8c8;
+
+      --cream: #f6f0e7;
+      --cream-light: #fbf8f2;
+
+      --text: #172334;
+      --text-soft: #4f5660;
+
+      --line: #ded1bf;
+
       --white: #ffffff;
-      --line: #dfded9;
 
-      --max-width: 1120px;
+      --max-width: 1180px;
     }
 
 
     /* ========================================================
-       GENERAL
+       RESET / GENERAL
        ======================================================== */
 
     * {
@@ -76,17 +82,26 @@
       margin: 0;
 
       font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Helvetica,
-        Arial,
-        sans-serif;
+        Georgia,
+        "Times New Roman",
+        serif;
 
-      background: var(--background);
-      color: var(--black);
+      color: var(--text);
 
-      line-height: 1.65;
+      background:
+        radial-gradient(
+          circle at 82% 35%,
+          rgba(200, 143, 114, 0.12),
+          transparent 32%
+        ),
+        linear-gradient(
+          135deg,
+          var(--cream-light) 0%,
+          var(--cream) 55%,
+          #f1e5d7 100%
+        );
+
+      line-height: 1.6;
 
       -webkit-font-smoothing: antialiased;
     }
@@ -117,15 +132,15 @@
 
       z-index: 100;
 
-      background: rgba(250, 249, 246, 0.96);
+      background: rgba(248, 243, 235, 0.94);
 
       backdrop-filter: blur(12px);
 
-      border-bottom: 1px solid var(--line);
+      border-bottom: 1px solid rgba(11, 42, 74, 0.10);
     }
 
     .navigation {
-      min-height: 78px;
+      min-height: 84px;
 
       display: flex;
 
@@ -133,7 +148,7 @@
 
       justify-content: space-between;
 
-      gap: 30px;
+      gap: 35px;
     }
 
 
@@ -146,15 +161,15 @@
 
       align-items: center;
 
-      gap: 13px;
+      gap: 16px;
 
       text-decoration: none;
     }
 
     .brand-logo {
-      width: 40px;
+      width: 52px;
 
-      height: 40px;
+      height: 52px;
 
       display: flex;
 
@@ -162,24 +177,22 @@
 
       justify-content: center;
 
+      flex-shrink: 0;
+
       border-radius: 50%;
 
       background: var(--navy);
 
-      color: var(--white);
+      color: var(--gold-light);
+
+      border: 2px solid var(--gold);
 
       font-family:
         Georgia,
         "Times New Roman",
         serif;
 
-      font-size: 0.94rem;
-
-      font-weight: 700;
-
-      box-shadow:
-        0 0 0 3px
-        rgba(211, 165, 31, 0.12);
+      font-size: 1.25rem;
 
       transition:
         transform 0.2s ease,
@@ -187,22 +200,21 @@
     }
 
     .brand:hover .brand-logo {
-      transform: translateY(-1px);
+      transform: translateY(-2px);
 
       box-shadow:
-        0 0 0 4px
-        rgba(211, 165, 31, 0.17);
+        0 7px 18px
+        rgba(11, 42, 74, 0.14);
     }
 
     .brand-name {
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+      color: var(--navy);
 
-      font-size: 1.08rem;
+      font-size: 1.35rem;
 
       font-weight: 600;
+
+      letter-spacing: 0.2px;
     }
 
 
@@ -215,21 +227,21 @@
 
       align-items: center;
 
-      gap: 27px;
+      gap: 33px;
     }
 
     .nav-links a {
       position: relative;
 
-      padding: 29px 0 27px;
+      padding: 31px 0 27px;
+
+      color: var(--navy);
 
       text-decoration: none;
 
-      color: var(--charcoal);
+      font-size: 0.94rem;
 
-      font-size: 0.84rem;
-
-      font-weight: 600;
+      font-weight: 500;
 
       transition: color 0.2s ease;
     }
@@ -245,7 +257,7 @@
 
       width: 0;
 
-      height: 2px;
+      height: 3px;
 
       background: var(--gold);
 
@@ -253,7 +265,7 @@
     }
 
     .nav-links a:hover {
-      color: var(--navy);
+      color: var(--navy-soft);
     }
 
     .nav-links a:hover::after {
@@ -262,64 +274,171 @@
 
 
     /* ========================================================
-       HOMEPAGE
+       HERO / HOMEPAGE
        ======================================================== */
 
     .home {
-      min-height: calc(100vh - 78px - 65px);
+      position: relative;
 
-      display: flex;
+      overflow: hidden;
 
-      align-items: center;
+      min-height: calc(100vh - 84px);
 
-      padding: 70px 0 80px;
+      padding: 48px 0 58px;
     }
 
+
+    /* ========================================================
+       SUBTLE MOUNTAIN-INSPIRED BACKGROUND
+
+       This is abstract CSS decoration only.
+       It does NOT use a fake photograph.
+       ======================================================== */
+
+    .home::before {
+      content: "";
+
+      position: absolute;
+
+      right: -5%;
+
+      bottom: 0;
+
+      width: 66%;
+
+      height: 50%;
+
+      opacity: 0.16;
+
+      pointer-events: none;
+
+      background:
+        linear-gradient(
+          145deg,
+          transparent 0 32%,
+          rgba(11, 42, 74, 0.22) 32.5% 33.5%,
+          transparent 34% 100%
+        ),
+        linear-gradient(
+          35deg,
+          transparent 0 42%,
+          rgba(200, 143, 114, 0.34) 42.5% 44%,
+          transparent 44.5% 100%
+        );
+
+      clip-path:
+        polygon(
+          0 100%,
+          0 88%,
+          11% 77%,
+          19% 82%,
+          29% 63%,
+          37% 72%,
+          48% 46%,
+          55% 58%,
+          68% 27%,
+          77% 46%,
+          87% 22%,
+          100% 43%,
+          100% 100%
+        );
+
+      background-color: var(--sandstone);
+    }
+
+    .home::after {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+
+      right: 0;
+
+      bottom: 0;
+
+      height: 16%;
+
+      opacity: 0.09;
+
+      pointer-events: none;
+
+      background: var(--navy);
+
+      clip-path:
+        polygon(
+          0 78%,
+          7% 54%,
+          15% 67%,
+          23% 39%,
+          32% 62%,
+          42% 33%,
+          52% 60%,
+          62% 40%,
+          72% 68%,
+          81% 45%,
+          90% 65%,
+          100% 42%,
+          100% 100%,
+          0 100%
+        );
+    }
+
+
+    /* ========================================================
+       HERO GRID
+       ======================================================== */
+
     .home-layout {
+      position: relative;
+
+      z-index: 2;
+
       width: 100%;
 
       display: grid;
 
       grid-template-columns:
-        190px
+        300px
         minmax(0, 1fr);
 
-      gap: 68px;
+      gap: 54px;
 
-      align-items: center;
+      align-items: start;
 
-      animation: fadeIn 0.55s ease both;
+      animation: pageFade 0.6s ease both;
     }
 
 
     /* ========================================================
-       GRADUATION PHOTO
+       FULL GRADUATION PHOTO
 
-       IMPORTANT:
-       The photograph is NOT cropped.
-       There is no fixed height and no object-fit.
+       NO CROPPING:
+       - no fixed height
+       - no object-fit
+       - no object-position
        ======================================================== */
 
     .portrait-column {
-      width: 190px;
+      width: 300px;
 
-      align-self: center;
+      padding-top: 0;
     }
 
     .portrait {
-      width: 190px;
+      width: 300px;
 
       height: auto;
 
       display: block;
 
-      border-radius: 4px;
+      border-radius: 7px;
 
-      background: var(--white);
+      border: 1px solid rgba(11, 42, 74, 0.08);
 
       box-shadow:
-        0 12px 30px
-        rgba(23, 45, 80, 0.10);
+        0 14px 30px
+        rgba(56, 43, 29, 0.15);
     }
 
 
@@ -328,59 +447,84 @@
        ======================================================== */
 
     .intro {
-      max-width: 760px;
+      max-width: 770px;
+
+      padding-top: 7px;
     }
 
     .small-heading {
-      margin: 0 0 13px;
+      margin: 0 0 8px;
 
       color: var(--navy);
 
       text-transform: uppercase;
 
-      letter-spacing: 2.3px;
+      letter-spacing: 4px;
 
-      font-size: 0.68rem;
+      font-size: 0.72rem;
 
-      font-weight: 800;
+      font-weight: 600;
     }
 
     h1 {
-      margin: 0 0 13px;
+      margin: 0;
 
-      font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+      color: var(--navy);
 
       font-size:
-        clamp(3.1rem, 6vw, 4.75rem);
+        clamp(3.5rem, 6vw, 5rem);
 
-      line-height: 1;
+      line-height: 1.02;
 
-      font-weight: 500;
+      font-weight: 600;
 
-      letter-spacing: -2.3px;
-
-      color: var(--black);
+      letter-spacing: -2.5px;
     }
+
+
+    /* ========================================================
+       GOLD LINE
+       ======================================================== */
+
+    .name-accent {
+      width: 66px;
+
+      height: 3px;
+
+      margin: 13px 0 10px;
+
+      background: var(--gold);
+    }
+
+
+    /* ========================================================
+       ROLE + INSTITUTION
+       ======================================================== */
 
     .role {
       margin: 0 0 4px;
 
-      color: var(--charcoal);
+      color: var(--navy);
 
-      font-size: 1.03rem;
+      font-size: 1.34rem;
 
-      font-weight: 650;
+      line-height: 1.35;
+
+      font-weight: 700;
     }
 
     .institution {
-      margin: 0 0 29px;
+      margin: 0 0 23px;
 
-      color: var(--gray);
+      color: var(--navy-soft);
 
-      font-size: 0.95rem;
+      text-transform: uppercase;
+
+      letter-spacing: 3px;
+
+      font-size: 0.73rem;
+
+      font-weight: 500;
     }
 
 
@@ -389,23 +533,27 @@
        ======================================================== */
 
     .bio {
-      max-width: 710px;
+      max-width: 720px;
 
-      margin: 0 0 17px;
+      margin: 0 0 13px;
 
-      color: var(--charcoal);
+      color: var(--text);
 
       font-size: 1rem;
+
+      line-height: 1.55;
     }
 
     .personal {
-      max-width: 710px;
+      max-width: 720px;
 
       margin: 0;
 
-      color: var(--gray);
+      color: var(--text-soft);
 
-      font-size: 0.94rem;
+      font-size: 0.96rem;
+
+      line-height: 1.55;
     }
 
 
@@ -418,66 +566,87 @@
 
       flex-wrap: wrap;
 
-      gap: 8px;
+      gap: 9px;
 
-      margin-top: 29px;
+      margin-top: 22px;
     }
 
     .interest {
-      padding: 6px 11px;
+      padding: 7px 14px;
 
-      border: 1px solid var(--line);
+      border: 1px solid rgba(200, 146, 24, 0.72);
 
-      border-radius: 4px;
+      border-radius: 22px;
 
-      background: rgba(255, 255, 255, 0.45);
+      background:
+        rgba(255, 255, 255, 0.20);
 
-      color: var(--charcoal);
+      color: var(--navy);
 
-      font-size: 0.74rem;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Helvetica,
+        Arial,
+        sans-serif;
 
-      font-weight: 600;
+      font-size: 0.72rem;
+
+      font-weight: 700;
 
       transition:
-        color 0.2s ease,
-        border-color 0.2s ease,
+        transform 0.2s ease,
         background 0.2s ease,
-        transform 0.2s ease;
+        box-shadow 0.2s ease;
     }
 
     .interest:hover {
-      color: var(--navy);
-
-      border-color: var(--gold-soft);
-
-      background: rgba(211, 165, 31, 0.06);
-
       transform: translateY(-2px);
+
+      background:
+        rgba(255, 255, 255, 0.58);
+
+      box-shadow:
+        0 5px 12px
+        rgba(11, 42, 74, 0.07);
     }
 
 
     /* ========================================================
-       SOCIAL + ACADEMIC PROFILE ICONS
+       SOCIAL LINKS
        ======================================================== */
 
     .socials {
       display: flex;
 
-      align-items: center;
+      align-items: flex-start;
 
       flex-wrap: wrap;
 
-      gap: 14px;
+      gap: 19px;
 
-      margin-top: 29px;
+      margin-top: 23px;
+    }
+
+    .social-item {
+      min-width: 58px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      gap: 6px;
     }
 
     .social-link {
       position: relative;
 
-      width: 37px;
+      width: 46px;
 
-      height: 37px;
+      height: 46px;
 
       display: flex;
 
@@ -487,21 +656,27 @@
 
       border-radius: 50%;
 
-      border: 1px solid transparent;
+      border: 2px solid var(--gold);
+
+      background: var(--navy);
+
+      color: var(--white);
 
       text-decoration: none;
 
-      color: var(--charcoal);
+      box-shadow:
+        0 5px 12px
+        rgba(11, 42, 74, 0.10);
 
       transition:
-        color 0.2s ease,
-        border-color 0.2s ease,
+        transform 0.2s ease,
         background 0.2s ease,
-        transform 0.2s ease;
+        color 0.2s ease,
+        box-shadow 0.2s ease;
     }
 
     .social-link i {
-      font-size: 1.23rem;
+      font-size: 1.22rem;
     }
 
     .social-link .ai {
@@ -509,68 +684,25 @@
     }
 
     .social-link:hover {
+      transform: translateY(-3px);
+
+      background: var(--navy-soft);
+
+      color: var(--gold-light);
+
+      box-shadow:
+        0 8px 18px
+        rgba(11, 42, 74, 0.18);
+    }
+
+    .social-label {
       color: var(--navy);
 
-      border-color: var(--gold-soft);
+      font-size: 0.69rem;
 
-      background: var(--white);
-
-      transform: translateY(-2px);
-    }
-
-
-    /* ========================================================
-       ICON TOOLTIPS
-       ======================================================== */
-
-    .social-link::after {
-      content: attr(data-label);
-
-      position: absolute;
-
-      left: 50%;
-
-      bottom: -35px;
-
-      transform:
-        translateX(-50%)
-        translateY(-3px);
-
-      padding: 4px 8px;
+      line-height: 1;
 
       white-space: nowrap;
-
-      border-radius: 4px;
-
-      background: var(--navy);
-
-      color: var(--white);
-
-      font-size: 0.63rem;
-
-      font-weight: 500;
-
-      opacity: 0;
-
-      visibility: hidden;
-
-      pointer-events: none;
-
-      transition:
-        opacity 0.2s ease,
-        transform 0.2s ease;
-
-      z-index: 20;
-    }
-
-    .social-link:hover::after {
-      opacity: 1;
-
-      visibility: visible;
-
-      transform:
-        translateX(-50%)
-        translateY(0);
     }
 
 
@@ -579,11 +711,11 @@
        ======================================================== */
 
     .beyond {
-      margin-top: 45px;
+      margin-top: 25px;
 
-      padding-top: 19px;
+      padding-top: 16px;
 
-      border-top: 1px solid var(--line);
+      border-top: 2px solid rgba(200, 146, 24, 0.72);
 
       display: flex;
 
@@ -591,37 +723,75 @@
 
       flex-wrap: wrap;
 
-      gap: 9px;
+      gap: 11px;
 
-      color: var(--gray);
+      color: var(--text-soft);
 
-      font-size: 0.78rem;
+      font-size: 0.76rem;
     }
 
     .beyond-title {
-      margin-right: 3px;
-
       color: var(--navy);
 
       font-weight: 700;
+
+      letter-spacing: 0.8px;
     }
 
-    .dot {
+    .divider {
       color: var(--gold);
 
-      font-weight: 700;
+      font-size: 1rem;
     }
 
 
     /* ========================================================
-       PAGE LOAD ANIMATION
+       FOOTER
        ======================================================== */
 
-    @keyframes fadeIn {
+    footer {
+      position: relative;
+
+      z-index: 5;
+
+      padding: 18px 0;
+
+      background: var(--navy);
+
+      border-top: 2px solid var(--gold);
+
+      color: rgba(255, 255, 255, 0.86);
+    }
+
+    .footer-content {
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      font-size: 0.75rem;
+    }
+
+    .footer-tagline {
+      font-style: italic;
+
+      color: rgba(255, 255, 255, 0.80);
+    }
+
+
+    /* ========================================================
+       LOAD ANIMATION
+       ======================================================== */
+
+    @keyframes pageFade {
+
       from {
         opacity: 0;
 
-        transform: translateY(6px);
+        transform: translateY(7px);
       }
 
       to {
@@ -633,60 +803,43 @@
 
 
     /* ========================================================
-       FOOTER
-       ======================================================== */
-
-    footer {
-      border-top: 1px solid var(--line);
-
-      padding: 21px 0;
-
-      color: var(--gray);
-
-      font-size: 0.74rem;
-    }
-
-    .footer-content {
-      display: flex;
-
-      align-items: center;
-
-      justify-content: space-between;
-
-      gap: 20px;
-    }
-
-
-    /* ========================================================
        TABLET
        ======================================================== */
 
-    @media (max-width: 900px) {
+    @media (max-width: 980px) {
 
       .nav-links {
-        gap: 17px;
+        gap: 18px;
       }
 
       .home-layout {
         grid-template-columns:
-          165px
+          235px
           minmax(0, 1fr);
 
-        gap: 44px;
+        gap: 38px;
       }
 
       .portrait-column {
-        width: 165px;
+        width: 235px;
       }
 
       .portrait {
-        width: 165px;
+        width: 235px;
 
         height: auto;
       }
 
       h1 {
-        font-size: 3.6rem;
+        font-size: 3.8rem;
+      }
+
+      .role {
+        font-size: 1.15rem;
+      }
+
+      .socials {
+        gap: 13px;
       }
     }
 
@@ -695,12 +848,20 @@
        MOBILE
        ======================================================== */
 
-    @media (max-width: 720px) {
+    @media (max-width: 760px) {
 
       .navigation {
         min-height: auto;
 
-        padding: 15px 0;
+        padding: 13px 0;
+      }
+
+      .brand-logo {
+        width: 42px;
+
+        height: 42px;
+
+        font-size: 1rem;
       }
 
       .brand-name {
@@ -708,11 +869,11 @@
       }
 
       .nav-links {
-        max-width: calc(100vw - 90px);
+        max-width: calc(100vw - 85px);
 
         overflow-x: auto;
 
-        gap: 15px;
+        gap: 17px;
 
         scrollbar-width: none;
       }
@@ -722,19 +883,19 @@
       }
 
       .nav-links a {
-        padding: 10px 0;
+        padding: 9px 0;
 
         white-space: nowrap;
 
-        font-size: 0.74rem;
+        font-size: 0.75rem;
       }
 
       .nav-links a::after {
-        bottom: 5px;
+        bottom: 3px;
       }
 
       .home {
-        padding: 48px 0 60px;
+        padding: 36px 0 48px;
       }
 
       .home-layout {
@@ -742,19 +903,27 @@
 
         flex-direction: column;
 
-        align-items: flex-start;
-
         gap: 34px;
       }
 
       .portrait-column {
-        width: 145px;
+        width: min(280px, 80vw);
       }
 
       .portrait {
-        width: 145px;
+        width: 100%;
 
         height: auto;
+      }
+
+      .intro {
+        padding-top: 0;
+      }
+
+      .small-heading {
+        font-size: 0.64rem;
+
+        letter-spacing: 3px;
       }
 
       h1 {
@@ -763,18 +932,36 @@
         letter-spacing: -1.7px;
       }
 
-      .small-heading {
-        font-size: 0.63rem;
+      .role {
+        font-size: 1.05rem;
+      }
+
+      .institution {
+        letter-spacing: 2px;
+
+        font-size: 0.66rem;
       }
 
       .socials {
-        gap: 10px;
+        gap: 14px;
+      }
+
+      .social-item {
+        min-width: 52px;
       }
 
       .social-link {
-        width: 32px;
+        width: 42px;
 
-        height: 32px;
+        height: 42px;
+      }
+
+      .social-label {
+        font-size: 0.62rem;
+      }
+
+      .beyond {
+        gap: 8px;
       }
 
       .footer-content {
@@ -873,7 +1060,8 @@
 
 
         <!-- ===================================================
-             FULL GRADUATION PHOTO
+             ACTUAL GRADUATION PHOTO
+             FULL IMAGE — NO CROPPING
              =================================================== -->
 
         <aside class="portrait-column">
@@ -905,6 +1093,9 @@
           </h1>
 
 
+          <div class="name-accent"></div>
+
+
           <p class="role">
             Doctoral Researcher in Applied Statistics
           </p>
@@ -915,7 +1106,8 @@
           </p>
 
 
-          <!-- Bio -->
+
+          <!-- BIO -->
 
           <p class="bio">
 
@@ -976,103 +1168,145 @@
           <div class="socials">
 
 
-            <!-- Email -->
+            <!-- EMAIL -->
 
-            <a
-              class="social-link"
-              href="mailto:franklina.adwoa.addae@gmail.com"
-              aria-label="Email Franklina Addae"
-              data-label="Email"
-            >
+            <div class="social-item">
 
-              <i class="fa-solid fa-envelope"></i>
+              <a
+                class="social-link"
+                href="mailto:franklina.adwoa.addae@gmail.com"
+                aria-label="Email Franklina Addae"
+              >
 
-            </a>
+                <i class="fa-solid fa-envelope"></i>
 
+              </a>
 
+              <span class="social-label">
+                Email
+              </span>
 
-            <!-- GitHub -->
-
-            <a
-              class="social-link"
-              href="https://github.com/franklinaadwoaaddae-wq"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-              data-label="GitHub"
-            >
-
-              <i class="fa-brands fa-github"></i>
-
-            </a>
+            </div>
 
 
 
-            <!-- LinkedIn -->
+            <!-- GITHUB -->
 
-            <a
-              class="social-link"
-              href="https://www.linkedin.com/in/franklina-a-246054160"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              data-label="LinkedIn"
-            >
+            <div class="social-item">
 
-              <i class="fa-brands fa-linkedin-in"></i>
+              <a
+                class="social-link"
+                href="https://github.com/franklinaadwoaaddae-wq"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+              >
 
-            </a>
+                <i class="fa-brands fa-github"></i>
 
+              </a>
 
+              <span class="social-label">
+                GitHub
+              </span>
 
-            <!-- Google Scholar -->
-
-            <a
-              class="social-link"
-              href="https://scholar.google.com/citations?user=blxx2e4AAAAJ&hl=en"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Google Scholar"
-              data-label="Google Scholar"
-            >
-
-              <i class="ai ai-google-scholar"></i>
-
-            </a>
+            </div>
 
 
 
-            <!-- ResearchGate -->
+            <!-- LINKEDIN -->
 
-            <a
-              class="social-link"
-              href="https://www.researchgate.net/profile/Franklina-Addae-2"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="ResearchGate"
-              data-label="ResearchGate"
-            >
+            <div class="social-item">
 
-              <i class="ai ai-researchgate"></i>
+              <a
+                class="social-link"
+                href="https://www.linkedin.com/in/franklina-a-246054160"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
 
-            </a>
+                <i class="fa-brands fa-linkedin-in"></i>
+
+              </a>
+
+              <span class="social-label">
+                LinkedIn
+              </span>
+
+            </div>
+
+
+
+            <!-- GOOGLE SCHOLAR -->
+
+            <div class="social-item">
+
+              <a
+                class="social-link"
+                href="https://scholar.google.com/citations?user=blxx2e4AAAAJ&hl=en"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Google Scholar"
+              >
+
+                <i class="ai ai-google-scholar"></i>
+
+              </a>
+
+              <span class="social-label">
+                Google Scholar
+              </span>
+
+            </div>
+
+
+
+            <!-- RESEARCHGATE -->
+
+            <div class="social-item">
+
+              <a
+                class="social-link"
+                href="https://www.researchgate.net/profile/Franklina-Addae-2"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="ResearchGate"
+              >
+
+                <i class="ai ai-researchgate"></i>
+
+              </a>
+
+              <span class="social-label">
+                ResearchGate
+              </span>
+
+            </div>
 
 
 
             <!-- ORCID -->
 
-            <a
-              class="social-link"
-              href="https://orcid.org/0009-0004-3648-9271"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="ORCID"
-              data-label="ORCID"
-            >
+            <div class="social-item">
 
-              <i class="ai ai-orcid"></i>
+              <a
+                class="social-link"
+                href="https://orcid.org/0009-0004-3648-9271"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="ORCID"
+              >
 
-            </a>
+                <i class="ai ai-orcid"></i>
+
+              </a>
+
+              <span class="social-label">
+                ORCID
+              </span>
+
+            </div>
 
 
           </div>
@@ -1089,29 +1323,25 @@
               Beyond research
             </span>
 
+            <span class="divider">|</span>
+
             <span>
               Exploring new places
             </span>
 
-            <span class="dot">
-              ·
-            </span>
+            <span class="divider">|</span>
 
             <span>
               Staying active
             </span>
 
-            <span class="dot">
-              ·
-            </span>
+            <span class="divider">|</span>
 
             <span>
               Creative projects
             </span>
 
-            <span class="dot">
-              ·
-            </span>
+            <span class="divider">|</span>
 
             <span>
               Life in Colorado
@@ -1143,8 +1373,8 @@
         © 2026 Franklina Addae
       </span>
 
-      <span>
-        Applied Statistics · Research · Data
+      <span class="footer-tagline">
+        Applied Statistics · Research · Data for People and Possibility
       </span>
 
     </div>
