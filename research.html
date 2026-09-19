@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Research | Franklina Addae</title>
+
+  <meta
+    name="description"
+    content="Research interests and methodological areas of Franklina Addae, doctoral researcher in Applied Statistics."
+  >
+
+  <!-- FA Favicon -->
+  <link
+    rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='47' fill='%230b2a4a' stroke='%23c89218' stroke-width='4'/%3E%3Ctext x='50' y='64' text-anchor='middle' font-family='Georgia' font-size='43' fill='%23d6a62a'%3EFA%3C/text%3E%3C/svg%3E"
+  >
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  >
+
+  <style>
+
+    /* ========================================================
+       COLORS
+       ======================================================== */
+
+    :root {
+      --navy: #0b2a4a;
+      --navy-soft: #173d64;
+
+      --gold: #c89218;
+      --gold-light: #ddb957;
+
+      --sandstone: #c88f72;
+      --sandstone-light: #ead8c8;
+
+      --cream: #f6f0e7;
+      --cream-light: #fbf8f2;
+
+      --text: #172334;
+      --text-soft: #4f5660;
+
+      --white: #ffffff;
+
+      --max-width: 1180px;
+    }
+
+
+    /* ========================================================
+       GENERAL
+       ======================================================== */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      color: var(--text);
+
+      background: var(--cream);
+
+      line-height: 1.65;
+
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(90%, var(--max-width));
+      margin: 0 auto;
+    }
+
+
+    /* ========================================================
+       HEADER
+       ======================================================== */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+
+      z-index: 100;
+
+      background: rgba(248, 243, 235, 0.96);
+
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+
+      border-bottom: 1px solid rgba(11, 42, 74, 0.10);
+    }
+
+    .navigation {
+      min-height: 84px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 35px;
+    }
+
+
+    /* ========================================================
+       BRAND
+       ======================================================== */
+
+    .brand {
+      display: flex;
+      align-items: center;
+
+      gap: 16px;
+
+      text-decoration: none;
+    }
+
+    .brand-logo {
+      width: 52px;
+      height: 52px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      flex-shrink: 0;
+
+      border-radius: 50%;
+
+      background: var(--navy);
+
+      color: var(--gold-light);
+
+      border: 2px solid var(--gold);
+
+      font-size: 1.25rem;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .brand:hover .brand-logo {
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 7px 18px
+        rgba(11, 42, 74, 0.14);
+    }
+
+    .brand-name {
+      color: var(--navy);
+
+      font-size: 1.35rem;
+
+      font-weight: 600;
+
+      letter-spacing: 0.2px;
+    }
+
+
+    /* ========================================================
+       NAVIGATION
+       ======================================================== */
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+
+      gap: 33px;
+    }
+
+    .nav-links a {
+      position: relative;
+
+      padding: 31px 0 27px;
+
+      color: var(--navy);
+
+      text-decoration: none;
+
+      font-size: 0.94rem;
+
+      font-weight: 500;
+    }
+
+    .nav-links a::after {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      bottom: 21px;
+
+      width: 0;
+      height: 3px;
+
+      background: var(--gold);
+
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-links a.active {
+      font-weight: 700;
+    }
+
+
+    /* ========================================================
+       REAL MOUNTAIN BACKGROUND
+       ======================================================== */
+
+    .page {
+      position: relative;
+
+      min-height: calc(100vh - 84px);
+
+      overflow: hidden;
+
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(250, 246, 239, 0.97) 0%,
+          rgba(250, 246, 239, 0.95) 42%,
+          rgba(248, 241, 231, 0.89) 70%,
+          rgba(239, 218, 195, 0.78) 100%
+        ),
+        url("mountain-bg.jpg");
+
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .page::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      pointer-events: none;
+
+      background:
+        radial-gradient(
+          circle at 80% 30%,
+          rgba(200, 143, 114, 0.10),
+          transparent 35%
+        );
+    }
+
+
+    /* ========================================================
+       PAGE HEADING
+       ======================================================== */
+
+    .page-heading {
+      position: relative;
+
+      z-index: 2;
+
+      padding: 56px 0 24px;
+    }
+
+    .eyebrow {
+      margin: 0 0 7px;
+
+      color: var(--gold);
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      font-size: 0.72rem;
+
+      font-weight: 800;
+
+      letter-spacing: 3px;
+
+      text-transform: uppercase;
+    }
+
+    .page-heading h1 {
+      margin: 0;
+
+      color: var(--navy);
+
+      font-size: clamp(3rem, 6vw, 4.6rem);
+
+      line-height: 1;
+
+      font-weight: 600;
+
+      letter-spacing: -2px;
+    }
+
+    .heading-line {
+      width: 65px;
+      height: 3px;
+
+      margin-top: 16px;
+
+      background: var(--gold);
+    }
+
+    .research-intro {
+      position: relative;
+
+      z-index: 2;
+
+      max-width: 820px;
+
+      margin: 0;
+
+      padding: 8px 0 44px;
+
+      color: var(--text);
+
+      font-size: 1.03rem;
+
+      line-height: 1.75;
+    }
+
+
+    /* ========================================================
+       RESEARCH AREAS
+       ======================================================== */
+
+    .research-content {
+      position: relative;
+
+      z-index: 2;
+
+      padding-bottom: 65px;
+    }
+
+    .research-section {
+      padding: 33px 0;
+
+      border-top: 1px solid rgba(200, 146, 24, 0.44);
+    }
+
+    .section-layout {
+      display: grid;
+
+      grid-template-columns: 220px minmax(0, 1fr);
+
+      gap: 52px;
+    }
+
+    .section-number {
+      margin: 0 0 6px;
+
+      color: var(--gold);
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      font-size: 0.69rem;
+
+      font-weight: 800;
+
+      letter-spacing: 2px;
+    }
+
+    .section-title {
+      margin: 0;
+
+      color: var(--navy);
+
+      font-size: 1.24rem;
+
+      line-height: 1.35;
+
+      font-weight: 700;
+    }
+
+    .section-title::after {
+      content: "";
+
+      display: block;
+
+      width: 38px;
+      height: 2px;
+
+      margin-top: 10px;
+
+      background: var(--gold);
+    }
+
+    .section-content {
+      max-width: 800px;
+    }
+
+    .section-content p {
+      margin: 0 0 18px;
+
+      font-size: 0.97rem;
+
+      line-height: 1.72;
+    }
+
+
+    /* ========================================================
+       METHOD TAGS
+       ======================================================== */
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 9px;
+
+      margin-top: 18px;
+    }
+
+    .tag {
+      padding: 7px 13px;
+
+      border: 1px solid rgba(200, 146, 24, 0.78);
+
+      border-radius: 20px;
+
+      background:
+        rgba(250, 246, 239, 0.73);
+
+      color: var(--navy);
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      font-size: 0.71rem;
+
+      font-weight: 700;
+
+      backdrop-filter: blur(4px);
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .tag:hover {
+      transform: translateY(-2px);
+
+      background: rgba(255, 255, 255, 0.90);
+    }
+
+
+    /* ========================================================
+       CURRENT DIRECTION
+       ======================================================== */
+
+    .direction-box {
+      margin-top: 13px;
+
+      padding: 22px 24px;
+
+      border-left: 3px solid var(--gold);
+
+      background:
+        rgba(250, 246, 239, 0.67);
+
+      border-radius: 0 6px 6px 0;
+
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+    }
+
+    .direction-box p {
+      margin: 0;
+
+      color: var(--text);
+
+      font-size: 0.95rem;
+
+      line-height: 1.7;
+    }
+
+
+    /* ========================================================
+       RESEARCH PRINCIPLES
+       ======================================================== */
+
+    .principles {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+      gap: 15px;
+
+      margin-top: 4px;
+    }
+
+    .principle {
+      padding: 20px 18px;
+
+      background:
+        rgba(250, 246, 239, 0.68);
+
+      border: 1px solid rgba(11, 42, 74, 0.09);
+
+      border-top: 2px solid var(--gold);
+
+      border-radius: 5px;
+
+      backdrop-filter: blur(5px);
+    }
+
+    .principle i {
+      margin-bottom: 11px;
+
+      color: var(--gold);
+
+      font-size: 1.2rem;
+    }
+
+    .principle h3 {
+      margin: 0 0 7px;
+
+      color: var(--navy);
+
+      font-size: 0.95rem;
+    }
+
+    .principle p {
+      margin: 0;
+
+      color: var(--text-soft);
+
+      font-size: 0.82rem;
+
+      line-height: 1.55;
+    }
+
+
+    /* ========================================================
+       PROJECT LINK
+       ======================================================== */
+
+    .project-link {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+      margin-top: 12px;
+
+      padding: 10px 17px;
+
+      border-radius: 4px;
+
+      background: var(--navy);
+
+      color: var(--white);
+
+      text-decoration: none;
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      font-size: 0.77rem;
+
+      font-weight: 700;
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .project-link:hover {
+      transform: translateY(-2px);
+
+      background: var(--navy-soft);
+    }
+
+    .project-link i {
+      color: var(--gold-light);
+    }
+
+
+    /* ========================================================
+       FOOTER
+       ======================================================== */
+
+    footer {
+      position: relative;
+
+      z-index: 5;
+
+      padding: 18px 0;
+
+      background: var(--navy);
+
+      border-top: 2px solid var(--gold);
+
+      color: rgba(255, 255, 255, 0.86);
+    }
+
+    .footer-content {
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+
+      font-size: 0.75rem;
+    }
+
+    .footer-tagline {
+      color: rgba(255, 255, 255, 0.80);
+
+      font-style: italic;
+    }
+
+
+    /* ========================================================
+       TABLET
+       ======================================================== */
+
+    @media (max-width: 900px) {
+
+      .nav-links {
+        gap: 18px;
+      }
+
+      .section-layout {
+        grid-template-columns: 180px minmax(0, 1fr);
+
+        gap: 35px;
+      }
+
+      .principles {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+
+    /* ========================================================
+       MOBILE
+       ======================================================== */
+
+    @media (max-width: 760px) {
+
+      .navigation {
+        min-height: auto;
+
+        padding: 13px 0;
+      }
+
+      .brand-logo {
+        width: 42px;
+        height: 42px;
+
+        font-size: 1rem;
+      }
+
+      .brand-name {
+        display: none;
+      }
+
+      .nav-links {
+        max-width: calc(100vw - 85px);
+
+        overflow-x: auto;
+
+        gap: 17px;
+
+        scrollbar-width: none;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav-links a {
+        padding: 9px 0;
+
+        white-space: nowrap;
+
+        font-size: 0.75rem;
+      }
+
+      .nav-links a::after {
+        bottom: 3px;
+      }
+
+      .page {
+        background-attachment: scroll;
+
+        background-position: 65% center;
+      }
+
+      .page-heading {
+        padding-top: 40px;
+      }
+
+      .section-layout {
+        display: block;
+      }
+
+      .section-title {
+        margin-bottom: 24px;
+      }
+
+      .principles {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-content {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 4px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- ========================================================
+       HEADER
+       ======================================================== -->
+
+  <header class="site-header">
+
+    <div class="container">
+
+      <nav class="navigation">
+
+
+        <a
+          class="brand"
+          href="index.html"
+        >
+
+          <span class="brand-logo">
+            FA
+          </span>
+
+          <span class="brand-name">
+            Franklina Addae
+          </span>
+
+        </a>
+
+
+        <div class="nav-links">
+
+          <a href="about.html">
+            About
+          </a>
+
+          <a
+            class="active"
+            href="research.html"
+          >
+            Research
+          </a>
+
+          <a href="publications.html">
+            Publications
+          </a>
+
+          <a href="projects.html">
+            Projects
+          </a>
+
+          <a href="cv.html">
+            CV
+          </a>
+
+          <a href="contact.html">
+            Contact
+          </a>
+
+        </div>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- ========================================================
+       RESEARCH PAGE
+       ======================================================== -->
+
+  <main class="page">
+
+
+    <!-- PAGE HEADING -->
+
+    <div class="container page-heading">
+
+      <p class="eyebrow">
+        Research
+      </p>
+
+      <h1>
+        Research Interests
+      </h1>
+
+      <div class="heading-line"></div>
+
+    </div>
+
+
+    <div class="container">
+
+      <p class="research-intro">
+
+        My research interests center on the use of modern
+        statistical methods to investigate substantive questions
+        in public health, education, and policy. I am particularly
+        interested in causal inference, machine learning, and
+        statistical computing for complex and large-scale data.
+
+      </p>
+
+    </div>
+
+
+
+    <!-- ======================================================
+         RESEARCH CONTENT
+         ====================================================== -->
+
+    <div class="container research-content">
+
+
+      <!-- ====================================================
+           CAUSAL INFERENCE
+           ==================================================== -->
+
+      <section class="research-section">
+
+        <div class="section-layout">
+
+          <div>
+
+            <p class="section-number">
+              01
+            </p>
+
+            <h2 class="section-title">
+              Causal Inference
+            </h2>
+
+          </div>
+
+
+          <div class="section-content">
+
+            <p>
+
+              I am interested in methods for estimating causal
+              effects using observational and quasi-experimental
+              data. A central part of this work is understanding
+              how research design, identifying assumptions, and
+              statistical methodology interact when evaluating
+              policies and interventions.
+
+            </p>
+
+
+            <div class="tags">
+
+              <span class="tag">
+                Difference-in-Differences
+              </span>
+
+              <span class="tag">
+                Event Studies
+              </span>
+
+              <span class="tag">
+                Treatment Effects
+              </span>
+
+              <span class="tag">
+                Observational Data
+              </span>
+
+              <span class="tag">
+                Policy Evaluation
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ====================================================
+           MACHINE LEARNING
+           ==================================================== -->
+
+      <section class="research-section">
+
+        <div class="section-layout">
+
+          <div>
+
+            <p class="section-number">
+              02
+            </p>
+
+            <h2 class="section-title">
+              Machine Learning
+            </h2>
+
+          </div>
+
+
+          <div class="section-content">
+
+            <p>
+
+              I am interested in the intersection of statistical
+              inference and machine learning, particularly where
+              flexible predictive methods can support questions
+              involving heterogeneous, high-dimensional, or
+              large-scale data.
+
+            </p>
+
+
+            <div class="tags">
+
+              <span class="tag">
+                Double Machine Learning
+              </span>
+
+              <span class="tag">
+                Predictive Modeling
+              </span>
+
+              <span class="tag">
+                High-Dimensional Data
+              </span>
+
+              <span class="tag">
+                Statistical Learning
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ====================================================
+           PUBLIC HEALTH + POLICY
+           ==================================================== -->
+
+      <section class="research-section">
+
+        <div class="section-layout">
+
+          <div>
+
+            <p class="section-number">
+              03
+            </p>
+
+            <h2 class="section-title">
+              Public Health & Policy
+            </h2>
+
+          </div>
+
+
+          <div class="section-content">
+
+            <p>
+
+              I am interested in applying quantitative methods
+              to questions involving health care access,
+              preventive health behavior, public programs, and
+              policy interventions. This area provides an
+              important setting for connecting methodological
+              work with questions that have direct practical
+              implications.
+
+            </p>
+
+
+            <div class="tags">
+
+              <span class="tag">
+                Health Policy
+              </span>
+
+              <span class="tag">
+                Preventive Care
+              </span>
+
+              <span class="tag">
+                Health Care Access
+              </span>
+
+              <span class="tag">
+                Population Data
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ====================================================
+           EDUCATION
+           ==================================================== -->
+
+      <section class="research-section">
+
+        <div class="section-layout">
+
+          <div>
+
+            <p class="section-number">
+              04
+            </p>
+
+            <h2 class="section-title">
+              Education & Large-Scale Data
+            </h2>
+
+          </div>
+
+
+          <div class="section-content">
+
+            <p>
+
+              Another developing area of my research focuses on
+              educational data and the opportunities created by
+              large-scale datasets. I am interested in how
+              statistical and machine-learning methods can be
+              used to investigate meaningful questions about
+              educational outcomes, patterns, and processes.
+
+            </p>
+
+
+            <div class="tags">
+
+              <span class="tag">
+                Educational Data
+              </span>
+
+              <span class="tag">
+                Large-Scale Data
+              </span>
+
+              <span class="tag">
+                Student Outcomes
+              </span>
+
+              <span class="tag">
+                Applied Machine Learning
+              </span>
+
+            </div>
+
+
+            <div class="direction-box">
+
+              <p>
+
+                This is an evolving area of my doctoral research,
+                with particular interest in identifying questions
+                where modern statistical and machine-learning
+                methods can make useful contributions to
+                educational research.
+
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ====================================================
+           STATISTICAL COMPUTING
+           ==================================================== -->
+
+      <section class="research-section">
+
+        <div class="section-layout">
+
+          <div>
+
+            <p class="section-number">
+              05
+            </p>
+
+            <h2 class="section-title">
+              Statistical Computing
+            </h2>
+
+          </div>
+
+
+          <div class="section-content">
+
+            <p>
+
+              Reproducible statistical computing is an important
+              part of how I approach research. I am interested
+              in developing transparent workflows for data
+              management, simulation, modeling, visualization,
+              and reproducible analysis.
+
+            </p>
+
+
+            <div class="tags">
+
+              <span class="tag">
+                R
+              </span>
+
+              <span class="tag">
+                SAS
+              </span>
+
+              <span class="tag">
+                Simulation
+              </span>
+
+              <span class="tag">
+                Reproducible Research
+              </span>
+
+              <span class="tag">
+                GitHub
+              </span>
+
+              <span class="tag">
+                LaTeX
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ====================================================
+           RESEARCH PRINCIPLES
+           ==================================================== -->
+
+      <section class="research-section">
+
+        <div class="section-layout">
+
+          <div>
+
+            <p class="section-number">
+              APPROACH
+            </p>
+
+            <h2 class="section-title">
+              How I Approach Research
+            </h2>
+
+          </div>
+
+
+          <div class="section-content">
+
+            <div class="principles">
+
+
+              <div class="principle">
+
+                <i class="fa-solid fa-compass-drafting"></i>
+
+                <h3>
+                  Thoughtful Design
+                </h3>
+
+                <p>
+                  Start with a clear research question and
+                  align the design and statistical methods
+                  with what the data can support.
+                </p>
+
+              </div>
+
+
+              <div class="principle">
+
+                <i class="fa-solid fa-code-branch"></i>
+
+                <h3>
+                  Reproducibility
+                </h3>
+
+                <p>
+                  Build transparent workflows that make the
+                  analytical process organized, traceable,
+                  and reproducible.
+                </p>
+
+              </div>
+
+
+              <div class="principle">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                <h3>
+                  Practical Impact
+                </h3>
+
+                <p>
+                  Connect rigorous statistical analysis with
+                  substantive questions and communicate
+                  findings clearly.
+                </p>
+
+              </div>
+
+
+            </div>
+
+
+            <a
+              class="project-link"
+              href="projects.html"
+            >
+
+              Explore my projects
+
+              <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+    </div>
+
+  </main>
+
+
+
+  <!-- ========================================================
+       FOOTER
+       ======================================================== -->
+
+  <footer>
+
+    <div class="container footer-content">
+
+      <span>
+        © 2026 Franklina Addae
+      </span>
+
+      <span class="footer-tagline">
+        Applied Statistics · Research · Data for People and Possibility
+      </span>
+
+    </div>
+
+  </footer>
+
+
+</body>
+
+</html>
