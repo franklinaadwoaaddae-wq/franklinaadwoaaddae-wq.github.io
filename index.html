@@ -235,8 +235,13 @@
       color: var(--navy-soft);
     }
 
-    .nav-links a:hover::after {
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
       width: 100%;
+    }
+
+    .nav-links a.active {
+      font-weight: 700;
     }
 
 
@@ -942,6 +947,13 @@
 
         <div class="nav-links">
 
+          <a
+            class="active"
+            href="index.html"
+          >
+            Home
+          </a>
+
           <a href="about.html">
             About
           </a>
@@ -1215,7 +1227,7 @@
 
 
 
-            <!-- OWLINDEX — ONLY NEW ADDITION -->
+            <!-- OWLINDEX -->
 
             <div class="social-item">
 
